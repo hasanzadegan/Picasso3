@@ -1,5 +1,5 @@
 # Picasso3
-ProtoType generator, flow manager and code generator based angularjs + material design
+ProtoType generator, flow manager and code generator based on angularjs + material design
 
 
 
