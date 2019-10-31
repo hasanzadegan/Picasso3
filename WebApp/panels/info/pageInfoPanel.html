@@ -1,0 +1,9 @@
+<div layout="column" ng-show="current.page.PageId>0">
+    <div class="picasso_tbl" ng-repeat="token in current.project.tokenList" layout="row" flex="100">
+        <input ng-model="token.TokenValue" flex="80" style="{{token.changed?'background-color:#faeddf':''}}"
+               class="md-accent" placeholder="{{token.TokenName}}"
+               ng-blur="savePageToken(token,1)"
+               ng-change="checkPTChange({$index},'{{token.TokenValue}}')" />
+        <md-icon ng-click="deletePageToken({$index},token);" style="font-size:10px !important" ng-show="token.overrided">delete</md-icon>
+    </div>
+</div>

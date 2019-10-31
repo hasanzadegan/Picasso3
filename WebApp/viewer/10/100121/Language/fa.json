@@ -1,0 +1,30 @@
+﻿{
+	"DIRECTION": "rtl",
+	"DIRECTION_INVERSE": "ltr",
+	"CELL_PHONE": "تلفن همراه",
+	"CELL_PHONE_HINT": "برای مثال : 09123456789",
+	"CONTINUE":"ادامه",
+	"CODE":"کد",
+	"CODE_HINT":"کد ذکر شده",
+	"VERIFY":"بررسی",
+	"RESEND":"ارسال مجدد",
+	
+	"FIRST_NAME":"نام",
+	"LAST_NAME":"نام خانوادگی",
+	"NATIONAL_CODE":"کد ملی",
+	"STATE":"استان",
+	"CITY":"شهرستان",
+	"REGISTRATION":"ثبت نام",
+	
+	"SUBJECT":"موضوع",
+	"SPECIALITY":"تخصص",
+	"START_DATE":"تاریخ شروع",
+	"VOLENTEER_REQUEST":"ثبت درخواست",
+
+
+	
+	"YOUR_TRACKING_CODE_IS":"کد رهگیری شما",
+	"SIGN_OUT":"خروج از سیستم",
+	"NEW_MISSION":"ماموریت جدید"
+
+}

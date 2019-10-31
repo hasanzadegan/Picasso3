@@ -1,0 +1,55 @@
+﻿<div ng-init="rootScope.getDesignList()"></div>
+<md-input-container flex="100" flex-xs="100" style="width:100%">
+    <input ng-model="rootScope.current.design.designDesc"
+           ng-keyup="rootScope.addDesign($event,this)"
+           placeholder="Add new Action">
+</md-input-container>
+<md-input-container flex="100" flex-xs="100" style="width:100%">
+    <input ng-model="rootScope.current.design.filter" placeholder="filter">
+</md-input-container>
+<div flex="100" layout-padding style="overflow-y:auto;height:450px;">
+    <div md-colors="rootScope.current.selectedComponent.Design.DesignId==design.DesignId?{color:'default-accent-500-1'}:''"
+         style="{{rootScope.current.selectedComponent.DesignId==design.DesignId?'font-weight:bolder;text-decoration:underline':''}}"
+         ng-repeat="design in rootScope.current.project.designList | filter:rootScope.current.design.filter"
+         ng-click="rootScope.loadDesign(design.DesignId)"
+         flex="100" layout="row">
+        <md-menu>
+            <md-icon ng-click="$mdMenu.open()"
+                     md-colors="rootScope.current.selectedComponent.Design.DesignId==design.DesignId?{color:'default-accent-500-1'}:''">settings</md-icon>
+            <md-menu-content width="4">
+                <md-menu-item>
+                    <md-button md-prevent-menu-close="md-prevent-menu-close">
+                        <input ng-model="design.DesignDesc" ng-blur="rootScope.changeDesignDesc(design);design.editMode=false" />
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="rootScope.changeComponentDesign(design.DesignId)">
+                        change component design
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="rootScope.loadDesign(design.DesignId)">
+                        load design
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="rootScope.deleteDesign(design)">
+                        delete
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+        <div flex="90" ng-if="!design.editMode" ng-dblclick="design.editMode=true" title="{{design.DesignId}}">
+            {{design.DesignDesc}}
+            <md-icon ng-show="rootScope.current.selectedComponent.DesignId==design.DesignId" class="md-primary">
+                reply
+            </md-icon>
+        </div>
+        <div flex="90" ng-if="design.editMode">
+            <md-input>
+                {{design.DesignNewDesc}}
+                <input ng-model="design.DesignDesc" ng-blur="rootScope.changeDesignDesc(design);design.editMode=false" />
+            </md-input>
+        </div>
+    </div>
+</div>

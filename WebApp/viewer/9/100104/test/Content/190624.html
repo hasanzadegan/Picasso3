@@ -1,0 +1,218 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190624.js?r=1761900809','Design/design20215.js?r=1410528918','Design/design20215.js?r=1410528918','Design/design20215.js?r=1410528918','Design/design20215.js?r=1410528918','Design/design20215.js?r=1410528918','scripts/ngMask.min.js','scripts/md-input.css']}"> 
+	<div ng-controller="Design_20215"></div>
+<div ng-controller="Design_20215"></div>
+<div ng-controller="Design_20215"></div>
+<div ng-controller="Design_20215"></div>
+<div ng-controller="Design_20215"></div>
+
+	<div ng-controller="Ctrl190624">
+	    <form id="formData" name="formData">
+			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+		<div flex="60" flex-xs="100" layout-padding >
+			<div flex="100" layout-wrap layout="row">
+<md-input-container 
+	 flex="70" flex-xs="100" >
+    <md-icon>search</md-icon>
+    <input ng-model="Form.input"   
+	  md- 
+	 md-  
+	
+	      >	
+	<label>{{'Search'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container>
+<md-button  
+	class="md-primary md-raised" 
+	ng-click="makeDesign_293251();" flex="20" flex-xs="100"  >
+    <md-icon class="material-icons">search</md-icon>
+    <span class="md-inline-list-icon-label">{{'جستجو' | translate}}</span>   
+</md-button>
+<!--  -->
+<!--div ng-init="getDynamicData('__cityList','','0','/base/list/city','country',[],this)"></div-->
+
+<div data-ng-init=" __cityList =  " style="display:none"></div>
+<div data-ng-init=" Form.city.id =  " style="display:none"></div>
+
+<md-input-container flex="55" flex-xs="100" md-no-float>
+	<md-icon></md-icon>
+	<md-select 
+		
+		md-on-open="getDynamicData('__cityList','','0','/base/list/city','country',[],this)"
+		ng-model="Form.city.id" placeholder="{{'شهر' | translate}}" >
+		<md-option  ng-repeat="item in __cityList" value="{{item.id}}">
+			{{item.name}}		
+		</md-option>
+	</md-select>
+</md-input-container>
+<md-input-container class="md-block" flex-gt-xs   >
+	<md-radio-group  flex-gt-sm layout-padding layout="row" flex="100"  ng-model="Form.person.gender.id"  >
+		<md-radio-button ng-repeat="item in [{'title':'MALE','id':11},{'title':'FEMALE','id':12}]" class="md-primary" value="{{item.id}}">{{item.title|translate}}</md-radio-button>
+	</md-radio-group>
+</md-input-container>
+
+<h4   > {{'جستجوي پيشرفته' |translate}} </h4>
+<div  class="removeOutline" ng-click="flag=!flag">
+    <md-icon style="padding:20px" class="setCursor">{{!flag?'keyboard_arrow_down':'keyboard_arrow_up'}}</md-icon>
+</div>
+
+
+<div flex="100"></div>
+<!--div ng-init="getDynamicData('__languageList','','0','/base/list/language','',[],this)"></div-->
+
+<div data-ng-init=" __languageList =  " style="display:none"></div>
+<div data-ng-init=" Form.doctorAccount.primaryLanguage.id =  " style="display:none"></div>
+
+<md-input-container flex="100" flex-xs="100" md-no-float>
+	<md-icon></md-icon>
+	<md-select 
+		
+		md-on-open="getDynamicData('__languageList','','0','/base/list/language','',[],this)"
+		ng-model="Form.doctorAccount.primaryLanguage.id" placeholder="{{'Language' | translate}}" >
+		<md-option  ng-repeat="item in __languageList" value="{{item.id}}">
+			{{item.name}}		
+		</md-option>
+	</md-select>
+</md-input-container>
+<md-content style="background-color: rgba(250, 250, 250, 0);" layout-margin>
+			<div layout="row" layout-align="space-between center" layout-wrap layout-padding >
+				<md-card ng-repeat="find in findData" style="background: #fff;" flex="noshrink" flex-xs="100">
+					<div layout="column">
+						<div layout="column" layout-xs="column">
+							<div layout="row" layout-align="center start">
+								<div class="docPicList">
+									<img ng-hide="find.picture.docId=='' || find.picture.docId==null" ng-src="{{picUrl+find.picture.docId}}" height="100">
+								</div>
+								<div layout="column" layout-align="space-between center">
+									<div class="docNameList">
+										{{find.firstName}} {{find.lastName}}
+									</div>
+									<div class="docExpertiseList">
+										{{find.specialtyName}}
+									</div>
+								</div>
+							</div>
+							<div layout="row" layout-align="space-between center" layout-xs="column">
+								<div layout="column">
+									<div layout="row" class="docTellList">
+										<div class="docTellOffice">{{ 'TELL' }}</div><div>{{find.office_tel}},{{find.telephone}}</div>
+									</div>
+									<div layout="row" class="docTellList">
+										<div class="docTellOffice">{{ 'FAX' }}</div><div>{{find.office_fax}},{{find.fax}}</div>
+									</div>
+								</div>										
+								<div class="docBtnList">
+									<md-button class="md-button" ng-click="#">{{ 'APPOINTMENT' }}</md-button>
+								</div>
+							</div>
+						</div>
+						<hr class="borderStyleList">
+						<div layout="column" layout-xs="column" layout-align="space-between center" layout-align-xs="start start">
+							<div layout="row">
+								<div class="docAddrTitle">{{ 'ADDRESS' }}:</div>
+								<div class="docAddr">{{find.address_name}} ({{find.addressType}}) {{find.cityName}} - {{find.mandatory_address}} {{find.optional_address}}</div>
+							</div>
+							<div layout="row">									
+								<div>{{ 'RATING'  }}: </div>
+								<star-rating class="star-rating" 
+									 rating-value="rating" 
+									 data-max="5" on-rating-selected="rateFunction(rating)" 
+									 ng-init="rating = 1">
+								</star-rating>									
+							</div>
+						</div>
+					</div>
+				</md-card>
+			</div>
+		</md-content>
+<div ng-init="design_20217(this)" style="display:none"></div>
+<style><style>.docPicList img {
+			width: 65px;
+			height: 65px;
+			border: solid 1px #80355e;
+			border-radius: 60px;
+			padding: 2px;
+			margin: 0 15px 0 0;
+		}
+		.docNameList {
+			font-size: 17px;
+			font-weight: bold;
+			color: #7F345B;
+			margin: 10px 0;
+		}
+		.docExpertiseList {
+			font-size: 14px;
+			color: #777;			
+		}
+		.docBtnList button {
+			background: #7F345B !important;
+			border-radius: 5px;
+			color: #fff;
+		}
+		.docAddrTitle {
+			font-weight: bold;
+			margin: 0 10px;
+		}
+		.docTellList.layout-row {
+			margin: 3px;
+		}
+		.docTellOffice {
+			font-weight: bold;	
+			margin: 0 10px;
+		}
+		.rating{
+		  color: #a9a9a9;
+		  margin: 0 10px;
+		  padding: 0;
+		  line-height: 16px;
+		}
+
+		ul.rating {
+		  display: inline-block;
+		}
+
+		.rating li {
+		  list-style-type: none;
+		  display: inline-block;
+		  padding: 1px;
+		  text-align: center;
+		  font-weight: bold;
+		  cursor: pointer;
+		}
+
+		.rating .filled {
+		  color: #FFD700;
+		}
+		hr.borderStyleList {
+			border: 0;
+			height: 2px;
+			background-image: -webkit-linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+			background-image: -moz-linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+			background-image: -ms-linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+			background-image: -o-linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+			background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+			width: 100%;
+		}
+		.md-steppers-header-region {
+  			  z-index: 0;
+		}
+		.alignSelect{
+		    min-height: 58px !important;
+		}
+		.setCursor{
+        	cursor: pointer;
+            outline:none;
+        }
+        .removeOutline{
+            outline:none;
+        }
+        }
+</style></style>
+{{Form}}</div>  
+		</div>
+	</div>
+</div>
+		</form>
+	</div> 
+</div> 

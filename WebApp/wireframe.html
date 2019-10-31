@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-aria.min.js"></script>
+    <script src="scripts/angular-animate.js"></script>
+    <script src="scripts/angular-material.min.js"></script>
+    <script src="scripts/angular-material-icons.min.js"></script>
+    <!--<script src="scripts/angular-route.min.js"></script>-->
+    <script src="scripts/moment.min.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/angular-messages.min.js"></script>
+    <script src="scripts/angular-cookies.js"></script>
+    <script src="scripts/ngStorage.min.js"></script>
+    <script src="scripts/ngDraggable.js"></script>
+    <script src="scripts/ngGroup.js"></script>
+    <!--<script src="scripts/angular-route.min.js"></script>-->
+    <!--    <script src="scripts/ngGroup.js"></script>-->
+    <!--<script src="scripts/angular-ui-router.min.js"></script>-->
+
+    <script src="scripts/moment-jalaali.js"></script>
+    <script src="scripts/datePicker.min.js"></script>
+    <script src="scripts/ng-map.min.js"></script>
+    <script src="scripts/angular-sanitize.min.js"></script>
+    <script src="scripts/md-steppers.min.js"></script>
+
+    <link href="scripts/angular-material.min.css" rel="stylesheet" />
+    <link href="scripts/picasso2App.css" rel="stylesheet" />
+    <link href="scripts/angular-material-font.css" rel="stylesheet" />
+    <link href="scripts/md-steppers.min.css" rel="stylesheet" />
+
+    <script src="scripts/ace/src-noconflict/ace.js"></script>
+    <script src="scripts/ace/src-noconflict/ext-language_tools.js"></script>
+    <script src="scripts/ace/ace-angular.js"></script>
+
+    <script src="scripts/ocLazyLoad/require.js"></script>
+    <script src="scripts/ocLazyLoad/ocLazyLoad.min.js"></script>
+    <script src="scripts/ocLazyLoad/ocLazyLoad.require.min.js"></script>
+
+    <script src="panels/panel.js"></script>
+
+    <!--<script src="panels/login/loginPanel.js"></script>-->
+    <!--<script src="panels/project/projectPanel.js"></script>-->
+    <!--<script src="panels/page/pagePanel.js"></script>-->
+    <!--<script src="panels/content/contentPanel.js"></script>-->
+    <!--<script src="panels/layout/layoutPanel.js"></script>-->
+    <!--<script src="panels/component/componentPanel.js"></script>-->
+    <!--<script src="panels/generate/generatePanel.js"></script>-->
+    <!--<script src="dialog/icon/iconDialog.js"></script>-->
+    <!--<script src="dialog/navigation/navigationDialog.js"></script>-->
+    <!--<script src="dialog/wish/wishDialog.js"></script>-->
+    <!--<script src="dialog/component/componentDialog.js"></script>-->
+    <!--<script src="dialog/html/htmlDialog.js"></script>-->
+
+
+</head>
+<body ng-app="myApp" ng-keydown="keyPress($event)" ng-click="documentClick($event)" layout="column" flex="100">
+    <div ng-controller="mainController"></div>
+    <!--<div ng-include="'test.html?'+rand"></div>-->
+    <div layout="column">
+        <md-toolbar class="md-accent _md _md-toolbar-transitions" style="background:#3a3a3a !important" ng-show="!F8">
+            <div layout="row">
+                <md-title flex="40" class="Picasso_logoType" layout="row">
+                    <div style="font-size:40px;color:white">
+                        <font style="font-family:'Material Icons';color:deepskyblue"></font>
+                        Picasso2
+                    </div>
+                </md-title>
+                <div flex="80">
+                    <div flex="100" ng-show="User.UserId" layout-wrap layout="row">
+                        <!--<md-button class="md-icon-button" ng-click="showNavigationDialog($event)">
+                            <md-icon class="toolbar_icon">assignment</md-icon>
+                        </md-button>-->
+                        <div ng-if="current.project!=null" layout="row" flex="60">
+
+                            <md-button class="md-icon-button" ng-click="reCreateResources()">
+                                <md-icon class="toolbar_icon">build</md-icon>
+                            </md-button>
+                            <md-button class="md-icon-button" ng-click="makeAllDesign()">
+                                <md-icon class="toolbar_icon">gamepad</md-icon>
+                            </md-button>
+
+                            <md-button class="md-icon-button" ng-click="generateAll()">
+                                <md-icon class="toolbar_icon">local_bar</md-icon>
+                            </md-button>
+                            <div ng-init="getPanelList()"></div>
+                            <div ng-init="getDashboardList()"></div>
+                        </div>
+
+                        <md-button class="md-icon-button" ng-click="showWishDialog($event)">
+                            <md-icon class="toolbar_icon">assistant</md-icon>
+                        </md-button>
+                        <md-button class="md-icon-button" ng-click="panel.pages= !panel.pages">
+                            <md-icon class="toolbar_icon">home</md-icon>
+                        </md-button>
+                        <md-button class="md-icon-button" ng-click="panel.component = !panel.component">
+                            <md-icon class="toolbar_icon">dashboard</md-icon>
+                        </md-button>
+                        <md-button class="md-icon-button" ng-click="panel.code = !panel.code">
+                            <md-icon class="toolbar_icon">code</md-icon>
+                        </md-button>
+
+
+
+                        <md-progress-linear ng-if="isGenerating" md-mode="indeterminate"></md-progress-linear>
+
+
+                        <!--<md-button class="md-icon-button" ng-if="current.project!=null" ng-click="generateAllPageContent()">
+                            <md-icon flex="30" class="toolbar_icon">home</md-icon>
+                        </md-button>-->
+                    </div>
+                    <div flex="100" ng-include="'panels/info/userInfoPanel.html?r='+rand"></div>
+                </div>
+                <div flex="5">
+                    <md-button class="md-icon-button" ng-click="signIn()">
+                        <md-icon flex="30" class="toolbar_icon">power_settings_new</md-icon>
+                    </md-button>
+                </div>
+            </div>
+        </md-toolbar>
+        <div layout="row">
+            <md-card flex="20" ng-show="!panel.pages && !F8" layout="column">
+                <div ng-include="'panels/page/pagePanel.html?r='+rand" layout-padding></div>
+                <div flex="60" ng-include="'panels/info/'+current.pageInfo+'.html?r='+rand" layout-padding></div>
+            </md-card>
+            <md-card flex="20" layout="column" ng-show="!panel.showContent && !F7">
+                <div flex="100" ng-include="'panels/content/projectContentPanel.html?r='+rand"></div>
+            </md-card>
+            <div flex="100">
+                <div layout="column" flex="100" style="height:100vh">
+                    <div style="position:absolute;bottom:0px">
+                        <!--{{current.path}}-->
+                        <a href="{{current.path}}" target="_blank">
+                            <md-icon>list_alt</md-icon>
+                        </a>
+                    </div>
+                    {{current.projectPath+'/partViewer.html?r='+rand}}
+                    <div style="height:100vh"
+                         ng-if="true"
+                         ng-include="current.projectPath+'/partViewer.html?r='+rand"
+                         init="pageContentId=current.content.PageContentId;
+                         pageId=current.page.PageId;
+                         projectPath = current.projectPath;
+                         ">
+                    </div>
+                    --
+                    <!--<iframe
+            ng-if="current.path!=null" frameborder="0" id="viewerFrame" layout-wrap
+            flex="100" src="{{current.path}}" style="height:10px;zoom:0.3">
+
+    </iframe>-->
+                    <!--{{current.path}}
+    <div ng-include="{{current.path}}"></div>-->
+                </div>
+            </div>
+            <md-card flex="25" layout-padding ng-show="!panel.component && !F8" layout="column">
+                <div flex="30" ng-include="'panels/layout/layoutPanel.html?r='+rand" layout="column"></div>
+                <div ng-include="'panels/component/componentPanel.html?r='+rand" layout="column"></div>
+                <div flex="10" ng-include="'panels/generate/generatePanel.html?r='+rand"></div>
+            </md-card>
+        </div>
+        <textArea flex="100" style="width:100%;position:fixed;height:250px;bottom:0px;background:#f8f3eb" ng-if="panel.code && !F8">
+            {{current.selectedComponent.Design}}
+        </textArea>
+    </div>
+    <div ng-include="'dialog/navigation/navigationDialog.html?r=' + rand"></div>
+    <div ng-include="'dialog/table/tableDialog.html?r=' + rand"></div>
+    <div ng-include="'dialog/icon/iconDialog.html?r=' + rand"></div>
+    <div ng-include="'dialog/wish/wishDialog.html?r=' + rand"></div>
+    <div ng-include="'dialog/component/componentDialog.html?r=' + rand"></div>
+    <div ng-include="'dialog/html/htmlDialog.html?r=' + rand"></div>
+    <!--<div ng-init="showNavigationDialog($event)"></div>-->
+</body>
+</html>

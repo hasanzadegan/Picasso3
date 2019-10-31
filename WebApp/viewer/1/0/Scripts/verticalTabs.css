@@ -1,0 +1,9 @@
+mat-tab-group[vertical] .mat-tab-labels {
+    display: flex;
+    flex-direction: column!important;
+}
+
+mat-tab-group[vertical] {
+    display: flex;
+    flex-direction: row!important;
+}

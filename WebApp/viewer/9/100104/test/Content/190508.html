@@ -1,0 +1,59 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190508.js?r=1913767473','Design/design10114.js?r=185439863','Design/design10134.js?r=185439863','Design/design10111.js?r=955967791','scripts/ngMask.min.js','scripts/md-input.css']}"> 
+	<div ng-controller="Design_10114"></div>
+<div ng-controller="Design_10134"></div>
+<div ng-controller="Design_10111"></div>
+
+	<div ng-controller="Ctrl190508">
+	    <form id="formData" name="formData">
+			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+		<div flex="60" flex-xs="100" layout-padding >
+			<div flex="100" layout-wrap layout="row">
+
+<h3 style="text-align:center" ng-if = "DocInfo.active.id == 13" ng-model= "activateStatus" ng-show="showMe1" flex="100" flex-xs="100"> {{'YOUR_ACCOUNT_IS_CURRENTLY_ACTIVE' |translate}} </h3>
+
+<h3 style="text-align:center" ng-if = "DocInfo.active.id == 14" ng-model= "activateStatus" ng-show="showMe1" flex="100" flex-xs="100"> {{'YOUR_ACCOUNT_IS_CURRENTLY_DEACTIVE' |translate}} </h3>
+<md-button  
+	class="md-list-item-content md-primary" 
+	ng-click="makeDesign_272539();" flex="100" flex-xs="100"  >
+    <md-icon class="material-icons">eye</md-icon>
+    <span class="md-inline-list-icon-label">{{'DEACTIVE/ACTIVE' | translate}}</span>   
+</md-button>
+<!--  -->
+<div ng-init=" showMe = false " style="display:none"></div>
+
+<md-input-container  flex="70" flex-xs="100" ng-show="showMe">
+    <md-icon>sms</md-icon>
+    <input ng-model="Form.verifyCode"   
+	   
+	md- type="text"  
+	      >	
+	<label>{{'VERIFICATION_CODE'| translate }}</label>
+    <div class="hint">{{'PLEASE_ENTER_THE_CODE' | translate }}</div>
+    
+</md-input-container>
+<md-button  
+	class="md-list-item-content md-primary" 
+	ng-click="design_10134(this);" flex="25" flex-xs="100" ng-show="showMe" >
+    <md-icon class="material-icons">send</md-icon>
+    <span class="md-inline-list-icon-label">{{'Send' | translate}}</span>   
+</md-button>
+<!--  -->
+<div ng-init=" showMe1 = true " style="display:none"></div>
+<div ng-init="startTimer(toggleStatus.expiration_time/100,'timerLimit','100')"></div>
+<div ng-if="false">
+	{{timerLimit}}
+</div> 
+<md-button  
+	 ng-disabled="timerLimit>0"
+	ng-click="design_10111(this);" flex="100" flex-xs="100" ng-show="showMe" >
+    <md-icon class="material-icons">forward_30</md-icon>
+    <span class="md-inline-list-icon-label">{{'ارسال مجدد پيامک {{timerLimit>0?(timerLimit/10 |number:0):''}}' | translate}}</span>   
+</md-button>
+<!--  --></div>  
+		</div>
+	</div>
+</div>
+		</form>
+	</div> 
+</div> 

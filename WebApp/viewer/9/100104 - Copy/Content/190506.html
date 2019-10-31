@@ -1,0 +1,101 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190506.js?r=911158519','Design/design10123.js?r=559786628','Design/design10124.js?r=559786628','Design/design10141.js?r=1330314556','Design/design10136.js?r=1330314556']}"> 
+	<div ng-controller="Design_10123"></div>
+<div ng-controller="Design_10124"></div>
+<div ng-controller="Design_10141"></div>
+<div ng-controller="Design_10136"></div>
+
+	<div ng-controller="Ctrl190506">
+	    <form id="formData" name="formData">
+			<div id="_template" class="template flex-100 layout-wrap layout-column">
+	<div class="flex-100 layout-wrap layout-row">
+		<div class="flex-100 layout-row layout-wrap">
+				
+
+<h4 style="text-align:center" flex="70" > {{'PLEASE_ADD_YOUR_WORKPLACE' |translate}} </h4>
+<md-button  
+	class="md-list-item-content md-primary" 
+	ng-click="makeDesign_272530();" flex="5" flex-xs="5"  >
+    <md-icon class="material-icons">add_circle</md-icon>
+    <span class="md-inline-list-icon-label">{{'' | translate}}</span>   
+</md-button>
+<!--  -->
+
+<div ng-if="content.pageContentId==190515">
+	can not include same page as dialog
+</div>
+<md-dialog ng-if="content.pageContentId!=190515">
+    <md-dialog-content>
+		<script type="text/ng-template" id="addOffice.tmpl">
+			<md-dialog flex="60">
+				<md-dialog-content flex="100" style="height:400" layout-padding>
+					<div ng-include="'Content/190515.html?r='+rootScope.rand" ></div>
+				</md-dialog-content>
+			</md-dialog>
+		</script>
+    </md-dialog-content>
+</md-dialog>
+
+<table class="workplaceTbl">
+	<tr>
+		<th>SPECIALTY</th>
+		<th>PHONE_NUMBER</th>
+		<th>POSTAL_CODE</th>
+		<th>ADDRESS</th>
+		<th>ACTIVE_DEACTIVE</th>
+		<th>REMOVE</th>
+		<th>EDIT</th>
+	</tr>
+	<tr ng-repeat="x in _workplace track by $index">
+		<td>{{x.specialty.name}}</td>
+		<td>{{x.officeTel}}</td>
+		<td>{{x.address.postalCode}}</td>
+		<td>{{x.address.mandatoryAddress}}</td>
+		<td>{{x.active.description}}</td>
+		<td>
+		<md-button  
+        	class="md-list-item-content md-primary" 
+        	ng-click="design_10124(this,$index);" flex="100" flex-xs="100"  >
+            <md-icon class="material-icons">remove</md-icon>
+            <span class="md-inline-list-icon-label"></span>   
+        </md-button>
+		</td>
+		<td>
+		<md-button  
+        	class="md-list-item-content md-primary" 
+        	ng-click="design_10136(this,$index);" flex="100" flex-xs="100"  >
+            <md-icon class="material-icons">edit</md-icon>
+            <span class="md-inline-list-icon-label"></span>   
+        </md-button>
+		</td>
+	</tr>
+</table>
+
+<style>
+    .workplaceTbl {
+    width: 100%;
+    border: solid 1px #f3f3f3;
+    border-radius: 5px;
+    border-collapse: collapse;
+    text-align : center;
+}
+.workplaceTbl tr:nth-child(1) {
+    background: #00C6D7;
+    color: #fff;
+}
+.workplaceTbl tr td, .workplaceTbl tr th {
+    padding: 10px;
+}
+.dialogFormStyle {
+	background: #00C6D7 !important;
+}
+.circleIcon {
+	background: #052963 !important
+}
+</style>
+<div ng-init="getInitData('_workplace','','0','workplace/list/doctor/'+DocInfo.id+'',{},this)" style="display:none"></div>
+		</div>
+	</div>
+</div>
+		</form>
+	</div> 
+</div> 

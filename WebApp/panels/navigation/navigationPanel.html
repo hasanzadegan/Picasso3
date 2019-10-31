@@ -1,0 +1,31 @@
+<div ng-controller="navigationController" ng-show="current.selectedComponent.ComponentId>0" layout="column">
+    <div layout="row" layout-wrap>
+        <md-select flex="50" ng-model="current.navigation.page" name="NavPage" ng-change="changeNavPage()">
+            <md-option ng-value="page.PageId" ng-repeat="page in current.project.pageList">{{page.PageName}}</md-option>
+        </md-select>
+        <md-select flex="50" ng-model="current.navigation.content" name="NavContent">
+            <md-option ng-value="content" ng-repeat="content in current.pageContentList">{{content.ContentName}}</md-option>
+        </md-select>
+        
+        <md-input-container flex="90">
+            <input ng-model="current.navigation.ConditionDesc" />
+        </md-input-container>
+
+        <md-button flex="10" class="md-icon-button" ng-click="addNavigation();">
+            <md-icon class="md-accent">add</md-icon>
+        </md-button>
+    </div>
+    <div flex="70" layout="row" layout-wrap>
+        <div ng-repeat="navigation in current.selectedComponent.ComponentNavigationList" layout="row" flex="100">
+            <div flex="30">{{navigation.PageName.substring(0,5)+'...'}}</div>
+            <div flex="30">{{navigation.ContentName.substring(0,5)+'...'}}</div>
+            <div flex="30">{{navigation.ConditionDesc.substring(0,5)+'...'}}</div>
+            <md-button flex="10" class="md-icon-button" ng-click="deleteNavigation(navigation);">
+                <md-icon class="md-accent">delete</md-icon>
+            </md-button>
+        </div>
+    </div>
+</div>
+
+
+

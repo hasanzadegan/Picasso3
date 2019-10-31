@@ -1,0 +1,41 @@
+<div oc-lazy-load="{ name: 'myApp', files: ['panels/login/loginPanel.js']}">
+    <div ng-controller="loginController">
+        <div ng-hide="User.UserId>0" layout="row" layout-wrap flex="100">
+
+            <div style="min-height:200px">
+                <img src="img/still-life-with-lamp-1944.jpg!Large.jpg" flex="100"/>
+            </div>
+
+            <div layout-padding flex="100" layout="row" layout-wrap>
+
+                <md-input-container md-no-float flex="100" flex-xs="100">
+                    <!--<md-icon class="md-accent" flex="10">mail</md-icon>-->
+                    <input ng-model="UserData.email" ng-pattern="/^[a-zA-Z+[a-zA-Z0-9._]+@[a-zA-Z]+\.[a-zA-Z.]{2,5}$/"
+                           type="text" minlength="3" maxlength="200" md-maxlength="200" placeholder="eMail" name="eMail">
+                </md-input-container>
+                <md-input-container flex="100" flex-xs="100" md-no-float>
+                    <!--<md-icon flex="10" class="md-accent">security</md-icon>-->
+                    <input ng-model="UserData.Password" type="Password" maxlength="20" md-maxlength="20"
+                           placeholder="Password" name="Password">
+                </md-input-container>
+
+                <md-button class="md-raised md-accent" ng-click="userLogin()" flex="100" flex-xs="100">
+                    <md-icon>security</md-icon>Login
+                </md-button>
+
+                <md-checkbox ng-model="Form.CheckBox">
+                    Do you forget password?
+                </md-checkbox>
+
+
+
+            </div>
+        </div>
+        <div ng-show="userId>0" layout="row" layout-wrap flex="100">
+            <md-button class="md-raised md-accent" flex="100" flex-xs="100" ng-click="logout()">
+                <md-icon class="material-icons">security</md-icon>
+                <span class="md-inline-list-icon-label">Logout</span>
+            </md-button>
+        </div>
+    </div>
+</div>

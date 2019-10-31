@@ -1,0 +1,54 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190647.js?r=291335627']}"> 
+	
+	<div ng-controller="Ctrl190647">
+	    <form id="formData" name="formData">
+			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+			<div flex="100" layout-wrap layout="row">
+{{Form}}
+<div >
+	<div  
+		style="height:100px;width:100px;
+		border:solid 1px silver;
+		background:url('{{Form.Image1}}');
+		background-size: cover;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		border-radius:px;
+		position:relative;
+		" >
+	</div>
+	<div layout-padding style="width:100px;position:relative">
+		<input ng-model="Form.Image1" type="file"  
+		style="color:transparent"
+		onchange="angular.element(this).scope().uploadedFile(this,'Form.Image1__')" >
+	</div>
+</div>
+
+<div >
+	<div  
+		style="height:100px;width:100px;
+		border:solid 1px silver;
+		background:url('{{Form.Image2}}');
+		background-size: cover;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		border-radius:5px;
+		position:relative;
+		" >
+	</div>
+	<div layout-padding style="width:100px;position:relative">
+		<input ng-model="Form.Image2" type="file"  accept="*.jpg"
+		style="color:transparent"
+		onchange="angular.element(this).scope().uploadedFile(this,'Form.Image2__')" >
+	</div>
+</div>
+</div>  
+	</div>
+</div>
+
+		</form>
+	</div> 
+</div> 

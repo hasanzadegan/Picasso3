@@ -1,0 +1,59 @@
+<div oc-lazy-load="{ name: 'myApp', files: ['dialog/html/htmlDialog.js']}">
+    <script type="text/ng-template" id="componentHtml.tmpl.html" ng-controller="htmlDialogController">
+        <md-dialog flex="90">
+            <md-dialog-content style="min-height:600px" layout-padding layout="row">
+                <div ng-show="rootScope.current.selectedComponent.ComponentId>0" layout="column" flex="25">
+                    {{rootScope.current.selectedComponent.InheritedTypeName}}:
+                    {{rootScope.current.selectedComponent.ComponentId}}
+
+                    <div class="picasso_tbl_cmp" ng-repeat="token in rootScope.current.selectedComponent.ComponentTokenList" layout="row">
+                        <div flex="20" style="font-size:9px">{{token.TokenName}}</div>
+<!--                    ng-change="rootScope.checkChange({$index},'{{token.TokenValue}}',1);"-->
+                        <textarea flex="75" ng-model="token.TokenValue" ng-show="token.ComponentTokenId>0"
+                                  style="width:100%;min-height:15px;background-color:#faeddf"
+                                  class="md-accent" placeholder="{{token.TokenName}}"
+                                  ng-blur="rootScope.saveComponentToken({$index})"></textarea>
+<!--                    ng-change="rootScope.checkChange({$index},'{{token.InheritedTokenValue}}',2);"-->
+                        <textarea flex="75" ng-model="token.InheritedTokenValue" ng-show="token.ComponentTokenId==0"
+                                  style="width:100%;min-height:15px"
+                                  class="md-accent" placeholder="{{token.TokenName}}"
+                                  ng-blur="rootScope.saveComponentToken({$index})"></textarea>
+                        <md-icon ng-show="token.Overrided" ng-click="rootScope.deleteComponentToken({$index})" class="mini-icon">delete</md-icon>
+                    </div>
+                </div>
+                <div flex="75" layout="column">
+                    <div ace-editor="{mode:'html',theme:'chrome'}" ng-model="rootScope.current.selectedComponent.RenderHTML"
+                         style="height:100%"></div>
+
+                    <div layout="row" layout-padding>
+                        <!--<button class="md-icon-button md-button" ng-if="rootScope.current.selectedComponent.InheritedType.IsGeneric!=1" type="button" ng-click="rootScope.updateComponentInfo()">
+                            <md-icon flex="5">edit</md-icon>
+                        </button>
+                        <button class="md-icon-button md-button" ng-if="rootScope.current.selectedComponent.InheritedType.IsGeneric!=1" type="button" ng-click="rootScope.deleteInheritedType()">
+                            <md-icon flex="5">delete</md-icon>
+                        </button>
+                        <button ng-if="!rootScope.current.selectedComponent.Design.DesignId" class="md-icon-button md-button" type="button" ng-click="rootScope.showNavigationDialog($event)">
+                            <md-icon>link</md-icon>
+                        </button>-->
+                        <div flex="90"></div>
+                        <button flex="10" class="md-icon-button md-button" ng-click="rootScope.changeComponentHTML();rootScope.generatePage();" role="img" aria-label="save">
+                            <md-icon style="color:{{rootScope.current.selectedComponent.isEditing?'red':''}}">save</md-icon>
+                        </button>
+
+                        <!--<div ng-if="rootScope.current.selectedComponent.Design.DesignId" class="componentContainer " layout="row">
+                        <md-buttn class="md-icon-button" ng-click="rootScope.unlinkDesign()">
+                            <md-icon>delete</md-icon>
+                        </md-buttn>
+                        <div layout-padding style="font-size:10px" ng-click="showNavigationDialog($event)">
+                            <md-tooltip>
+                                {{rootScope.current.selectedComponent.Design.DesignDesc}}
+                            </md-tooltip>
+                            {{rootScope.current.selectedComponent.Design.DesignId}}
+                        </div>
+                            </div>-->
+                    </div>
+                </div>
+            </md-dialog-content>    
+        </md-dialog>
+    </script>
+</div>

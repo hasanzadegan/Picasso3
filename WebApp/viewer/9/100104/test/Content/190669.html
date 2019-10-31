@@ -1,0 +1,55 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190669.js?r=548086124','Design/design20197.js?r=1737770089','Design/design10096.js?r=1131342298','Design/design20222.js?r=779970407','Design/design10111.js?r=779970407','scripts/ngMask.min.js','scripts/md-input.css']}"> 
+	<div ng-controller="Design_20197"></div>
+<div ng-controller="Design_10096"></div>
+<div ng-controller="Design_20222"></div>
+<div ng-controller="Design_10111"></div>
+
+	<div ng-controller="Ctrl190669">
+	    <form id="formData" name="formData">
+			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+		<div flex="60" flex-xs="100" layout-padding >
+			<div flex="100" layout-wrap layout="row">
+<md-input-container 
+	 flex="100" flex-xs="100" >
+    <md-icon>sms</md-icon>
+    <input ng-model="Form.verifyCode" ng-pattern="/^[0-9]/"  
+	 minlength="4" md-minlength="4" 
+	maxlength="4" md-maxlength="4"  
+	
+	name="verifyCode"  required    >	
+	<label>{{'VERIFICATION_CODE'| translate }}</label>
+    	<div class="hint" ng-show="!formData.verifyCode.$touched || formData.verifyCode.$valid">{{'VERIFY_CODE_HINT' | translate }}</div>
+    
+</md-input-container>
+<md-button  
+	 
+	ng-click="makeDesign_293353();" flex="100" flex-xs="100"  >
+    <md-icon class="material-icons">send</md-icon>
+    <span class="md-inline-list-icon-label">{{'CONFIRM_CODE' | translate}}</span>   
+</md-button>
+<!--  -->
+<md-button  
+	class="md-list-item-content md-primary" 
+	ng-click="makeDesign_293354();" flex="45" flex-xs="100"  >
+    <md-icon class="material-icons"></md-icon>
+    <span class="md-inline-list-icon-label">{{'CHANGE_PHONE_NUMBER' | translate}}</span>   
+</md-button>
+<!--  -->
+<md-button  
+	 
+	ng-click="makeDesign_293355();" flex="45" flex-xs="100"  >
+    <md-icon class="material-icons">forward_30</md-icon>
+    <span class="md-inline-list-icon-label">{{'RESEND_CODE' | translate}}</span>   
+</md-button>
+<!--  -->
+<div ng-init="startTimer(600,'timerLimit','100')"></div>
+<div ng-if="false">
+	{{timerLimit}}
+</div> </div>  
+		</div>
+	</div>
+</div>
+		</form>
+	</div> 
+</div> 

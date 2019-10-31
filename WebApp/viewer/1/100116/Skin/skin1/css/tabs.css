@@ -1,0 +1,14 @@
+/*tabs*/
+.profileTabs {
+    min-height: 650px !important;
+}
+.tabsBx .md-active {
+	color: #052963 !important;
+}
+.tabsBx md-ink-bar {
+	background: #052963;
+	color: #052963;
+}
+.tabsBx md-tabs-wrapper {
+    background: #f3f3f3;
+}

@@ -1,0 +1,48 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190651.js?r=251178874','Design/design20225.js?r=2047290630','scripts/ngMask.min.js','scripts/md-input.css']}"> 
+	<div ng-controller="Design_20225"></div>
+
+	<div ng-controller="Ctrl190651">
+	    <form id="formData" name="formData">
+			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+		<div flex="60" flex-xs="100" layout-padding >
+			<div flex="100" layout-wrap layout="row">
+<div ng-init=" Form.NationalCode = '0385581181' " style="display:none"></div>
+<md-input-container 
+	 flex="50" flex-xs="50" >
+    <md-icon>id</md-icon>
+    <input ng-model="Form.NationalCode"   
+	 minlength="10" md-minlength="10" 
+	maxlength="10" md-maxlength="10"  
+	
+	name="NationalCode"   isNationalCode   >	
+	<label>{{'شماره ملي'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container>
+<md-button  
+	 
+	ng-click="makeDesign_293239();" flex="10" flex-xs="10"  >
+    <md-icon class="material-icons">search</md-icon>
+    <span class="md-inline-list-icon-label">{{'' | translate}}</span>   
+</md-button>
+<!--  -->
+--{{Driver}}--
+<md-input-container 
+	 flex="100" flex-xs="100" >
+    <md-icon></md-icon>
+    <input ng-model="Driver."   
+	  md- 
+	 md-  
+	
+	     ng-disabled="disabled" >	
+	<label>{{''| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container></div>  
+		</div>
+	</div>
+</div>
+		</form>
+	</div> 
+</div> 

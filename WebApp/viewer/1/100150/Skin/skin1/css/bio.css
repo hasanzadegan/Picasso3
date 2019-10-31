@@ -1,0 +1,11 @@
+/*bio*/
+.titleBio {
+    color: #595959;
+    font-size: 20px;
+}
+.textbox {
+    height: 255px;
+    overflow-y: auto;
+    text-align: justify;
+    padding: 0 50px;
+}

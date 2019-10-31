@@ -1,0 +1,29 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190595.js?r=314067198']}"> 
+	
+	<div ng-controller="Ctrl190595">
+	    <form id="formData" name="formData">
+			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+		<div flex="60" flex-xs="100" layout-padding >
+			<div flex="100" layout-wrap layout="row">
+<div ng-init="Form.CertificateDate=setStandardDate()"
+<md-input-container  >
+	<label>{{''| translate }}</label>
+        <md-persian-datepicker ng-model="Form.CertificateDate"   name="CertificateDate"  ></md-persian-datepicker>
+
+</md-input-container>
+
+<div  layout="column" flex-order="1" flex-order-gt-sm="0">
+	<md-subheader>تاريخ ارائه خدمت</md-subheader>
+	<md-input-container flex="50" flex-xs="100">
+			<md-persian-calendar ng-model="Form.Madah.orderDate"   name="orderDate"
+			ng-change="getDynamicData('__DayTimeList','','','','')"
+			></md-persian-calendar>
+	</md-input-container>
+</div></div>  
+		</div>
+	</div>
+</div>
+		</form>
+	</div> 
+</div> 

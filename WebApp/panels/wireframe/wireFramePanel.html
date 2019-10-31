@@ -1,0 +1,39 @@
+
+
+
+<div ng-controller="wireframeController" layout="row" flex="100" layout-wrap>
+
+    <div ng-init="items=[{x:40,y:100},{x:200,y:200}]" ></div>
+    {{items}}
+    <div ng-drop="true" style="height:100vh;width:100%;position:absolute;top:0px;left:0px;z-index:100 " >
+        <div ng-repeat="item in items">
+            
+            <div style="position:absolute;top:{{item.y}}px;left:{{item.x}}px" layout-padding 
+                 ng-drag="true" ng-drop="true" ng-drag-data="obj.parent" 
+                 ng-drag-success="dragContent($index,$event);"
+                 ng-drop-success="dropContent($index,$event)"
+                 ng-drag-over="dragContent($index,$event);">
+                <div style="position:absolute;top:-16px;left:3px;width:12px;height:12px;background:#a8dcfc;border:solid 1px #86c4ea" 
+                     layout-padding>+</div>
+                <div style="border:solid 1px silver;">
+                    aaaaaaaaaaaaaaaaa{{item.y}}
+                </div>
+            
+            </div>
+        </div>
+    </div>
+
+    <div ng-if="current.project.ProjectId>0" ng-repeat="page in current.pageList" flex="25">
+        <md-card flex="100" style="min-height:75px">
+            <md-card-title>{{page.PageName}}</md-card-title>
+            <md-card-actions layout="row" layout-align="end center" flex="100">
+                <div ng-repeat="pageContent in page.PageContentList" layout-padding>
+                    <div style="border:solid 1px silver;border-radius:5px;font-size:10px" layout-padding
+                         ng-drag="true" ng-drag-data="obj" ng-drag-success="dragContent('{{pageContent.PageContentId}}',$event);"
+                         ng-drop="true" ng-drop-success="dropContent('{{pageContent.PageContentId}}',$event)" 
+                         >{{pageContent.ContentName}}</div>
+                </div>
+            </md-card-actions>
+        </md-card>
+    </div>
+</div>

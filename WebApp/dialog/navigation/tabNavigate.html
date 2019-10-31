@@ -1,0 +1,58 @@
+﻿<md-radio-group ng-model="rootScope.current.selectedComponent.Design.isMulipledest" ng-change="rootScope.changeDestType()" layout-padding layout="row">
+    <md-radio-button value="-1">None</md-radio-button>
+    <md-radio-button value="0">One Path</md-radio-button>
+    <md-radio-button value="1">Multiple Path</md-radio-button>
+</md-radio-group>
+<div layout-padding>
+    <div ng-if="rootScope.current.selectedComponent.Design.isMulipledest==0" layout="row">
+        <div ng-include="'dialog/navigation/navMenu.html?r=' + rand"></div>
+        <div >
+            <md-button class="md-icon-button" ng-click="rootScope.deleteDesignResult(designResult)">
+                <md-icon>delete</md-icon>
+            </md-button>
+            <md-icon ng-if="rootScope.current.selectedComponent.Design.PageContentId>0">insert_drive_file</md-icon>
+            {{rootScope.current.selectedComponent.Design.PageContentDesc}}
+
+        </div>
+    </div>
+
+    <div ng-if="rootScope.current.selectedComponent.Design.isMulipledest==1">
+        <div layout="row" flex="100">
+            <md-input-container flex="60">
+                <input ng-model="rootScope.current.selectedComponent.Design.ResultCase" md-no-float placeholder="Case">
+            </md-input-container>
+            <md-input-container flex="20">
+                <input ng-model="rootScope.current.selectedComponent.Design.ResultMessage" md-no-float placeholder="Message">
+            </md-input-container>
+            <div ng-show="rootScope.current.selectedComponent.Design.ResultCase.length>0"
+                 ng-include="'dialog/navigation/navMenu.html?r=' + rand"></div>
+        </div>
+        <div style="height:200px;overflow-y:auto;">
+            <div ng-repeat="designResult in rootScope.current.designResultList">
+                <div flex="100" layout="row" layout-padding title="{{designResult.DesignResultId}}">
+                    <md-menu>
+                        <!--<md-icon flex="5" ng-click="showIconDialog({pageContent},$event,$index)">{{pageContent.Icon}}</md-icon>-->
+                        <md-icon ng-click="$mdMenu.open()">settings</md-icon>
+                        <md-menu-content width="4">
+                            <md-menu-item layout-padding>
+                                <md-button ng-click="rootScope.deleteDesignResult({designResult})">
+                                    <md-icon>delete</md-icon> delete
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>                    
+                    <input flex="50" ng-model="designResult.ResultCase" ng-blur="rootScope.updateDesignResult(designResult)" md-no-float placeholder="Case">
+                    <input flex="15" ng-model="designResult.ResultMessage" ng-blur="rootScope.updateDesignResult(designResult)" md-no-float placeholder="Message">
+                    <div flex="25">
+                        <md-icon ng-if="designResult.DestDesignId>0">device_hub</md-icon>
+                        <md-icon ng-if="designResult.DestPageContentId>0">insert_drive_file</md-icon>
+                        {{designResult.DestDesc}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div ng-repeat="designResult in rootScope.current.designResultList" layout="row">
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div oc-lazy-load="{ name: 'myApp', files: ['dialog/wish/wishDialog.js']}">
+    <script type="text/ng-template" id="wish.tmpl.html" ng-controller="wishController">
+        <md-dialog>
+            <md-dialog-content style="min-height:200px" layout-padding>
+                <div layout="row" layout-wrap>
+                    <md-input-container flex="100" flex-xs="100">
+                        <md-icon>assistant</md-icon>
+                        <input ng-model="UserWish" type="text" minlength="3" maxlength="300" md-maxlength="300" placeholder="I Wish">
+                    </md-input-container>
+                    <md-button flex="100" flex-xs="100" ng-click="rootScope.makeWish({UserWish})">
+                        <md-icon class="material-icons">assistant</md-icon>
+                        <span class="md-inline-list-icon-label">Send Your Wish</span>
+                    </md-button>
+                    <div ng-if="rootScope.wishId">your wish saved : {{rootScope.wishId}}</div>
+                </div>
+            </md-dialog-content>
+        </md-dialog>
+    </script>
+</div>

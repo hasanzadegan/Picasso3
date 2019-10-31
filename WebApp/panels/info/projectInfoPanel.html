@@ -1,0 +1,14 @@
+<div layout="column" ng-show="current.project.ProjectId>0">
+    <md-input-container layout-wrap>
+        <input ng-model="current.project.ProjectName" type="text" placeholder="Project Name">
+        <md-icon ng-click="updateProjectInfo()">save</md-icon>
+    </md-input-container>
+    <div class="picasso_tbl" ng-repeat="token in current.project.tokenList" layout="row">
+        <input ng-model="token.TokenValue" flex="80"
+               placeholder="{{token.TokenName}}"
+               token.changed
+               ng-blur="saveProjectToken({$index})"
+               ng-change="checkPTChange({$index},'{{token.TokenValue}}')" />
+
+    </div>
+</div>

@@ -1,0 +1,68 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190504.js?r=888015532','Design/design10121.js?r=536643641','Design/design10129.js?r=1307171569','scripts/ngMask.min.js','scripts/md-input.css']}"> 
+	<div ng-controller="Design_10121"></div>
+<div ng-controller="Design_10129"></div>
+
+	<div ng-controller="Ctrl190504">
+	    <form id="formData" name="formData">
+			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+		<div flex="60" flex-xs="100" layout-padding >
+			<div flex="100" layout-wrap layout="row">
+<md-input-container 
+	 flex="100" flex-xs="100" >
+    <md-icon>verified_user</md-icon>
+    <input ng-model="DocInfo.doctorNumber"   
+	  md- 
+	 md-  
+	
+	      >	
+	<label>{{'ENTER_YOUR_ACCOUNT_NUMBER'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container>
+<!--div ng-init="getDynamicData('__primaryLanguage','','0','base/list/language/','',[],this)"></div-->
+
+<div data-ng-init=" __primaryLanguage = getDynamicData('__primaryLanguage','','0','base/list/language/','',[],this) " style="display:none"></div>
+<div data-ng-init=" DocInfo.primaryLanguage.id =  " style="display:none"></div>
+
+<md-input-container flex="100" flex-xs="100" md-no-float>
+	<md-icon>language</md-icon>
+	<md-select 
+		
+		md-on-open="getDynamicData('__primaryLanguage','','0','base/list/language/','',[],this)"
+		ng-model="DocInfo.primaryLanguage.id" placeholder="{{'PRIMARY_LANGUAGE' | translate}}" >
+		<md-option  ng-repeat="item in __primaryLanguage" value="{{item.id}}">
+			{{item.name}}		
+		</md-option>
+	</md-select>
+</md-input-container>
+<!--div ng-init="getDynamicData('__secondaryLanguage','','0','base/list/language','',[],this)"></div-->
+
+<div data-ng-init=" __secondaryLanguage = getDynamicData('__secondaryLanguage','','0','base/list/language/','',[],this) " style="display:none"></div>
+<div data-ng-init=" DocInfo.secondaryLanguage.id =  " style="display:none"></div>
+
+<md-input-container flex="100" flex-xs="100" md-no-float>
+	<md-icon>language</md-icon>
+	<md-select 
+		
+		md-on-open="getDynamicData('__secondaryLanguage','','0','base/list/language','',[],this)"
+		ng-model="DocInfo.secondaryLanguage.id" placeholder="{{'SECONDARY_LANGUAGE' | translate}}" >
+		<md-option  ng-repeat="item in __secondaryLanguage" value="{{item.id}}">
+			{{item.name}}		
+		</md-option>
+	</md-select>
+</md-input-container>
+<md-button  
+	class="md-list-item-content md-primary" 
+	ng-click="makeDesign_272525();" flex="100" flex-xs="100"  >
+    <md-icon class="material-icons">save</md-icon>
+    <span class="md-inline-list-icon-label">{{'APPROVE' | translate}}</span>   
+</md-button>
+<!--  -->
+<div ng-init="design_10129(this)" style="display:none"></div></div>  
+		</div>
+	</div>
+</div>
+		</form>
+	</div> 
+</div> 

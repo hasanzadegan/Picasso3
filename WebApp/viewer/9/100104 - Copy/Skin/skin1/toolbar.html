@@ -1,0 +1,29 @@
+<div ng-include="skinPath+'toolbar/navBar.html?r='+rand"></div>
+<div oc-lazy-load="{ name: 'YourApp', files: [skinPath+'css/toolbar.css?r='+rand] }">
+<md-toolbar layout="row" layout-xs="column" >
+	<div class="toolBarBack" style="border-bottom:solid 8px {{barColor}}" layout="row" flex="100" >
+		<div layout="row" class="part1" flex-xs="100">
+			<!--logo-->
+			<div ng-include="skinPath+'toolbar/logo.html?r='+rand"></div>
+			<!--logo-->	
+			<!--sideNav-->
+			<div ng-include="skinPath+'toolbar/sideNav.html?r='+rand"></div>
+			<!--sideNav-->		
+		</div>
+		<div flex="100"></div>
+		<div layout="row" class="part2" flex-xs="100">
+			<!-- SEARCH -->			
+			<div ng-include="skinPath+'toolbar/search.html?r='+rand"></div>
+			<!-- SEARCH -->			<!-- LANGUAGE -->
+			<div ng-include="skinPath+'toolbar/language.html?r='+rand"></div>
+			<!-- LANGUAGE -->
+			<!-- BEGIN USER ACCOUNT -->
+			<div ng-include="skinPath+'toolbar/account.html?r='+rand"></div>
+			<!-- END USER ACCOUNT -->
+		</div>
+	</div>
+</md-toolbar>
+<!-- BEGIN SEARCHBAR -->
+<div ng-include="skinPath+'toolbar/searchbar.html?r='+rand" ></div>
+<!-- END USER SEARCHBAR -->
+</div>

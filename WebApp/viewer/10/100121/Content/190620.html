@@ -1,0 +1,37 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190620.js?r=1722271524','Design/design20210.js?r=345315805','Design/design20212.js?r=345315805','Design/design20213.js?r=345315805']}"> 
+	<div ng-controller="Design_20210"></div>
+<div ng-controller="Design_20212"></div>
+<div ng-controller="Design_20213"></div>
+
+	<div ng-controller="Ctrl190620">
+	    <form id="formData" name="formData">
+			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+		<div flex="60" flex-xs="100" layout-padding >
+			<div flex="100" layout-wrap layout="row">
+<div ng-init="design_20210(this)" style="display:none"></div>
+
+<h4   > {{'YOUR_TRACKING_CODE_IS' |translate}} </h4>
+<div layout="row" flex="100" flex-xs="100">
+</div>
+{{TrackingCode}}
+<md-button  
+	 
+	ng-click="makeDesign_293125();" flex="45" flex-xs="100"  >
+    <md-icon class="material-icons">security</md-icon>
+    <span class="md-inline-list-icon-label">{{'NEW_MISSION' | translate}}</span>   
+</md-button>
+<!--  -->
+<md-button  
+	 
+	ng-click="makeDesign_293126();" flex="45" flex-xs="100"  >
+    <md-icon class="material-icons">security</md-icon>
+    <span class="md-inline-list-icon-label">{{'SIGN_OUT' | translate}}</span>   
+</md-button>
+<!--  --></div>  
+		</div>
+	</div>
+</div>
+		</form>
+	</div> 
+</div> 

@@ -1,0 +1,27 @@
+/*search*/
+.searchIconMobile {
+	font-size:30px;
+	width:30px;
+	height:30px;
+}
+.searchBtnMobile {
+	border:solid 1px #fff;
+	border-radius: 5px; 
+	margin: 15px 2px !important;
+}
+.searchInput {
+	border: solid 1px #ccc;
+    border-radius: 5px;
+    padding: 0 7px;
+    background: #b4eef3;
+	color: #fff !important;
+}
+.searchBx {
+	padding: 0 12px;
+}
+.searchBx .md-select-value {
+	min-height: 19px !important;
+}
+.searchBx .searchBtn.md-button {
+	min-width: 40px !important;
+}

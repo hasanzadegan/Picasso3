@@ -1,0 +1,13 @@
+<div oc-lazy-load="{ name: 'myApp', files: ['panels/generate/generatePanel.js']}">
+    <div ng-show="current.page.PageId>0" ng-controller="generateController" align="center">
+
+        <md-button ng-click="generatePage()" flex="50">
+            Generate Page
+        </md-button>
+        <md-button ng-click="generateProjectZip()" flex="50">
+            Download
+        </md-button>
+        <!--<a href="{{current.downloadPath
+        }}">download</a>-->
+    </div>
+</div>

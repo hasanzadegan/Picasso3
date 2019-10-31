@@ -1,0 +1,47 @@
+
+.ng-table th.filter .input-filter
+{
+	border-radius: 7px;
+	border: solid 1px #eee;
+}
+
+.ng-table {
+  border-collapse: collapse;
+}
+
+.ng-table tr:first-child td{
+	border-top:solid 1px #ccc;
+}
+
+
+.ng-table tr:first-child th{
+	border-top:solid 1px #ccc;
+}
+
+.ng-table .filter-horizontal{
+  border-bottom:solid 1px #eee;
+}
+
+.ng-table th{
+	background:#fefefe;
+	padding:5px;
+}
+
+.ng-table td{
+  padding:5px;
+  border-bottom:solid 1px #eee;
+}
+
+
+.ng-table tr:hover{
+	background-color:#ccc !important;
+	cursor:pointer;
+}
+
+.ng-table tr:nth-child(odd){
+	background: #fefefe;
+}
+
+.ng-table-pager{
+	display:none;
+}

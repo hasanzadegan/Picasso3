@@ -1,0 +1,5 @@
+<div oc-lazy-load="{name:'myApp',files:['part.js?r='+rand]}">
+	<div ng-controller="CtrlPart">
+		<div ng-include="'Page/'+partParam.pageId+'.html?r='+rand" ng-init="pageContentId=partParam.pageContentId" ></div>
+	</div>
+</div>

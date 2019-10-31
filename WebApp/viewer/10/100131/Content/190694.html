@@ -1,0 +1,187 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190694.js?r='+rand,'Design/design30263.js?r='+rand,'scripts/ngMask.min.js','scripts/md-input.css']}"> 
+	<div ng-controller="Design_30263"></div>
+
+	<div ng-controller="Ctrl190694">
+	    <form id="formData" name="formData">
+			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+			<div flex="100" layout-wrap layout="row">
+<div ng-init="design_30263(this)" style="display:none"></div>
+<md-input-container 
+	 flex="33" flex-xs="100" >
+    <md-icon></md-icon>
+    <input ng-model="Form.user.FirstName"   
+	  md- 
+	 md-  
+	
+	     ng-disabled="true" >	
+	<label>{{'نام'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container>
+<md-input-container 
+	 flex="33" flex-xs="100" >
+    <md-icon></md-icon>
+    <input ng-model="Form.user.LastName"   
+	  md- 
+	 md-  
+	
+	     ng-disabled="true" >	
+	<label>{{'نام خانوادگي'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container>
+<md-input-container 
+	 flex="33" flex-xs="100" >
+    <md-icon></md-icon>
+    <input ng-model="Form.user.StrGender"   
+	  md- 
+	 md-  
+	
+	     ng-disabled="true" >	
+	<label>{{'جنسيت'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container>
+<md-input-container 
+	 flex="33" flex-xs="100" >
+    <md-icon></md-icon>
+    <input ng-model="Form.user.PostTitle"   
+	  md- 
+	 md-  
+	
+	     ng-disabled="true" >	
+	<label>{{'پست سازماني'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container>
+<md-input-container 
+	 flex="33" flex-xs="100" >
+    <md-icon></md-icon>
+    <input ng-model="Form.Title"   
+	  md- 
+	 md-  
+	
+	     ng-disabled="true" >	
+	<label>{{'عنوان'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container>
+<md-input-container 
+	 flex="33" flex-xs="100" >
+    <md-icon></md-icon>
+    <input ng-model="Form.PostalCode" ng-pattern="/^[13-9]*$/"  
+	mask="99999-99999"  md- 
+	 md-  
+	
+	name="PostalCode"     ng-disabled="true" >	
+	<label>{{'کدپستي'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container>
+<md-input-container 
+	 flex="33" flex-xs="100" >
+    <md-icon></md-icon>
+    <input ng-model="Form.Phone"  type="cellPhone" 
+	mask="0999-999-9999"  md- 
+	 md-  
+	
+	name="cellPhone"     ng-disabled="true" >	
+	<label>{{'تلفن همراه'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container>
+<md-input-container 
+	 flex="33" flex-xs="50" >
+    <md-icon></md-icon>
+    <input ng-model="Form.Fax"   
+	  md- 
+	 md-  
+	
+	name="faxNumber"   valid-number  ng-disabled="true" >	
+	<label>{{'فکس'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container>
+<md-input-container 
+	 flex="33" flex-xs="100" >
+    <md-icon></md-icon>
+    <input ng-model="Form.AccountNumber"   
+	  md- 
+	 md-  
+	
+	     ng-disabled="true" >	
+	<label>{{'شماره حساب'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container>
+<md-input-container 
+	 flex="33" flex-xs="100" >
+    <md-icon></md-icon>
+    <input ng-model="Form.Shaba"   
+	  md- 
+	 md-  
+	
+	     ng-disabled="true" >	
+	<label>{{'شماره شبا'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container>
+<div data-ng-init=" __stateList = isNullList() " style="display:none"></div>
+<div data-ng-init=" Form.StateId = isNullObject() " style="display:none"></div>
+
+<md-input-container flex="33" flex-xs="100" md-no-float>
+	<md-icon></md-icon>
+	<md-select 
+		disabled="true"
+		md-on-open="getDynamicData('__stateList','','0','State/Get','',[],this)"
+		ng-model="Form.StateId" placeholder="{{'استان' | translate}}" >
+		<md-option  ng-repeat="item in __stateList" value="{{item.StateId}}">
+			{{item.Title}}		
+		</md-option>
+	</md-select>
+</md-input-container>
+<div data-ng-init=" __cityList = isNullList() " style="display:none"></div>
+<div data-ng-init=" Form.TownId = isNullObject() " style="display:none"></div>
+
+<md-input-container flex="33" flex-xs="100" md-no-float>
+	<md-icon></md-icon>
+	<md-select 
+		disabled="true"
+		md-on-open="getDynamicData('__cityList','','0','Town/Get?StateId='+Form.StateId+'','city','',this)"
+		ng-model="Form.TownId" placeholder="{{'شهر' | translate}}" >
+		<md-option  ng-repeat="item in __cityList" value="{{item.TownId}}">
+			{{item.Title}}		
+		</md-option>
+	</md-select>
+</md-input-container>
+<md-input-container 
+	 flex="100" flex-xs="100" >
+    <md-icon></md-icon>
+    <input ng-model="Form.Address"   
+	  md- 
+	 md-  
+	
+	name="Address"     ng-disabled="true" >	
+	<label>{{'آدرس'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container>
+<div layout="row" flex="15" flex-xs="10">
+</div>
+<div layout="column" layout-align="center center">
+<div>لوگوي سازمان</div>
+<img src="{{Form.Logo}}"      >
+</div>
+<div layout="row" flex="25" flex-xs="10">
+</div>
+<div layout="column" layout-align="center center">
+<div>امضاي مديرعامل</div>
+<img src="{{Form.Sign}}"      >
+</div></div>  
+	</div>
+</div>
+
+		</form>
+	</div> 
+</div> 

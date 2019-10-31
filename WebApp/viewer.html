@@ -1,0 +1,19 @@
+<div ng-if="current.content.PageContentId>0 && current.projectPath!=null">
+    <div oc-lazy-load="{name:'myApp',files:[
+     current.projectPath+'/path.js?r='+rand,
+     'viewer.js?r='+rand,
+     ]}">
+        <div ng-controller="CtrlViewer">
+            <!--
+                {{current.page.PageId}}-
+                {{current.content.PageContentId}}
+                {{current.projectPath}}
+                {{current.projectPath+'/'+page.path+'.html?r='+rand}}
+            -->
+
+            <div ng-init="pageContent=pageContent;basePath=current.projectPath;">
+                <div ng-include="current.projectPath+'/'+page.path+'.html?r='+rand"></div>
+            </div>
+        </div>
+    </div>
+</div>

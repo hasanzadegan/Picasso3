@@ -1,0 +1,17 @@
+<div layout="row" flex="100" layout-padding ng-hide="current.content.PageContentId>0">
+    <input flex="30" ng-model="current.page.Path" placeholder="fileName" ng-blur="setPath(current.page.Path,current.page.FileName)" />
+    <div>/</div>
+    <input flex="20" ng-model="current.page.FileName" placeholder="filePath" ng-blur="setPath(current.page.Path,current.page.FileName)" />
+    <div>.html</div>
+</div>
+
+<div layout="row" flex="100" layout-padding ng-show="current.content.PageContentId>0">
+    <input flex="30" ng-model="current.content.Path" placeholder="fileName" ng-blur="setPath(current.content.Path,current.content.FileName)" />
+    <div>/</div>
+    <input flex="20" ng-model="current.content.FileName" placeholder="filePath" ng-blur="setPath(current.content.Path,current.content.FileName)" />
+    <div>.html</div>
+    <a flex="5" href="{{current.path}}" target="_blank">
+        <md-icon>list_alt</md-icon>
+    </a>
+</div>
+

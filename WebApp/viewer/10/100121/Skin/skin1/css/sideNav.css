@@ -1,0 +1,25 @@
+/*sideNav*/
+.sideVavBox {
+	background: #111 !important;
+	height: 100%;
+	color:white;
+}
+.sideVavBox  md-icon{
+	color:#ccc !important;
+	padding:6px;
+}
+.docs-menu {
+	padding: 0;
+}
+.parent-list-item {
+    border-left: solid 6px #052963;
+	border-bottom: 1px dotted rgba(6, 26, 68, 0.1);
+}
+.parent-list-item:hover {
+    border-left: solid 6px #111;
+	background:#257335;
+	cursor: pointer;
+}
+md-sidenav md-icon.extraIcons {
+    cursor: pointer !important;
+}

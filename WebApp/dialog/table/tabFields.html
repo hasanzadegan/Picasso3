@@ -1,0 +1,73 @@
+﻿<div ace-editor="{mode:'json',theme:'chrome'}"
+     ng-model="rootScope.current.Table.ColumnJSON"
+     ng-click="rootScope.JSONtoColumn()"
+     ng-keyup="rootScope.JSONtoColumn()"
+     style="width:100%;height:15vh"></div>
+<div layout="row" flex="100">
+    <div ng-init="rootScope.getDesignList()"></div>
+    <div flex="30" layout-padding layout="row" layout-wrap>
+        <md-input-container layout="row" flex="45" flex-xs="100" md-no-float>
+            <md-input layout="row" flex="100">
+                <input ng-model="rootScope.current.Table.CssClass" placeholder="CssClass">
+            </md-input>
+        </md-input-container>
+        <md-input-container layout="row" flex="45" flex-xs="100" md-no-float>
+            <md-input layout="row" flex="100">
+                <input ng-model="rootScope.current.Table.NgModel" placeholder="NgModel">
+            </md-input>
+        </md-input-container>
+        <md-input-container layout="row" flex="90" flex-xs="100" md-no-float>
+            <md-input layout="row" flex="100">
+                <input ng-model="rootScope.current.Table.SavePageContentId" placeholder="SavePageContentId">
+            </md-input>
+        </md-input-container>
+        <md-checkbox ng-model="rootScope.current.Table.HasNew">New</md-checkbox>
+        <md-checkbox ng-model="rootScope.current.Table.HasView">View</md-checkbox>
+        <md-checkbox ng-model="rootScope.current.Table.HasEdit">Edit</md-checkbox>
+
+        <md-input-container layout="row" flex="90" flex-xs="100" md-no-float>
+            <md-input layout="row" flex="100">
+                <input ng-model="rootScope.current.Table.DeletePageContentId" placeholder="DeletePageContentId">
+            </md-input>
+        </md-input-container>
+        <md-checkbox ng-model="rootScope.current.Table.HasDelete">Delete</md-checkbox>
+        <div flex="80"></div>
+
+        <md-button ng-click="rootScope.storeTable();">
+            <md-icon>save</md-icon>
+        </md-button>
+    </div>
+    <div style="height:30vh;overflow-y:auto" flex="75" layout-padding>
+        <div layout="row">
+            <div flex="20">Name</div>
+            <div flex="20">Title</div>
+            <div flex="20">Flex</div>
+            <div flex="5">Sort</div>
+            <div flex="5">Filter</div>
+            <div flex="5">Key</div>
+            <div flex="5">Show</div>
+        </div>
+        <div ng-repeat="item in rootScope.current.Table.ColumnList">
+            <div layout="row">
+                <input type="hidden" ng-model="item.TableBodyId" />
+                <input type="hidden" ng-model="item.TableColumnId" />
+                <div flex="20">{{item.ColName}}</div>
+                <md-input-container layout="row" flex="20" flex-xs="20" md-no-float>
+                    <md-input layout="row" flex="100">
+                        <input ng-model="item.ColTitle">
+                    </md-input>
+                </md-input-container>
+                <md-input-container layout="row" flex="20" flex-xs="20" md-no-float>
+                    <md-input layout="row" flex="100">
+                        <input ng-model="item.Flex">
+                    </md-input>
+                </md-input-container>
+                <md-checkbox ng-model="item.HasSort"></md-checkbox>
+                <md-checkbox ng-model="item.HasFilter"></md-checkbox>
+                <md-checkbox ng-model="item.IsKey"></md-checkbox>
+                <md-checkbox ng-model="item.IsShow"></md-checkbox>
+            </div>
+        </div>
+    </div>
+
+</div>

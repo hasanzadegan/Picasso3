@@ -1,0 +1,14 @@
+/*toolbar*/
+.toolbarBkColor {
+	padding: 0;
+	min-height: 45px;
+	height: 55px;
+}
+
+.part1{
+	background-color: #000 !important;
+}
+
+.toolBarBack{
+	background-color: #257335 !important;
+}

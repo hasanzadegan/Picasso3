@@ -1,0 +1,125 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190628.js?r=579139664','scripts/ngMask.min.js','scripts/md-input.css']}"> 
+	
+	<div ng-controller="Ctrl190628">
+	    <form id="formData" name="formData">
+			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+		<div flex="60" flex-xs="100" layout-padding >
+			<div flex="100" layout-wrap layout="row">
+<div ng-init="design_10135(this)" style="display:none"></div>
+
+
+<md-input-container  flex="100" flex-xs="100" >
+    <md-icon>fingerprint</md-icon>
+    <input ng-model="PatientInfo.nationalCode"   
+	 minlength="10" md-minlength="10" maxlength="10" 
+	md-maxlength="10" type="text"  
+	name="NationalCode"     disabled >	
+	<label>{{'NATIONAL_CODE'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container>
+<md-input-container  flex="100" flex-xs="100" md-no-float>
+    <md-icon>phone</md-icon>
+    <input ng-model="PatientInfo.mobileNo"  type="cellPhone" 
+	name="cellPhone"     disabled >	
+	<label>{{'CELL_PHONE'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container>
+<md-input-container 
+	 flex="50" flex-xs="100" >
+    <md-icon>person</md-icon>
+    <input ng-model="PatientInfo.firstName" ng-pattern="/^([a-zA-Z\u0600-\u06FF,U+0020_ ])+$/" type="text" 
+	 minlength="3" md-minlength="3" 
+	maxlength="30" md-maxlength="30"  
+	
+	name="FirstName"      >	
+	<label>{{'FIRST_NAME'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    <div ng-messages="formData.FirstName.$error" role="alert"  >
+		<div ng-message="required" class="my-message">
+			{{ 'FIRST_NAME_IS_REQUIRED' | translate }}
+		</div>
+		<div ng-message="pattern" class="my-message">
+			{{ 'FIRST_NAME_IS_NOT_VALID' | translate }}
+		</div>
+		<div ng-message="maxlength" class="my-message">
+			{{ 'FIRST_NAME_IS_VERY_LONG' | translate }}
+		</div>
+	</div>
+</md-input-container>
+<md-input-container 
+	 flex="50" flex-xs="100" >
+    <md-icon>group</md-icon>
+    <input ng-model="PatientInfo.lastName" ng-pattern="/^([a-zA-Z\u0600-\u06FF,U+0020_ ])+$/" type="text" 
+	  md- 
+	maxlength="25" md-maxlength="25"  
+	
+	name="LastName"      >	
+	<label>{{'LAST_NAME'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    <div ng-messages="formData.LastName.$error" role="alert"  >
+		<div ng-message="required" class="my-message">
+			{{ 'LAST_NAME_IS_REQUIRED' | translate }}
+		</div>
+		<div ng-message="pattern" class="my-message">
+			{{ 'LAST_NAME_IS_NOT_VALID' | translate }}
+		</div>
+	</div>
+</md-input-container>
+<md-input-container 
+	 flex="100" flex-xs="100" md-no-float>
+    <md-icon>mail</md-icon>
+    <input ng-model="PatientInfo.email" ng-pattern="/^[a-zA-Z+[a-zA-Z0-9._]+@[a-zA-Z]+\.[a-zA-Z.]{2,5}$/" type="text" 
+	 minlength="3" md-minlength="3" 
+	maxlength="200" md-maxlength="200"  
+	
+	name="eMail"      >	
+	<label>{{'EMAIL'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    <div ng-messages="formData.eMail.$error" role="alert"  >
+		<div ng-message="required" class="my-message">
+			{{ 'EMAIL_IS_REQUIRED' | translate }}
+		</div>
+		<div ng-message="pattern" class="my-message">
+			{{ 'EMAIL_IS_NOT_VALID' | translate }}
+		</div>
+		
+	</div>
+</md-input-container>
+<div ng-init="=setFilterForDate('','','','')"></div>
+<div ng-init="maxDate=setFilterForDate('dynamicType','0','0','0')"></div>
+
+<div ng-init="PatientInfo.birthDate=setStandardDate('PatientInfo.birthDate')"></div>
+<md-input-container flex="45" flex-xs="100">
+	<label>{{''| translate }}</label>
+        <md-persian-datepicker 
+			md-max-date="maxDate"
+			
+			ng-model="PatientInfo.birthDate"   name="BirthDate"  ></md-persian-datepicker>
+
+</md-input-container>
+
+
+
+<md-input-container class="md-block" flex-gt-xs>
+			<md-radio-group  flex-gt-sm layout-padding layout="row" flex="50" ng-model="PatientInfo.gender.id" required>
+				<md-radio-button class="md-primary" value="11">{{ 'MALE' | translate }}</md-radio-button>
+				<md-radio-button class="md-primary" value="12">{{ 'FEMALE' | translate }}</md-radio-button>
+			</md-radio-group>
+		</md-input-container>
+<div ng-init="design_10147(this)" style="display:none"></div>
+<md-button  
+	class="md-list-item-content md-primary" 
+	ng-click="design_10137(this);" flex="100" flex-xs="100"  >
+    <md-icon class="material-icons"></md-icon>
+    <span class="md-inline-list-icon-label">{{'APPROVE' | translate}}</span>   
+</md-button>
+<!--  --></div>  
+		</div>
+	</div>
+</div>
+		</form>
+	</div> 
+</div> 

@@ -1,0 +1,47 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190542.js?r=1271856387']}"> 
+	
+	<div ng-controller="Ctrl190542">
+	    <form id="formData" name="formData">
+			<div id="_template" class="template flex-100 layout-wrap layout-column">
+	<div class="flex-100 layout-wrap layout-row">
+		<div class="flex-100 layout-row layout-wrap">
+				
+<table class="calVac" style="width:100%;">
+    <tr layout-padding >
+    	<th>TITLE</th>
+    	<th>DATE</th>
+    </tr>
+    <tr layout-padding ng-repeat="x in _calendarVacation">
+    	<td>{{x.description}}</td>
+    	<td>{{x.exceptionDate}}</td>
+	</tr>	
+</table>
+<style>
+    .calVac {
+    width: 100%;
+    border: solid 1px #f3f3f3;
+    border-radius: 5px;
+    border-collapse: collapse;
+    text-align : center;
+}
+.calVac tr:nth-child(1) {
+    background: #00C6D7;
+    color: #fff;
+}
+.calVac tr td, .calVac tr th {
+    padding: 10px;
+}
+.dialogFormStyle {
+	background: #00C6D7 !important;
+}
+.circleIcon {
+	background: #052963 !important
+}
+</style>
+<div ng-init="getInitData('_calendarVacation','','0','workplace/list/agenda/exception/byexceptiontype?workplaceId='+workplace.id+'&expTypeId=36',{},this)" style="display:none"></div>
+		</div>
+	</div>
+</div>
+		</form>
+	</div> 
+</div> 

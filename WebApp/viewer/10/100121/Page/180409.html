@@ -1,0 +1,9 @@
+<!--	
+<div ng-init="skinPath='Skin//'"></div>	
+<div ng-include="skinPath+'toolbar.html?r='+rand" ng-init="pageContent=(contents|filter:{pageContentId:pageContentId})[0]"></div>
+-->
+	
+<div ng-init="contents =[{'index':0,'pageContentId':'190616','contentId':'160375', 'title':'Authorize','icon':'info'},{'index':1,'pageContentId':'190617','contentId':'160376', 'title':'Verification','icon':'info'},{'index':2,'pageContentId':'190618','contentId':'160377', 'title':'RegisterVolentier','icon':'info'},{'index':3,'pageContentId':'190619','contentId':'160378', 'title':'RegisterMission','icon':'info'},{'index':4,'pageContentId':'190620','contentId':'160379', 'title':'GetTrackingCode','icon':'info'}];selectedContent();"></div>
+<div ng-include="'Content/'+pageContentId+'.html?r='+rand"></div>
+
+

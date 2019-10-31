@@ -1,0 +1,22 @@
+﻿<div style="min-height:100%;overflow:hidden" >
+    <md-input-container layout="row" flex="100" flex-xs="100" md-no-float>
+        <md-input layout="row" flex="100">
+            <md-icon>grain</md-icon>
+            <input ng-model="rootScope.current.selectedComponent.Design.ReturnObject"
+                   ng-blur="rootScope.SaveRenderJs();"
+                   type="text" placeholder="name of object for filling with response.data. use blank for bypass">
+        </md-input>
+    </md-input-container>
+    <md-input-container layout="row" flex="100" flex-xs="100" md-no-float>
+        <md-input layout="row" flex="100">
+            <md-icon>grain</md-icon>
+            <input ng-model="rootScope.current.selectedComponent.Design.ReturnStorage"
+                   ng-blur="rootScope.SaveRenderJs();"
+                   type="text" placeholder="name of object for filling with response.data. use blank for bypass">
+        </md-input>
+    </md-input-container>
+    <div ace-editor="{mode:'javascript',theme:'chrome'}"
+         ng-model="rootScope.current.selectedComponent.Design.InnerCallback"
+         ng-click="rootScope.SaveRenderJs();"
+         style="min-width:30vh;height:30vh"></div>
+</div>

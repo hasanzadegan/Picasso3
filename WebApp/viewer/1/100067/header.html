@@ -1,0 +1,23 @@
+<!--
+header can edited in /header.html
+tookens are :
+{{AppTitle}}
+{{pageContentId}}
+{{contents}} 
+{{pageContent}}
+-->
+<div ng-init="pageContent=(contents|filter:{pageContentId:pageContentId})[0]" ></div> 
+<md-toolbar flex="100" >
+	<div flex="100" layout="row" layout-padding>
+		<div >
+			<img src="images/logo.png" style="height:60px;" >
+		</div>
+		<div style="color:black;font-size:4vh !important;font-weight:bolder" layout-padding>
+			{{AppTitle}}
+		</div>
+	</div>
+	<div layout="row" style="color:black;background:#bababa !important" flex="100">
+		<md-icon style="color:black" flex="5">{{pageContent.icon}}</md-icon>
+		<div flex="95">{{pageContent.title}}</div>
+	</div>
+</md-toolbar>

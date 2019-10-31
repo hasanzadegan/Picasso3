@@ -1,0 +1,69 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190643.js?r=2022410530','scripts/ngMask.min.js','scripts/md-input.css']}"> 
+	
+	<div ng-controller="Ctrl190643">
+	    <form id="formData" name="formData">
+			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+		<div flex="60" flex-xs="100" layout-padding >
+			<div flex="100" layout-wrap layout="row">
+<md-input-container 
+	 flex="100" flex-xs="100" md-no-float>
+    <md-icon>phone</md-icon>
+    <input ng-model="Form.cellPhone"  type="cellPhone" 
+	mask="0999-999-99-99"  md- 
+	 md-  
+	
+	name="cellPhone"      >	
+	<label>{{'شماره همراه'| translate }}</label>
+    	<div class="hint" >{{'نمونه: 091212345678' | translate }}</div>
+    
+</md-input-container>
+<md-input-container 
+	 flex="100" flex-xs="100" >
+    <md-icon>id</md-icon>
+    <input ng-model="Form.NationalCode"   
+	 minlength="10" md-minlength="10" 
+	maxlength="10" md-maxlength="10"  
+	
+	name="NationalCode"   isNationalCode   >	
+	<label>{{'شماره ملي'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container>
+<md-input-container 
+	 flex="100" flex-xs="100" >
+    <md-icon></md-icon>
+    <input ng-model="Form.Search"   
+	  md- 
+	 md-  
+	
+	name="FULLNAME"      >	
+	<label>{{'نام و نام خانوادگي'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container>
+<md-input-container 
+	 flex="100" flex-xs="100" >
+    <md-icon>home</md-icon>
+    <input ng-model="Form.Address"   
+	  md- 
+	maxlength="4000" md-maxlength="4000"  
+	
+	name="Address"      >	
+	<label>{{'آدرس'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container>
+<md-button  
+	class="md-raised md-primary" 
+	ng-click="makeDesign_293203();" flex="100" flex-xs="100"  >
+    <md-icon class="material-icons">fast_forward</md-icon>
+    <span class="md-inline-list-icon-label">{{'دريافت کد تاييديه' | translate}}</span>   
+</md-button>
+<!--  --></div>  
+		</div>
+	</div>
+</div>
+		</form>
+	</div> 
+</div> 

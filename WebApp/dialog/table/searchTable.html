@@ -1,0 +1,53 @@
+﻿<div ng-init="rootScope.getTableList()"></div>
+<md-input-container flex="100" flex-xs="100" style="width:100%">
+    <input ng-model="rootScope.current.table.TableName"
+           ng-keyup="rootScope.addNewTable($event,this)"
+           placeholder="Add New Table">
+</md-input-container>
+<md-input-container flex="100" flex-xs="100" style="width:100%">
+    <input ng-model="rootScope.current.table.filter" placeholder="filter">
+</md-input-container>
+<div flex="100" layout-padding style="overflow-y:auto;height:450px;">
+    <div class="{{rootScope.current.Table.TableBodyId==table.TableBodyId?'selected':''}}"
+         style="background:{{rootScope.current.Table.TableBodyId==table.TableBodyId?'#c3ebf9':''}};
+               {{rootScope.current.selectedComponent.ComponentTableId==table.TableBodyId?'font-weight:bolder;text-decoration:underline':''}}
+                                 "
+         ng-repeat="table in rootScope.current.project.tableList | filter:rootScope.current.table.table"
+         ng-click="rootScope.getTableData(table.TableBodyId)"
+         flex="100" layout="row">
+        <md-menu>
+            <md-icon ng-click="$mdMenu.open()">settings</md-icon>
+            <md-menu-content width="4">
+                <md-menu-item>
+                    <md-button md-prevent-menu-close="md-prevent-menu-close">
+                        <input ng-model="table.TableName" ng-blur="rootScope.changeTableName(table);table.editMode=false" />
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="rootScope.changeComponentTable(table.TableBodyId)">
+                        change component table
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="rootScope.getTableData(table.TableBodyId)">
+                        load table
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="rootScope.deleteTable(table.TableBodyId)">
+                        delete
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+        <div flex="90" ng-if="!table.editMode" ng-dblclick="table.editMode=true" title="{{table.TableBodyId}}">
+            {{table.TableName}}
+        </div>
+        <div flex="90" ng-if="table.editMode">
+            <md-input>
+                {{table.TableNewDesc}}
+                <input ng-model="table.TableName" ng-blur="rootScope.changeTableName(table);table.editMode=false" />
+            </md-input>
+        </div>
+    </div>
+</div>

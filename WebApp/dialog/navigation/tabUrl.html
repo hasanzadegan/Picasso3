@@ -1,0 +1,39 @@
+﻿<div ng-init="rootScope.getBaseUrls()"></div>
+<md-input-container layout="row" flex="100" flex-xs="100" md-no-float>
+    <md-select ng-model="rootScope.current.selectedComponent.Design.BaseUrlId" placeholder="url" flex="100"
+               ng-change="rootScope.SaveRenderJs()">
+        <md-option ng-value="">
+        </md-option>
+        <md-option ng-value="{{$index}}" ng-repeat="item in rootScope.current.project.BaseUrls">
+            {{item}}
+        </md-option>
+    </md-select>
+</md-input-container>
+
+<md-input-container layout="row" flex="100" flex-xs="100" md-no-float>
+    <md-select ng-model="rootScope.current.selectedComponent.Design.MethodType" placeholder="Method Type"
+               ng-value="Post"
+               ng-change="rootScope.SaveRenderJs()"
+               flex="100">
+        <md-option ng-value="item.value"
+                   ng-repeat="item in [{'title':'Post','value':'Post'},{'title':'Get','value':'Get'}]">
+            {{item.title}}
+        </md-option>
+    </md-select>
+</md-input-container>
+
+<md-input-container layout="row" flex="100" flex-xs="100" md-no-float>
+    <md-input layout="row" flex="100">
+        <input flex="100" ng-model="rootScope.current.selectedComponent.Design.ActionUrl"
+               ng-blur="rootScope.SaveRenderJs();"
+               type="text" placeholder="Post Object">
+    </md-input>
+</md-input-container>
+
+<md-input-container layout="row" flex="100" flex-xs="100" md-no-float>
+    <md-input layout="row" flex="100">
+        <input ng-model="rootScope.current.selectedComponent.Design.ActionParameter"
+               ng-blur="rootScope.SaveRenderJs();"
+               type="text" placeholder="object(contains parameter). use blank for bypass">
+    </md-input>
+</md-input-container>

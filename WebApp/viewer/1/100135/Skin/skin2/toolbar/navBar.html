@@ -1,0 +1,95 @@
+<div oc-lazy-load="{ name: 'YourApp', files: [skinPath+'js/sideNav.js?r='+rand] }">
+	<div ng-controller="sidenavCtrl">
+		<md-sidenav md-component-id="app-side-left" layout="column" class="md-whiteframe-z1">
+			<md-toolbar layout="column">
+				<div class="sideVavBox" layout="row" layout-align="space-around center">
+					<!--logo-->		
+						<div ng-include="skinPath+'toolbar/logo.html?r='+rand"></div>
+					<!--logo-->	
+					<!--sideNav-->
+					<div ng-include="skinPath+'toolbar/sideNav.html?r='+rand"></div>
+					<!--sideNav-->		
+				</div>
+			</md-toolbar>
+			<!---->
+			<!--div class="" layout="column" layout-align="center center" layout-margin>
+				<div class="accountPic">
+					<img src="images/person5.png" />
+				</div>
+				<div class="grayTxt">
+					User Name
+				</div>
+				<div layout="row" layout-align="center center" layout-margin>
+					<md-icon class="extraIcons">account_circle</md-icon>
+					<md-icon class="extraIcons">settings</md-icon>
+					<md-icon class="extraIcons">power_settings_new</md-icon>
+				</div>
+			</div-->
+			<!---->
+			<!-- BEGIN LEFT SIDE NAVIGATION -->
+			<md-content flex role="navigation" class="whiteTxtToolbar sideVavBox">
+				<ul class="docs-menu">
+					<!-- SHIPPING MENU OPTION -->
+					<li class="parent-list-item">
+					  <md-button class="md-button-toggle">
+						<div flex layout="row">
+						  <md-icon class="toolbarIcons">timeline</md-icon>
+							MY TIMELINE
+							<span flex layout="row"></span>
+						</div>
+					  </md-button>
+					</li>
+					<!-- DOCUMENTS MENU OPTION -->
+					<li class="parent-list-item">
+					  <md-button class="md-button-toggle">
+						<div flex layout="row">
+						  <md-icon class="toolbarIcons">find_in_page</md-icon>
+						  FIND A DOCTOR
+						  <span flex></span>
+						</div>
+					  </md-button>
+					</li>
+					<!--My Appointments-->
+					<li class="parent-list-item">
+					  <md-button class="md-button-toggle">
+						<div flex layout="row">
+						  <md-icon class="toolbarIcons">timer</md-icon>
+						  MY APPOINTMENTS
+						  <span flex></span>
+						</div>
+					  </md-button>
+					</li>
+					<!-- ELECTRONIC LIENS MENU OPTION -->
+					<li class="parent-list-item">
+					  <md-button class="md-button-toggle">
+						<div flex layout="row">
+						  <md-icon class="toolbarIcons">import_export</md-icon>
+						  SETTING
+						  <span flex></span>
+						</div>
+					  </md-button>
+					</li>
+					<!---->
+					<li class="parent-list-item">
+						<md-button class="md-button-toggle">
+							<div flex layout="row">
+								<md-icon class="toolbarIcons">account_circle</md-icon>
+								MY ACCOUNT
+								<span flex></span>
+							</div>
+						</md-button>
+					</li>
+					<li class="parent-list-item">
+						<md-button class="md-button-toggle">
+							<div flex layout="row">
+								<md-icon class="toolbarIcons">keyboard_backspace</md-icon>
+								SIGN OUT
+								<span flex></span>
+							</div>
+						</md-button>
+					</li>
+				</ul>
+			</md-content>
+		</md-sidenav>
+	</div>
+</div>

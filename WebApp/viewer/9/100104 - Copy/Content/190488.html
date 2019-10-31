@@ -1,0 +1,85 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190488.js?r=1643996738','Design/design10104.js?r=267041019','Design/design10105.js?r=267041019','scripts/ngMask.min.js','scripts/md-input.css']}"> 
+	<div ng-controller="Design_10104"></div>
+<div ng-controller="Design_10105"></div>
+
+	<div ng-controller="Ctrl190488">
+	    <form id="formData" name="formData">
+			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+		<div flex="60" flex-xs="100" layout-padding >
+			<div flex="100" layout-wrap layout="row">
+<md-input-container  flex="100" flex-xs="100" >
+    <md-icon>person</md-icon>
+    <input ng-model="Form.firstName" ng-pattern="/^[a-zA-Z. ]*[a-zA-Z]{1,25}$/"  
+	  md- maxlength="25" 
+	md-maxlength="25" type="text"  
+	name="firstName"  required    >	
+	<label>{{'FIRST_NAME'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    <div ng-messages="formData.firstName.$error" role="alert"  >
+		<div ng-message="required" class="my-message">
+			{{ 'FIRST_NAME_IS_REQUIRED' | translate }}
+		</div>
+		<div ng-message="pattern" class="my-message">
+			{{ 'FIRST_NAME_IS_NOT_VALID' | translate }}
+		</div>
+		<div ng-message="maxlength" class="my-message">
+			{{ 'FIRST_NAME_IS_VERY_LONG' | translate }}
+		</div>
+	</div>
+</md-input-container>
+<md-input-container  flex="100" flex-xs="100" >
+    <md-icon>group</md-icon>
+    <input ng-model="Form.lastName" ng-pattern="/^[a-zA-Z. ]*[a-zA-Z]{1,50}$/"  
+	  md- maxlength="50" 
+	md-maxlength="50" type="text"  
+	name="lastName"  required    >	
+	<label>{{'LAST_NAME'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    <div ng-messages="formData.lastName.$error" role="alert"  >
+		<div ng-message="required" class="my-message">
+			{{ 'LAST_NAME_IS_REQUIRED' | translate }}
+		</div>
+		<div ng-message="pattern" class="my-message">
+			{{ 'LAST_NAME_IS_NOT_VALID' | translate }}
+		</div>
+			<div ng-message="maxlength" class="my-message">
+			{{ 'LAST_NAME_IS_VERY_LONG' | translate }}
+		</div>
+	</div>
+</md-input-container>
+<md-input-container flex="50" flex-xs="100" md-no-float>
+	<md-icon>person</md-icon>
+	<md-select required
+		md-on-open="getDynamicData('__genderList',[{'title':'مرد','id':'11'},{'title':'زن','id':'12'}],'','','',[],this)"
+		ng-model="Form.gender" placeholder="GENDER" >
+		<md-option ng-value="item.id" ng-repeat="item in __genderList" >
+			{{item.title}}		
+		</md-option>
+	</md-select>
+</md-input-container>
+<md-input-container flex="50" flex-xs="100">
+	<label>{{'BIRTH_DATE'| translate }}</label>
+        <md-persian-datepicker ng-model="Form.birthDate"   name="BirthDate" required ></md-persian-datepicker>
+
+</md-input-container>
+<md-button  
+	class="md-list-item-content md-primary" 
+	ng-click="makeDesign_272396();" flex="45" flex-xs="100"  >
+    <md-icon class="material-icons">next</md-icon>
+    <span class="md-inline-list-icon-label">NEXT</span>   
+</md-button>
+<!--  -->
+<md-button  
+	class="md-list-item-content md-primary" 
+	ng-click="makeDesign_272395();" flex="45" flex-xs="100"  >
+    <md-icon class="material-icons">back</md-icon>
+    <span class="md-inline-list-icon-label">BACK</span>   
+</md-button>
+<!--  --></div>  
+		</div>
+	</div>
+</div>
+		</form>
+	</div> 
+</div> 

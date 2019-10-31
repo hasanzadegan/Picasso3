@@ -1,0 +1,73 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190590.js?r=1855038548','Design/design20180.js?r=478082829']}"> 
+	<div ng-controller="Design_20180"></div>
+
+	<div ng-controller="Ctrl190590">
+	    <form id="formData" name="formData">
+			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+		<div flex="60" flex-xs="100" layout-padding >
+			<div flex="100" layout-wrap layout="row">
+<div ng-include="'table.html?r='+rand" init = "ngModel='personData';tableId=7" ></div>
+
+<md-button  
+	class="md-list-item-content md-primary" 
+	ng-click="makeDesign_292926();" flex="100" flex-xs="100"  >
+    <md-icon class="material-icons">save</md-icon>
+    <span class="md-inline-list-icon-label">{{'اضافه کردن روز کاري' | translate}}</span>   
+</md-button>
+<!--  -->
+<div style="width:100%;">
+	<table class="tbl1" style="width:100%;">
+		<tr layout-padding >
+			<th>عنوان</th>
+			<th>از ساعت</th>
+			<th>تا ساعت</th>
+			<th>تاريخ</th>
+			<th>تاريخ ثبت</th>
+			<th>حذف</th>
+		</tr>
+		<tr layout-padding ng-repeat="x in allWorkDaysExp">
+			<td>{{x.description}}</td>
+			<td>
+				<div ng-show="x.fromTime==null && x.toTime==null">کل روز</div>
+				{{x.fromTime | date:'H:mm'}}
+			</td>
+			<td>{{x.toTime | date:'H:mm'}}</td>
+			<td>{{x.exceptionDate | jalaliDate:'jYYYY/jMM/jDD'}}</td>
+			<td>{{x.insertDate | jalaliDate:'jYYYY/jMM/jDD'}}</td>
+			<td style="width: 60px;"><md-icon ng-confirm-click="{{removeAlertMessage}}" class="removeExpIcon" ng-click="deleteExp(x.id)">clear</md-icon></td>
+		</tr>	
+	</table>
+</div>
+<style>table, td  {
+  border-collapse: collapse;
+  padding: 5px;
+}
+th{
+	border-bottom: 1px solid #efefef;
+	text-align:right;
+	background-color:#3f51b5;
+	color:white;
+}
+table tr:nth-child(odd) 
+    {
+    background-color: #f3f3f3;
+    text-align:right;
+	}
+table tr:nth-child(even) 
+	{
+	background-color: #ffffff;
+	text-align:right;
+	}
+	
+table tr:hover{
+  background-color:#e6f9fb;
+  }</style>
+<div ng-init="getInitData('allWorkDaysExp','','0','workplace/list/agenda/timesample/'+docId+'','',this)" style="display:none"></div>
+--{{allWorkDaysExp}}--</div>  
+		</div>
+	</div>
+</div>
+		</form>
+	</div> 
+</div> 

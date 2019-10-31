@@ -1,0 +1,109 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/booking/chooseService.js?r=1276759652','Design/design30377.js?r=1089487898','scripts/ngMask.min.js','scripts/md-input.css']}"> 
+	<div ng-controller="Design_30377"></div>
+
+	<div ng-controller="Ctrl190823">
+	    <form id="formData" name="formData">
+		<md-card flex="100" layout-padding>
+		<fieldset ng-disabled="ishttpCalling" style="height:520px;border:0px">
+			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+			<div flex="100" layout-wrap layout="row">
+<md-input-container 
+	 flex="33" flex-xs="100" >
+    <md-icon></md-icon>
+    <input ng-model="Form.Person.FirstName"  type="text" 
+	 minlength="3" md-minlength="3" 
+	maxlength="100" md-maxlength="100"  
+	
+	name="FirstName"      >	
+	<label>{{'نام'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container>
+<md-input-container 
+	 flex="33" flex-xs="100" >
+    <md-icon></md-icon>
+    <input ng-model="Form.Person.LastName"  type="text" 
+	 minlength="3" md-minlength="3" 
+	maxlength="100" md-maxlength="100"  
+	
+	name="LastName"      >	
+	<label>{{'نام خانوادگي'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container>
+<md-input-container 
+	 flex="33" flex-xs="100" >
+    <md-icon>id</md-icon>
+    <input ng-model="Form.NationalCode"   
+	 minlength="10" md-minlength="10" 
+	maxlength="10" md-maxlength="10"  
+	
+	name="NationalCode"   isNationalCode   >	
+	<label>{{'شماره ملي'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container>
+<div data-ng-init=" __stateList_edit = isNullList() " style="display:none"></div>
+<div data-ng-init=" Form.State = isNullObject() " style="display:none"></div>
+
+<md-input-container flex="33" flex-xs="100" md-no-float>
+	<md-icon></md-icon>
+	<md-select 
+		
+		
+		md-on-open="getDynamicData('__stateList','','','http://localhost:8089/getData','state',[],this)"
+		ng-model="Form.State" placeholder="{{'استان محل فعاليت' | translate}}" >
+		<md-option  ng-repeat="item in  (__stateList!=null?__stateList:__stateList_edit)" value="{{item.item.id}}">
+			{{item.title}}		
+		</md-option>
+	</md-select>
+</md-input-container>
+<div data-ng-init=" __cityList_edit = isNullList() " style="display:none"></div>
+<div data-ng-init=" Form.City = isNullObject() " style="display:none"></div>
+
+<md-input-container flex="33" flex-xs="100" md-no-float>
+	<md-icon></md-icon>
+	<md-select 
+		
+		
+		md-on-open="getDynamicData('__cityList','','','http://localhost:8089/getData','city',{stateId:Form.State,classTypeId:Form.ClassType},this)"
+		ng-model="Form.City" placeholder="{{'شهر محل فعاليت' | translate}}" >
+		<md-option  ng-repeat="item in  (__cityList!=null?__cityList:__cityList_edit)" value="{{item.item.id}}">
+			{{item.title}}		
+		</md-option>
+	</md-select>
+</md-input-container>
+<div layout="row" flex="100" flex-xs="10">
+</div>
+
+<h4    layout-padding > {{'دفتر مرکزي تهران - آدرس ميدان آرژانتين خيابان ...' |translate}} </h4>
+<div layout="row" flex="100" flex-xs="10">
+</div>
+<md-input-container class="md-block" flex-gt-xs   >
+	<md-radio-group  flex-gt-sm layout-padding layout="row" flex="100"  ng-model="Form.gender"  >
+		<md-radio-button ng-repeat="item in [{'title':'از طريق کيوسک شخصا اقدام مي کنم','id':11},{'title':'نياز به کمک اپراتور دارم','id':12}]" class="md-primary" value="{{item.id}}">{{item.title|translate}}</md-radio-button>
+	</md-radio-group>
+</md-input-container>
+<md-button  
+	class="md-list-item-content md-primary" 
+	
+	ng-click="makeDesign_304758();" flex="100" flex-xs="100"  >
+    <md-icon class="material-icons">save</md-icon>
+    <span class="md-inline-list-icon-label">{{'تاييد و ادامه' | translate}}</span>   
+</md-button>
+<!--  -->
+<div ng-init="getData('__genderList','http://localhost:8089/getData?item=gender',{},this)"></div>
+<md-input-container class="md-block" flex-gt-xs     >
+	<md-radio-group  flex-gt-sm layout-padding layout="row"      >
+		<md-radio-button ng-repeat="item in __genderList"  class="md-primary" value="{{item.GenderId}}" ng-disabled="item.disabled">{{item.Title|translate}}</md-radio-button>
+	</md-radio-group>
+</md-input-container></div>  
+	</div>
+</div>
+
+		</fieldset>
+		</md-card>
+		</form>
+	</div> 
+</div> 

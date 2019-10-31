@@ -1,0 +1,20 @@
+<div oc-lazy-load="{ name: 'myApp', files: ['dialog/component/componentDialog.js']}">
+    <script type="text/ng-template" id="component.tmpl.html" ng-controller="componentDialogController">
+        <md-dialog>
+            <md-dialog-content style="min-height:200px" layout-padding>
+                <div layout="row" layout-wrap>
+                    <div ng-repeat="genericType in rootScope.current.InheritedTypeList | groupBy:'GenericTypeId':'GenericType'" layout-padding>
+                        <div layout="row" layout-padding layout-wrap>
+                            <div ng-repeat="inheritedType in genericType.items">
+                                <div class="componentContainer" ng-click="rootScope.addComponentToTile(inheritedType)">
+                                    {{inheritedType.Title}}
+                                </div>
+                            </div>
+                            <div style="color:cadetblue"> | </div>
+                        </div>
+                    </div>
+                </div>
+            </md-dialog-content>
+        </md-dialog>
+    </script>
+</div>

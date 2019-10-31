@@ -1,0 +1,9 @@
+<!--	
+<div ng-init="skinPath='Skin/skin1/'"></div>	
+<div ng-include="skinPath+'toolbar.html?r='+rand" ng-init="pageContent=(contents|filter:{pageContentId:pageContentId})[0]"></div>
+-->
+	
+<div ng-init="contents =[{'index':0,'pageContentId':'190550','contentId':'160278', 'title':'firstPage','icon':'home'},{'index':1,'pageContentId':'190478','contentId':'160280', 'title':'signIn','icon':'security'},{'index':2,'pageContentId':'190476','contentId':'160279', 'title':'cellPhone','icon':'phone'},{'index':3,'pageContentId':'190479','contentId':'160281', 'title':'verifyPage','icon':'person'},{'index':4,'pageContentId':'190669','contentId':'160418', 'title':'verifyPage','icon':'person'},{'index':5,'pageContentId':'190613','contentId':'160281', 'title':'verifyPage','icon':'person'},{'index':6,'pageContentId':'190480','contentId':'160282', 'title':'approvePage','icon':'how_to_reg'},{'index':7,'pageContentId':'190481','contentId':'160283', 'title':'Password','icon':'code'},{'index':8,'pageContentId':'190649','contentId':'160283', 'title':'Password','icon':'code'},{'index':9,'pageContentId':'190648','contentId':'160283', 'title':'Password','icon':'code'},{'index':10,'pageContentId':'190549','contentId':'160330', 'title':'selectDashboardForDoctor','icon':'info'},{'index':11,'pageContentId':'190566','contentId':'160340', 'title':'selectDashboardForSecretary','icon':'info'},{'index':12,'pageContentId':'190610','contentId':'160330', 'title':'selectDashboardForDoctor','icon':'info'},{'index':13,'pageContentId':'190611','contentId':'160340', 'title':'selectDashboardForSecretary','icon':'info'},{'index':14,'pageContentId':'190627','contentId':'160383', 'title':'setSecPass','icon':'info'}];selectedContent();"></div>
+<div ng-include="'Content/'+pageContentId+'.html?r='+rand"></div>
+
+

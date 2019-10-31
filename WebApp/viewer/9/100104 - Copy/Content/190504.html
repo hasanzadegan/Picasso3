@@ -1,0 +1,53 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190504.js?r=2139322944','Design/design10121.js?r=762367225','scripts/ngMask.min.js','scripts/md-input.css']}"> 
+	<div ng-controller="Design_10121"></div>
+
+	<div ng-controller="Ctrl190504">
+	    <form id="formData" name="formData">
+			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+		<div flex="60" flex-xs="100" layout-padding >
+			<div flex="100" layout-wrap layout="row">
+
+<md-input-container  flex="100" flex-xs="100" >
+    <md-icon>verified_user</md-icon>
+    <input ng-model="DocInfo.doctorNumber"   
+	   
+	md- type="text"  
+	      >	
+	<label>{{'ENTER_YOUR_ACCOUNT_NUMBER'| translate }}</label>
+    <div class="hint">{{'' | translate }}</div>
+    
+</md-input-container>
+<md-input-container flex="100" flex-xs="100" md-no-float>
+	<md-icon>language</md-icon>
+	<md-select ng-init="DocInfo.primaryLanguage.id"
+		md-on-open="getDynamicData('__primaryLanguage','','0','base/list/language/','',[],this)"
+		ng-model="DocInfo.primaryLanguage.id" placeholder="PRIMARY_LANGUAGE" >
+		<md-option ng-value="item.id" ng-repeat="item in __primaryLanguage" >
+			{{item.name}}		
+		</md-option>
+	</md-select>
+</md-input-container>
+<md-input-container flex="100" flex-xs="100" md-no-float>
+	<md-icon>language</md-icon>
+	<md-select 
+	ng-init="getDynamicData('__secondaryLanguage','','0','base/list/language','',[],this)"
+		ng-model="DocInfo.secondaryLanguage.id" placeholder="SECONDARY_LANGUAGE" >
+		<md-option ng-value="item.id" ng-repeat="item in __secondaryLanguage" >
+			{{item.name}}		
+		</md-option>
+	</md-select>
+</md-input-container>
+<md-button  
+	class="md-list-item-content md-primary" 
+	ng-click="makeDesign_272525();" flex="100" flex-xs="100"  >
+    <md-icon class="material-icons">save</md-icon>
+    <span class="md-inline-list-icon-label">APPROVE</span>   
+</md-button>
+<!--  --></div>  
+		</div>
+	</div>
+</div>
+		</form>
+	</div> 
+</div> 

@@ -1,0 +1,100 @@
+<div ng-controller="Ctrl190428">
+ 	<div id="_template" class="template flex-100 layout-wrap layout-column">
+ <div class="flex-100 layout-wrap layout-row">
+  <div class="flex-100 layout-wrap layout-row"> 
+<div layout="column" flex="100" >
+	<div>جمع</div>
+
+</div>
+
+<hr width="100%" /></div>
+    </div>
+    <div class="flex-100 layout-wrap layout-row" layout-xs="column">
+        <div class="flex-25 flex-xs-100 layout-column layout-padding col1" > 
+<div layout="row" layout-wrap >
+	<div>زمان جاري</div>
+	<div>{{Form.Office.value.nationalCode}}</div>
+</div>
+
+<div layout="row" layout-wrap >
+	<div>00:00:00</div>
+	<div>{{Form.Office.value.nationalCode}}</div>
+</div>
+ </div>
+        <div class="flex-25 flex-xs-100 layout-column layout-padding col2" > 
+<div layout="row" layout-wrap >
+	<div>زمان روز</div>
+	<div>{{Form.Office.value.nationalCode}}</div>
+</div>
+
+<div layout="row" layout-wrap >
+	<div>00:00:00</div>
+	<div>{{Form.Office.value.nationalCode}}</div>
+</div>
+ </div>
+        <div class="flex-25 flex-xs-100 layout-column layout-padding col3" > 
+<div layout="row" layout-wrap >
+	<div>زمان هفته</div>
+	<div>{{Form.Office.value.nationalCode}}</div>
+</div>
+
+<div layout="row" layout-wrap >
+	<div>00:00:00</div>
+	<div>{{Form.Office.value.nationalCode}}</div>
+</div>
+ </div>
+        <div class="flex-25 flex-xs-100 layout-column layout-padding col4" >  </div>
+    </div>   
+    <div class="flex-100 layout-wrap layout-row">
+        <div class="flex-100 layout-row layout-wrap">
+<div layout="column" layout-wrap flex="100">
+	<div>کارها</div>
+	<div>{{Form.Office.value.nationalCode}}</div>
+
+</div>
+
+<hr width="100%" /></div>
+    </div>
+    <div class="flex-100 layout-wrap layout-row">
+        <div class="flex-100 layout-row layout-wrap">
+                
+<md-list ng-cloak layout="column" flex="100" layout-margin> 
+ <md-content class="md-padding" layout-xs="column" layout="column">
+     <md-list-item  class="noright" ng-repeat="item in __listWork" >
+        <p>{{item.title}}</p>
+      </md-list-item>
+  </md-content>
+
+</md-list>
+<div layout="row" layout-wrap >
+	<div>وظايف :</div>
+	<div></div>
+</div>
+
+<md-input-container flex="40" flex-xs="100" layout="row" >
+    <md-icon>work</md-icon>
+    <textarea flex="100" name="توضيحات"      md-></textarea>
+    <div  role="alert"  >
+        <div ng-message="required" class="my-message"></div>
+    </div>
+</md-input-container>
+
+<div flex="100" 	layout-align="centre center" layout="column" >
+    <md-button  
+    	class=" md-primary md-raised" layout="column"
+    	layout-align="centre center"
+    	ng-click=";" flex="10" flex-xs="100"  >
+      <!--  <md-icon class="material-icons"></md-icon> -->
+        <span class="md-inline-list-icon-label">شروع کار</span>   
+    </md-button>
+</div>
+<!--  -->
+<div ng-init=" __listWork = [
+{'title':'بيمه سلامت'},
+{'title':'نظام پزشکي'},
+{'title':'حضور و غياب'}
+] " style="display:none"></div>
+        </div>
+    </div>
+</div> 
+ </div>

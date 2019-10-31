@@ -1,0 +1,29 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190579.js?r=241173501']}"> 
+	
+	<div ng-controller="Ctrl190579">
+	    <form id="formData" name="formData">
+			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+		<div flex="60" flex-xs="100" layout-padding >
+			<div flex="100" layout-wrap layout="row">
+<!--div ng-init="getDynamicData('__genderList',[{'title':'مرد','value':'01'},{'title':'زن','value':'02'}],'','','',[],this)"></div-->
+
+<div ng-init=" __genderList =  " style="display:none"></div>
+<div ng-init=" Form.Gender =  " style="display:none"></div>
+
+<md-input-container flex="100" flex-xs="100" md-no-float>
+	<md-icon>fmale</md-icon>
+	<md-select 
+		md-on-open="getDynamicData('__genderList',[{'title':'مرد','value':'01'},{'title':'زن','value':'02'}],'','','',[],this)"
+		ng-model="Form.Gender" placeholder="{{'Gender' | translate}}" >
+		<md-option  ng-repeat="item in __genderList" value="{{item.value}}">
+			{{item.title}}		
+		</md-option>
+	</md-select>
+</md-input-container></div>  
+		</div>
+	</div>
+</div>
+		</form>
+	</div> 
+</div> 

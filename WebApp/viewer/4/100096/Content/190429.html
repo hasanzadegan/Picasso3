@@ -1,0 +1,82 @@
+<div ng-controller="Ctrl190429">
+ 	<div id="_template" class="template flex-100 layout-wrap layout-column">
+ <div class="flex-100 layout-wrap layout-row">
+  <div class="flex-100 layout-wrap layout-row"> </div>
+    </div>
+    <div class="flex-100 layout-wrap layout-row" layout-xs="column">
+        <div class="flex-25 flex-xs-100 layout-column layout-padding col1" >  </div>
+        <div class="flex-25 flex-xs-100 layout-column layout-padding col2" >  </div>
+        <div class="flex-25 flex-xs-100 layout-column layout-padding col3" >  </div>
+        <div class="flex-25 flex-xs-100 layout-column layout-padding col4" >  </div>
+    </div>   
+    <div class="flex-100 layout-wrap layout-row">
+        <div class="flex-100 layout-row layout-wrap">
+<md-button  
+	class="md-list-item-content md-primary md-raised" 
+	ng-click=";" flex="20" flex-xs="100"  >
+    <md-icon class="material-icons">add</md-icon>
+    <span class="md-inline-list-icon-label">اضافه کردن</span>   
+</md-button>
+<!--  -->
+<md-input-container flex="25" flex-xs="100" md-no-float>
+	<md-icon></md-icon>
+	<md-select 
+		md-on-open="getDynamicData('__genderList',[{'title':'مرد','value':'01'},{'title':'زن','value':'02'}],'','',[])"
+		ng-model="Form.Gender" placeholder="اعمال" >
+		<md-option ng-value="value" ng-repeat="item in __genderList" >
+			{{item.title}}		
+		</md-option>
+	</md-select>
+</md-input-container>
+<md-input-container flex="100" flex-xs="100">
+	<label>روز</label>
+        <md-persian-datepicker ng-model="Form.toDate"   name="IssueDate"  ></md-persian-datepicker>
+        <!-- div ng-messages="form1.birthDate.$error" role="alert" multiple>
+            <div ng-message="required" class="my-message">  </div>
+        </div -->
+</md-input-container>
+
+
+<md-button  
+	class="md-raised md-primary" 
+	ng-click=";" flex="10" flex-xs="100"  >
+   
+    <span class="md-inline-list-icon-label">اضافه کردن کار</span>   
+</md-button>
+<!--  --></div>
+    </div>
+    <div class="flex-100 layout-wrap layout-row">
+        <div class="flex-100 layout-row layout-wrap">
+                
+<div layout="row" layout-wrap >
+	<div>يادداشت :</div>
+	<div></div>
+</div>
+
+<md-input-container flex="100" flex-xs="100" >
+    <md-icon>description</md-icon>
+    <textarea flex="100" name="توضيحات"      md-></textarea>
+    <div  role="alert"  >
+        <div ng-message="required" class="my-message"></div>
+    </div>
+</md-input-container>
+
+<div layout="row" flex="75" flex-xs="0">
+</div>
+<md-button  
+	class="md-raised md-primary" 
+	ng-click=";" flex="10" flex-xs="100"  >
+   
+    <span class="md-inline-list-icon-label">انصراف</span>   
+</md-button>
+<md-button  
+	class="md-raised md-primary" 
+	ng-click=";" flex="10" flex-xs="100"  >
+    <md-icon class="material-icons"></md-icon>
+    <span class="md-inline-list-icon-label">ذخيره</span>   
+</md-button>
+<!--  -->
+        </div>
+    </div>
+</div> 
+ </div>

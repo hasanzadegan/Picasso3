@@ -1,0 +1,55 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190505.js?r=447389953','Design/design10122.js?r=1217917881','scripts/ngMask.min.js','scripts/md-input.css']}"> 
+	<div ng-controller="Design_10122"></div>
+
+	<div ng-controller="Ctrl190505">
+	    <form id="formData" name="formData">
+			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+		<div flex="60" flex-xs="100" layout-padding >
+			<div flex="100" layout-wrap layout="row">
+
+<md-input-container  flex="100" flex-xs="100" md-no-float>
+    <md-icon>settings_cell</md-icon>
+    <input ng-model="DocInfo.person.mobileNo"  type="cellPhone" 
+	   
+	md- type="text"  
+	name="cellPhone"     disabled >	
+	<label>{{'MOBILE_NUMBER'| translate }}</label>
+    <div class="hint">{{'' | translate }}</div>
+    
+</md-input-container>
+
+<md-input-container  flex="100" flex-xs="100" >
+    <md-icon>person</md-icon>
+    <input ng-model="DocInfo.userName"   
+	   
+	md- type="text"  
+	      >	
+	<label>{{'USER_NAME'| translate }}</label>
+    <div class="hint">{{'' | translate }}</div>
+    
+</md-input-container>
+
+<md-input-container  flex="100" flex-xs="100" md-no-float>
+    <md-icon>mail</md-icon>
+    <input ng-model="DocInfo.email" ng-pattern="/^[a-zA-Z+[a-zA-Z0-9._]+@[a-zA-Z]+\.[a-zA-Z.]{2,5}$/" type="text" 
+	 minlength="6" maxlength="200" 
+	md-maxlength="200" type="text"  
+	name="email"      >	
+	<label>{{'EMAIL'| translate }}</label>
+    <div class="hint">{{'' | translate }}</div>
+    
+</md-input-container>
+<md-button  
+	class="md-list-item-content md-primary" 
+	ng-click="makeDesign_272528();" flex="100" flex-xs="100"  >
+    <md-icon class="material-icons">save</md-icon>
+    <span class="md-inline-list-icon-label">APPROVE</span>   
+</md-button>
+<!--  --></div>  
+		</div>
+	</div>
+</div>
+		</form>
+	</div> 
+</div> 

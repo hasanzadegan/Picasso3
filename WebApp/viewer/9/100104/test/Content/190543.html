@@ -1,0 +1,49 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190543.js?r=862391183']}"> 
+	
+	<div ng-controller="Ctrl190543">
+	    <form id="formData" name="formData">
+			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+		<div flex="60" flex-xs="100" layout-padding >
+			<div flex="100" layout-wrap layout="row">
+<md-input-container flex="50" flex-xs="100">
+    <md-icon class="material-icons myFormIcon">access_time</md-icon>
+    <label >VISIT_TIME</label>
+    <input dir="ltr" ng-model="Form.visitTime" type="time"  name="visitTime"  >
+    <div ng-messages=".$error" role="alert" multiple>
+        <div ng-message="required" class="my-message">visitTime is required</div>
+    </div>
+</md-input-container>
+<md-input-container 
+	 flex="50" flex-xs="100" >
+    <md-icon></md-icon>
+    <input ng-model="Form.parcelCapacity"  type="number" 
+	  md- 
+	 md-  
+	
+	name="parcelCapacity"  required    >	
+	<label>{{'PARCEL_CAPACITY'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container>
+<md-button  
+	class="md-list-item-content md-primary" 
+	ng-click="makeDesign_282743();" flex="45" flex-xs="100"  >
+    <md-icon class="material-icons">save</md-icon>
+    <span class="md-inline-list-icon-label">{{'SAVE' | translate}}</span>   
+</md-button>
+<!--  -->
+<md-button  
+	class="md-list-item-content md-primary" 
+	ng-click="makeDesign_282744();" flex="45" flex-xs="100"  >
+    <md-icon class="material-icons"></md-icon>
+    <span class="md-inline-list-icon-label">{{'REMOVE' | translate}}</span>   
+</md-button>
+<!--  -->
+{{Form.visitTime}}</div>  
+		</div>
+	</div>
+</div>
+		</form>
+	</div> 
+</div> 

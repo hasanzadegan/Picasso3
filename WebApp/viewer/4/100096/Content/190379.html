@@ -1,0 +1,46 @@
+<div ng-controller="Ctrl190379">
+ 	<div id="_template" class="template flex-100 layout-wrap layout-column">
+	<div class="flex-100 layout-wrap layout-row">
+		<div class="flex-100 layout-row layout-wrap">
+				
+<div ng-init=" __optionList=
+[
+	{value:{'category':'1','name':'item1','value':'1'},'title':'title1','path':'img1.jpg','desc':'desc1'},
+	{value:{'category':'1','name':'item2','value':'1'},'title':'title2','path':'img2.jpg','desc':'desc2'},
+	{value:{'category':'1','name':'item3','value':'1'},'title':'title3','path':'img3.jpg','desc':'desc3'},
+	{value:{'category':'1','name':'item4','value':'1'},'title':'title4','path':'img4.jpg','desc':'desc4'}
+]"
+style="display:none"></div>
+<!--
+[
+{'id':1,'title':'صدور فاکتور','path':'images/101.JPG','desc':'براي مشتريان خود فاکتور ارسال کنيد'},
+{'id':2,'title':'گزارش حقوق و دستمزد','path':'images/101.JPG','desc':'بررسي ساعات کارکرد کارکنان تا حقوق دقيقتري را به ايشان پرداخت کند'},
+{'id':3,'title':'پيگيري پروژه ها','path':'images/101.JPG','desc':'مقايسه برآورد ساعات کارکرد و هزينه هاي مربوط به شغلتان را بدست آوريد'},
+{'id':4,'title':'برنامه کاري','path':'images/101.JPG','desc':'ايجاد برنامه براي تيم خود'}
+]
+-->
+<div ng-init="Form.selectedOption=[]"></div>
+<div  flex="20" flex-xs="20" ng-repeat="item in __optionList" layout-padding >
+    <md-card>
+        <h4 flex="100" layout="row" layout-align="center center">{{item.title}}</h4>
+        <img style="width:100%" src="{{item.path}}" />
+        <div flex="100" layout="row" layout-align="center center">{{item.desc}}</div>
+        <div layout="row" layout-align="center center">
+          <md-checkbox  ng-checked="exists(item.value, Form.selectedOption)" ng-click="toggle(item.value, Form.selectedOption)"  >
+        	
+          </md-checkbox>
+        </div>
+    </md-card>
+</div>
+
+<md-button  
+	class="md-list-item-content md-primary" 
+	ng-click="makeDesign_261866();" flex="100" flex-xs="100"  >
+    <md-icon class="material-icons">save</md-icon>
+    <span class="md-inline-list-icon-label">تاييد و ادامه</span>   
+</md-button>
+<!--  -->
+		</div>
+	</div>
+</div> 
+ </div>

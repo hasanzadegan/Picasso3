@@ -1,0 +1,124 @@
+<div oc-lazy-load="{ name: 'myApp', files: ['panels/component/componentPanel.js']}">
+    <div ng-controller="componentController" flex="100" ng-show="current.content.PageContentId>0" layout-wrap>
+        <div layout="row">
+            <md-autocomplete flex="100"
+                             md-no-cache="noCache"
+                             md-items="component in searchComponent(searchText)"
+                             md-selected-item="current.component"
+                             md-item-text="component.Title"
+                             md-search-text="searchText"
+                             ng-keyup="addTileComponent($event)"
+                             md-floating-label=" "
+                             md-clear-button="!disabled"
+                             md-select-on-focus>
+                <md-item-template>
+                    <span md-highlight-text="searchText">{{component.Title}}</span>
+                </md-item-template>
+            </md-autocomplete>
+            <button class="md-icon-button md-button" ng-click="showComponentDialog($event)">
+                <md-icon>add</md-icon>
+            </button>
+        </div>
+        <div ng-repeat="tile in current.tileList" layout="row" layout-wrap flex="100">
+            <md-card flex="100" ng-click="current.CurrentTile=tile.tileName">
+                <md-card-title md-colors="current.CurrentTile==tile.tileName?{color:'default-accent-500-1'}:{color:'default-primary-500-1'}" layout="row">
+                    {{tile.tileName}}
+                </md-card-title>
+                <md-content layout="row" layout-wrap>
+                    <div ng-repeat="component in tile.componentList" layout-padding ng-drag="true" ng-drag-data="obj"
+                         ng-drag-success="onDragSuccess('{{component.ComponentId}}',$event,'{{tile.tileName}}');"
+                         title="{{component.ComponentId}}">
+                        <div layout="row">
+                            <div ng-drop="true"
+                                 ng-drop-success="onDropCompleteCMP($event,'{{tile.tileName}}',{{component.OrderInTile}})"
+                                 style="width:10px;">
+                            </div>
+                            <div class="componentContainer"
+                                 md-colors="current.selectedComponent.ComponentId==component.ComponentId?{background:'default-accent-300-1'}:{background:'default-primary-100-1'}"
+                                 layout="row">
+                                <md-menu>
+                                    <md-icon ng-click="selectComponentInfo({tile},{component},$event,false);$mdMenu.open()"
+                                             md-colors="current.selectedComponent.ComponentId==component.ComponentId?{color:'default-accent-700-1'}:''">settings</md-icon>
+                                    <md-menu-content width="4">
+                                        <md-menu-item>
+                                            <md-button ng-click="selectComponentInfo({tile},{component},$event,true);">
+                                                attributes
+                                            </md-button>
+                                        </md-menu-item>
+                                        <md-menu-item>
+                                            <md-button md-prevent-menu-close="md-prevent-menu-close">
+                                                <input ng-if="component.ComponentName!=null"
+                                                       ng-model="component.ComponentName"
+                                                       ng-blur="changeComponentName($mdMenu,component.ComponentId,component.ComponentName)" />
+                                                <input ng-if="component.ComponentName==null"
+                                                       ng-model="component.InheritedTypeName"
+                                                       ng-blur="changeComponentName($mdMenu,component.ComponentId,component.InheritedTypeName)" />
+                                            </md-button>
+                                        </md-menu-item>
+                                        <md-menu-item>
+                                            <md-button ng-click="deleteComponent({component})">
+                                                delete
+                                            </md-button>
+                                        </md-menu-item>
+                                        <md-menu-divider></md-menu-divider>
+                                        <md-menu-item ng-if="component.InheritedTypeId==150158">
+                                            <md-button ng-click="showTableDialog($event)" layout="row">
+                                                link to table
+                                                {{component.ComponentTableId?'['+component.ComponentTableId+']':''}}
+                                            </md-button>
+                                        </md-menu-item>
+                                        <md-menu-item>
+                                            <md-button ng-click="showNavigationDialog($event)">
+                                                link to action
+                                            </md-button>
+                                        </md-menu-item>
+                                        <md-menu-item ng-if="current.selectedComponent.Design.DesignId>0">
+                                            <md-button ng-click="unlinkDesign()">
+                                                unlink action
+                                                [{{current.selectedComponent.Design.DesignId}}]
+                                            </md-button>
+                                        </md-menu-item>
+                                        <md-menu-divider></md-menu-divider>
+                                        <md-menu-item layout-padding>
+                                            <md-button md-prevent-menu-close="md-prevent-menu-close">
+                                                <input ng-model="component.CloneName" />
+                                                <md-icon ng-click="cloneComponent()">save</md-icon>
+                                            </md-button>
+                                        </md-menu-item>
+                                        <md-menu-item layout-padding>
+                                            <md-button md-prevent-menu-close="md-prevent-menu-close" ng-click="deleteInheritedType()">
+                                                Delete This Type
+                                            </md-button>
+                                        </md-menu-item>
+                                        <md-menu-item>
+                                            <md-button ng-click="saveComponentToken()">
+                                                save Component Token
+                                            </md-button>
+                                        </md-menu-item>
+                                        <md-menu-item>
+                                            <md-button ng-disabled="{{component.InheritedType.IsGeneric==1}}" ng-click="deleteInheritedType()">
+                                                delete this type
+                                            </md-button>
+                                        </md-menu-item>
+                                    </md-menu-content>
+                                </md-menu>
+                                <!--<md-icon ng-dblclick="deleteComponent({component})" ng-show="!component.editingComponent">delete</md-icon>-->
+                                <div ng-show="!component.editingComponent" style="font-size:10px;margin:3px;"
+                                     ng-click="selectComponentInfo({tile},{component},$event,true)">
+                                    {{component.ComponentName!=null?component.ComponentName:component.InheritedTypeName}}
+                                </div>
+                                <md-icon ng-if="component.DesignId>0" ng-click="showNavigationDialog($event)">
+                                    device_hub
+                                </md-icon>
+                                <md-icon ng-if="component.ComponentTableId>0" ng-click="showTableDialog($event)">
+                                    grid_on
+                                </md-icon>
+                            </div>
+                        </div>
+                    </div>
+                </md-content>
+
+            </md-card>
+        </div>
+    </div>
+</div>

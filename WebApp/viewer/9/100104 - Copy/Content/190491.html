@@ -1,0 +1,119 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190491.js?r=836115327','Design/design10110.js?r=1606643255','Design/design10119.js?r=1255271364','Design/design10152.js?r=1255271364','scripts/ngMask.min.js','scripts/md-input.css']}"> 
+	<div ng-controller="Design_10110"></div>
+<div ng-controller="Design_10119"></div>
+<div ng-controller="Design_10152"></div>
+
+	<div ng-controller="Ctrl190491">
+	    <form id="formData" name="formData">
+			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+		<div flex="60" flex-xs="100" layout-padding >
+			<div flex="100" layout-wrap layout="row">
+
+<md-input-container  flex="50" flex-xs="50" >
+    <md-icon></md-icon>
+    <input ng-model="globalEntity.doctorAccount.doctorNumber"   
+	   
+	md- type="text"  
+	     disabled >	
+	<label>{{'MEDICAL_COUNCIL_CODE'| translate }}</label>
+    <div class="hint">{{'' | translate }}</div>
+    
+</md-input-container>
+
+<md-input-container  flex="50" flex-xs="50" >
+    <md-icon></md-icon>
+    <input ng-model="specialty.name"   
+	   
+	md- type="text"  
+	     disabled >	
+	<label>{{'SPECIALTY'| translate }}</label>
+    <div class="hint">{{'' | translate }}</div>
+    
+</md-input-container>
+
+<md-input-container  flex="50" flex-xs="50" >
+    <md-icon></md-icon>
+    <input ng-model="globalEntity.person.firstName + ' ' + globalEntity.person.lastName"   
+	   
+	md- type="text"  
+	     disabled >	
+	<label>{{'FIRST_NAME_AND_LAST_NAME'| translate }}</label>
+    <div class="hint">{{'' | translate }}</div>
+    
+</md-input-container>
+
+<md-input-container  flex="50" flex-xs="50" >
+    <md-icon>date</md-icon>
+    <input ng-model="globalEntity.person.birthDate"   
+	   
+	md- type="text"  
+	     disabled >	
+	<label>{{'BIRTH_DATE'| translate }}</label>
+    <div class="hint">{{'' | translate }}</div>
+    
+</md-input-container>
+
+<md-input-container  flex="100" flex-xs="100" >
+    <md-icon></md-icon>
+    <input ng-model="globalEntity.address.postalCode" ng-pattern="/^[13-9]*$/"  
+	   
+	md- type="text"  
+	name="PostalCode"     disabled >	
+	<label>{{'WORKPLACE_POSTALCODE'| translate }}</label>
+    <div class="hint">{{'' | translate }}</div>
+    
+</md-input-container>
+
+<md-input-container  flex="100" flex-xs="100" >
+    <md-icon>home</md-icon>
+    <input ng-model="globalEntity.address.mandatoryAddress + ' ' + globalEntity.address.optionalAddress"   
+	  maxlength="100" 
+	md-maxlength="100" type="text"  
+	name="Address"     ng-disabled = true >	
+	<label>{{'WORKPLACE_ADDRESS'| translate }}</label>
+    <div class="hint">{{'' | translate }}</div>
+    
+</md-input-container>
+
+<md-input-container  flex="100" flex-xs="100" >
+    <md-icon>phone</md-icon>
+    <input ng-model="globalEntity.address.telephone + ' , ' +globalEntity.address.fax"   
+	  maxlength="11" 
+	md-maxlength="11" type="text"  
+	name="PhoneNumber"     disabled >	
+	<label>{{'GENERAL_WORK_PHONE_AND_FAX'| translate }}</label>
+    <div class="hint">{{'' | translate }}</div>
+    
+</md-input-container>
+
+<md-input-container  flex="100" flex-xs="100" >
+    <md-icon>phone</md-icon>
+    <input ng-model="globalEntity.workplace.officeFax + ' , ' + globalEntity.workplace.officeTel" ng-pattern="/^[0-9]*$/"  
+	  maxlength="11" 
+	md-maxlength="11" type="text"  
+	name="PhoneNumber"     ng-disabled = true >	
+	<label>{{'WORK_PHONE_AND_FAX'| translate }}</label>
+    <div class="hint">{{'' | translate }}</div>
+    
+</md-input-container>
+<md-button  
+	class="md-list-item-content md-primary" 
+	ng-click="makeDesign_272417();" flex="45" flex-xs="100"  >
+    <md-icon class="material-icons">save</md-icon>
+    <span class="md-inline-list-icon-label">APPROVE</span>   
+</md-button>
+<!--  -->
+<md-button  
+	class="md-list-item-content md-primary" 
+	ng-click="makeDesign_272416();" flex="45" flex-xs="100"  >
+    <md-icon class="material-icons">back</md-icon>
+    <span class="md-inline-list-icon-label">BACK</span>   
+</md-button>
+<!--  --></div>  
+		</div>
+	</div>
+</div>
+		</form>
+	</div> 
+</div> 

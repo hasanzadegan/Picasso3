@@ -1,0 +1,59 @@
+<div oc-lazy-load="{ name: 'myApp', files: ['panels/content/contentPanel.js']}">    
+    <div ng-show="current.page.PageId" ng-controller="contentController" flex="100" layout="row">
+        <div flex="5"></div>
+        <div flex="95">
+            <div ng-repeat="pageContent in current.pageContentList"
+                 layout="row"
+                 md-colors="current.content.PageContentId==pageContent.PageContentId?{color:'default-accent-300-1'}:''">
+                <md-menu>
+                    <md-icon ng-click="$mdMenu.open()"
+                             md-colors="current.content.PageContentId==pageContent.PageContentId?{color:'default-accent-300-1'}:''">{{pageContent.Icon}}</md-icon>
+                    <md-menu-content width="4">
+                        <md-menu-item>
+                            <md-button md-prevent-menu-close="md-prevent-menu-close">
+                                <input ng-model="pageContent.PageContentName" ng-blur="savePageContent({pageContent},$event);" />
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button ng-click="copyPageContent()">
+                                copy page content
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item ng-if="clipBoard!=null">
+                            <md-button ng-click="pastePageContent()">
+                                paste page content
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button ng-click="showIconDialog({pageContent},$event,$index)">
+                                change icon
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button ng-click="deleteContent({pageContent})">
+                                delete
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+                <div flex="80">
+                    <md-input-container layout-wrap ng-if="current.editingContent[pageContent.PageContentId]">
+                        <input ng-model="pageContent.PageContentName" 
+                               ng-blur="savePageContent({pageContent},$event);" />
+                    </md-input-container>
+                    <div ng-if="!current.editingContent[pageContent.PageContentId]" 
+                         ng-click="selectContentInfo({pageContent},$index)"
+                         ng-dblclick="editContentName({pageContent})" 
+                         title="{{current.page.PageId +' '+pageContent.PageContentId}}
+                                {{pageContent.ContentName}}:{{pageContent.PageContentName!=null?pageContent.PageContentName:pageContent.ContentName}}">
+                        <div ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessPageContent(pageContent,$event);"
+                             ng-drop="true" 
+                             ng-drop-success="onDropCompletePageContent($event,{{pageContent.OrderInPage}})">
+                            {{pageContent.PageContentName}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

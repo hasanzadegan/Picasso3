@@ -1,0 +1,16 @@
+[ng-drag]{
+    user-select: none;
+    cursor: move;
+}
+[ng-drag].drag-over{
+    background:#f25092 !important;
+}
+[ng-drag].dragging{
+    opacity: 0.5;
+}
+	
+[ng-drop]{
+}
+[ng-drop].drag-enter{
+    background:#efc0c0 !important;
+}

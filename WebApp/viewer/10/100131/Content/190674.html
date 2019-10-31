@@ -1,0 +1,254 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190674.js?r='+rand,'Design/design20250.js?r='+rand,'Design/design30285.js?r='+rand,'scripts/ngMask.min.js','scripts/md-input.css']}"> 
+	<div ng-controller="Design_20250"></div>
+<div ng-controller="Design_30285"></div>
+
+	<div ng-controller="Ctrl190674">
+	    <form id="formData" name="formData">
+			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+			<div flex="100" layout-wrap layout="row">
+<md-input-container 
+	 flex="33" flex-xs="100" >
+    <md-icon></md-icon>
+    <input ng-model="Form.FirstName"   
+	  md- 
+	 md-  
+	
+	  required    >	
+	<label>{{'نام'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    <div ng-messages="formData.FirstName.$error" role="alert">
+		<div ng-message="required" class="my-message">
+			{{ 'وارد کردن نام الزامي است' | translate }}
+		</div>
+	</div>
+</md-input-container>
+<md-input-container 
+	 flex="33" flex-xs="100" >
+    <md-icon></md-icon>
+    <input ng-model="Form.LastName"   
+	  md- 
+	 md-  
+	
+	  required    >	
+	<label>{{'نام خانوادگي'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    <div ng-messages="formData.LastName.$error" role="alert">
+		<div ng-message="required" class="my-message">
+			{{ 'وارد کردن نام الزامي است' | translate }}
+		</div>
+	</div>
+</md-input-container>
+<div data-ng-init=" __genderlist = isNullList([{'title':'مرد','value':1},{'title':'زن','value':2}]) " style="display:none"></div>
+<div data-ng-init=" Form.StrGender = isNullObject() " style="display:none"></div>
+
+<md-input-container flex="33" flex-xs="100" md-no-float>
+	<md-icon></md-icon>
+	<md-select 
+		
+		md-on-open="getDynamicData('__genderlist',[],'','','',[],this)"
+		ng-model="Form.StrGender" placeholder="{{'جنسيت' | translate}}" >
+		<md-option  ng-repeat="item in __genderlist" value="{{item.value}}">
+			{{item.title}}		
+		</md-option>
+	</md-select>
+</md-input-container>
+<div data-ng-init=" __postList = isNullList() " style="display:none"></div>
+<div data-ng-init=" Form.PostId = isNullObject() " style="display:none"></div>
+
+<md-input-container flex="33" flex-xs="100" md-no-float>
+	<md-icon></md-icon>
+	<md-select 
+		
+		md-on-open="getDynamicData('__postList','','0','Post/get','',[],this)"
+		ng-model="Form.PostId" placeholder="{{'پست سازماني' | translate}}" >
+		<md-option  ng-repeat="item in __postList" value="{{item.PostId}}">
+			{{item.Title}}		
+		</md-option>
+	</md-select>
+</md-input-container>
+<md-input-container 
+	 flex="33" flex-xs="100" >
+    <md-icon></md-icon>
+    <input ng-model="Form.Title"   
+	  md- 
+	 md-  
+	
+	name="Title"  required    >	
+	<label>{{'عنوان سازمان'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    <div ng-messages="formData.Title.$error" role="alert">
+		<div ng-message="required" class="my-message">
+			{{ 'وارد کردن عنوان سازمان الزامي است' | translate }}
+		</div>
+	</div>
+</md-input-container>
+<md-input-container 
+	 flex="33" flex-xs="100" >
+    <md-icon></md-icon>
+    <input ng-model="Form.Phone" ng-pattern="/^[0-9]*$/"  
+	  md- 
+	maxlength="11" md-maxlength="11"  
+	
+	  required valid-number   >	
+	<label>{{'شماره تلفن'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container>
+<div data-ng-init=" __stateList = isNullList() " style="display:none"></div>
+<div data-ng-init=" Form.StateId = isNullObject() " style="display:none"></div>
+
+<md-input-container flex="33" flex-xs="100" md-no-float>
+	<md-icon></md-icon>
+	<md-select 
+		
+		md-on-open="getDynamicData('__stateList','','0','State/Get','',[],this)"
+		ng-model="Form.StateId" placeholder="{{'استان' | translate}}" >
+		<md-option  ng-repeat="item in __stateList" value="{{item.StateId}}">
+			{{item.Title}}		
+		</md-option>
+	</md-select>
+</md-input-container>
+<div data-ng-init=" __cityList = isNullList() " style="display:none"></div>
+<div data-ng-init=" Form.TownId = isNullObject() " style="display:none"></div>
+
+<md-input-container flex="33" flex-xs="100" md-no-float>
+	<md-icon></md-icon>
+	<md-select 
+		
+		md-on-open="getDynamicData('__cityList','','0','Town/Get?StateId='+Form.StateId+'','','',this)"
+		ng-model="Form.TownId" placeholder="{{'شهر' | translate}}" >
+		<md-option  ng-repeat="item in __cityList" value="{{item.TownId}}">
+			{{item.Title}}		
+		</md-option>
+	</md-select>
+</md-input-container>
+<md-input-container 
+	 flex="33" flex-xs="100" >
+    <md-icon></md-icon>
+    <input ng-model="Form.Fax" ng-pattern="/^[0-9]*$/"  
+	  md- 
+	maxlength="11" md-maxlength="11"  
+	
+	name="faxNumber"  required valid-number   >	
+	<label>{{'فکس'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container>
+<md-input-container 
+	 flex="33" flex-xs="100" >
+    <md-icon></md-icon>
+    <input ng-model="Form.AccountNumber"   
+	  md- 
+	 md-  
+	
+	name="AccountNumber"  required    >	
+	<label>{{'شماره حساب'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container>
+<md-input-container 
+	 flex="66" flex-xs="100" >
+    <md-icon></md-icon>
+    <input ng-model="Form.Shaba"   
+	mask="IR.99.9999.9999.9999.9999.9999.99"  md- 
+	 md-  
+	
+	  required    >	
+	<label>{{'شماره شبا'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container>
+<md-input-container 
+	 flex="33" flex-xs="100" >
+    <md-icon></md-icon>
+    <input ng-model="Form.PostalCode"   
+	mask="99999-99999"  md- 
+	 md-  
+	
+	name="PostalCode"  required    >	
+	<label>{{'کدپستي'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container>
+<md-input-container 
+	 flex="66" flex-xs="100" >
+    <md-icon></md-icon>
+    <input ng-model="Form.Address"   
+	  md- 
+	 md-  
+	
+	  required    >	
+	<label>{{'آدرس'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    
+</md-input-container>
+<div layout="row" flex="15" flex-xs="10">
+</div>
+{{Form.Logo}}
+<div >
+	<div style="margin: 10px auto;">لوگوي سازمان</div>
+	<div  
+		style="height:100px;width:100px;
+		border:solid 1px silver;
+		background:url('{{Form.Logo}}');
+		background-size: cover;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		border-radius:px;
+		position:relative;
+		" >
+	</div>
+	<div layout-padding style="width:100px;position:relative">
+		<input ng-model="Form.Logo" type="file"  accept="image"
+		style="color:transparent"
+		onchange="angular.element(this).scope().uploadedFile(this,'Form.Logo__')" >
+	</div>
+</div>
+
+<div layout="row" flex="25" flex-xs="10">
+</div>
+<div >
+	<div style="margin: 10px auto;">امضاي مدير عامل</div>
+	<div  
+		style="height:100px;width:100px;
+		border:solid 1px silver;
+		background:url('{{Form.Sign}}');
+		background-size: cover;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		border-radius:px;
+		position:relative;
+		" >
+	</div>
+	<div layout-padding style="width:100px;position:relative">
+		<input ng-model="Form.Sign" type="file"  
+		style="color:transparent"
+		onchange="angular.element(this).scope().uploadedFile(this,'Form.Sign__')" >
+	</div>
+</div>
+
+<md-button  
+	class="md-raised md-primary" 
+	
+	ng-click="makeDesign_293440();" flex="45" flex-xs="100"  >
+    <md-icon class="material-icons"></md-icon>
+    <span class="md-inline-list-icon-label">{{'ثبت درخواست' | translate}}</span>   
+</md-button>
+<!--  -->
+<md-button  
+	class="md-raised md-primary" ng-disabled="IsActive"
+	
+	ng-click="makeDesign_303895();" flex="45" flex-xs="100"  >
+    <md-icon class="material-icons"></md-icon>
+    <span class="md-inline-list-icon-label">{{'ثبت نهايي' | translate}}</span>   
+</md-button>
+<!--  --></div>  
+	</div>
+</div>
+
+		</form>
+	</div> 
+</div> 

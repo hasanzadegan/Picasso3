@@ -1,0 +1,76 @@
+<div ng-controller="Ctrl190457">
+ 	<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+		<div flex="60" flex-xs="100" layout-padding >
+			<div flex="100" layout-wrap layout="row">
+<md-input-container  flex="30"  >
+    <md-icon>time</md-icon>
+    <input ng-model="Form.Time"  type="Time" 
+	  maxlength="5" 
+	md-maxlength="5" type="text" placeholder="Time" 
+	name="Time"      >	
+    <div class="hint"></div>
+    <div  role="alert"  >
+        <div ng-message="required" class="my-message"></div>
+    </div>
+</md-input-container>
+
+<md-input-container  flex="30"  >
+    <md-icon>time</md-icon>
+    <input ng-model="Form.Time"  type="Time" 
+	  maxlength="5" 
+	md-maxlength="5" type="text" placeholder="Time" 
+	name="Time"      >	
+    <div class="hint"></div>
+    <div  role="alert"  >
+        <div ng-message="required" class="my-message"></div>
+    </div>
+</md-input-container>
+
+<md-input-container  flex="30"  >
+    <md-icon>time</md-icon>
+    <input ng-model="Form.Time"  type="Time" 
+	  maxlength="5" 
+	md-maxlength="5" type="text" placeholder="جمع" 
+	name="جمع"      >	
+    <div class="hint"></div>
+    <div  role="alert"  >
+        <div ng-message="required" class="my-message"></div>
+    </div>
+</md-input-container>
+
+<div layout="row" layout-wrap >
+<div>کارها :</div>
+	<div>{{Form.Office.value.nationalCode}}</div>
+</div>
+
+<div ng-repeat="item in [1,2,3]" flex="100" layout-wrap>
+<div flex="100">{{item}}</div>
+</div>
+<md-input-container flex="90" flex-xs="100" md-no-float>
+	<md-icon></md-icon>
+	<md-select 
+		md-on-open="getDynamicData('__ShoppingList','','http://localhost:8089/getData','shop',{'cat':Form.ServiceCategory})"
+		ng-model="Form.shop" placeholder="محصولات" >
+		<md-option ng-value="item.id" ng-repeat="item in __ShoppingList" >
+			{{item.title}}		
+		</md-option>
+	</md-select>
+</md-input-container>
+<div layout="row" layout-wrap >
+	<div>وظايف</div>
+	<div>{{Form.Office.value.nationalCode}}</div>
+</div>
+
+<md-input-container flex="100" flex-xs="100" >
+    <md-icon>note</md-icon>
+    <textarea flex="100" name="وظيفه"      md-></textarea>
+    <div  role="alert"  >
+        <div ng-message="required" class="my-message"></div>
+    </div>
+</md-input-container>
+</div>  
+		</div>
+	<div>
+</div> 
+ </div>

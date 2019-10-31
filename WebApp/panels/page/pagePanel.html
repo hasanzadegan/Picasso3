@@ -1,0 +1,57 @@
+<div oc-lazy-load="{ name: 'myApp', files: ['panels/page/pagePanel.js']}">
+    <div ng-controller="pageController">
+        <div layout="row">
+            <div flex="80" ng-include="'panels/project/projectPanel.html?r='+rand"></div>
+            <md-button ng-if="current.project.ProjectId>0" flex="10" class="md-icon-button" ng-click="addNewPage()">
+                <md-icon class="md-accent">add_box</md-icon>
+            </md-button>
+            <md-button ng-if="current.project.ProjectId>0" flex="10" class="md-icon-button" ng-click="panel.showContent=!panel.showContent">
+                <md-icon class="md-accent">widgets</md-icon>
+            </md-button>
+        </div>
+        <div ng-if="current.project.ProjectId>0" ng-repeat="page in current.pageList" layout="row" flex="100" layout-wrap>
+            <div flex="5"></div>
+            <md-menu>
+                <md-icon ng-click="selectPageInfo({page});$mdMenu.open()"
+                 md-colors="current.page.PageId==page.PageId?{color:'default-accent-500-1'}:''"
+                         >list_alt</md-icon>
+                <md-menu-content width="4">
+                    <md-menu-item>
+                        <md-button md-prevent-menu-close="md-prevent-menu-close">
+                            <input ng-model="current.page.PageName" type="text" ng-blur="updatePageInfo();page.isEditing=false;">
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item ng-if="clipBoard!=null">
+                        <md-button ng-click="pastePageContent()">
+                            paste page content
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button ng-click="savePageAndContents({page})">
+                            generate contents
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button ng-click="deletePage({page})">
+                            delete
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+            <div flex="80" ng-click="selectPageInfo({page});" title="{{page.PageId}}" ng-show="!page.isEditing" ng-dblclick="page.isEditing=true;" 
+                 md-colors="current.page.PageId==page.PageId?{color:'default-accent-500-1'}:''"
+                 >
+                {{page.PageName}}
+            </div>
+            <div flex="10"></div>
+            <div flex="90">
+
+                <md-input-container layout-wrap ng-show="page.isEditing">
+                    <input ng-model="current.page.PageName" type="text" ng-blur="updatePageInfo();page.isEditing=false;">
+                </md-input-container>
+
+                <div ng-include="'panels/content/contentPanel.html'" flex="100" ng-show="page.PageId==current.page.PageId"></div>
+            </div>
+        </div>
+    </div>
+</div>

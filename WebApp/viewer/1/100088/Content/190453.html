@@ -1,0 +1,53 @@
+<div ng-controller="Ctrl190453">
+ 	<div id="_template" class="template flex-100 layout-wrap layout-column">
+	<div class="flex-100 layout-wrap layout-row">
+		<div class="flex-100 layout-row layout-wrap">
+				
+<md-input-container  flex="80" flex-xs="80" md-no-float>
+    <md-icon>mail</md-icon>
+    <input ng-model="Form.email" ng-pattern="/^[a-zA-Z+[a-zA-Z0-9._]+@[a-zA-Z]+\.[a-zA-Z.]{2,5}$/" type="text" 
+	 minlength="3" maxlength="200" 
+	md-maxlength="200" type="text" placeholder="eMail" 
+	name="eMail"      >	
+    <div class="hint"></div>
+    <div  role="alert"  >
+        <div ng-message="required" class="my-message"></div>
+    </div>
+</md-input-container>
+
+<md-button  
+	class="md-list-item-content md-primary" 
+	ng-click="makeDesign_272223();" flex="15" flex-xs="15"  >
+    <md-icon class="material-icons">search</md-icon>
+    <span class="md-inline-list-icon-label"></span>   
+</md-button>
+<!--  -->
+<md-card flex="100" layout-padding ng-if="person.employees[0]">
+    <div layout="row">
+        <md-icon flex="5">person</md-icon>
+        <div flex="95" layout-padding > {{person.employees[0].fullName}}</div>
+    </div>
+    <div layout="row">
+        <md-icon flex="5">mail</md-icon>
+        <div flex="95" layout-padding > {{person.employees[0].email}}</div>
+    </div>
+    <div layout="row">
+        <md-icon flex="5">assignment_ind</md-icon>
+        <div flex="95" layout-padding > {{person.employees[0].personCode}}</div>
+    </div>
+    <div layout="row">
+        <md-icon flex="5">phone_iphone</md-icon>
+        <div flex="95" layout-padding > {{person.employees[0].mobile}}</div>
+    </div>
+</md-card>
+<md-button  
+	class="md-list-item-content md-primary" 
+	ng-click="makeDesign_272257();" flex="100" flex-xs="100"  >
+    <md-icon class="material-icons">send</md-icon>
+    <span class="md-inline-list-icon-label">ارسال دعوتنامه</span>   
+</md-button>
+<!--  -->
+		</div>
+	</div>
+</div> 
+ </div>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<title>Picasso2 UI Generator</title>
+<head>
+    <meta charset="UTF-8">
+    <meta company="hamfekrangroup.ir">
+    <meta author="shahrokh hassanzadegan">
+    <meta email="sh.h.zadegan@gmail.com">
+	
+	
+	
+<!--Global JS for Skin -->
+	<script src="Scripts/angular.min.js"></script>
+	<script src="Scripts/angular-aria.min.js"></script>
+	<script src="Scripts/angular-animate.js"></script>
+	<script src="Scripts/angular-material.min.js"></script>
+	<script src="Scripts/angular-material-icons.min.js"></script>
+	<script src="Scripts/angular-route.min.js"></script>
+	<script src="Scripts/moment.min.js"></script>
+	<script src="Scripts/angular-messages.min.js"></script>
+	<script src="scripts/ngStorage.min.js"></script>
+	<script src="scripts/moment-jalaali.js"></script>
+	<script src="scripts/datePicker.min.js"></script>
+	<script src="scripts/require.js"></script>
+	<script src="scripts/ocLazyLoad.min.js"></script>
+	<script src="scripts/ocLazyLoad.require.min.js"></script>
+<!--End Global JS for Skin -->
+
+
+
+ 
+ 
+ 
+ <script src="scripts/ngMask.min.js"></script>
+	<!--Global CSS for Skin -->
+	<link href="scripts/angular-material.min.css" rel="stylesheet" />
+	<link href="scripts/angular-material-font.css" rel="stylesheet" />
+	<link href="scripts/angular-fonts.css" rel="stylesheet" />
+	<link href="scripts/IRANSansWeb.css" rel="stylesheet" />
+<!--End Global CSS for Skin -->
+ 
+ 
+ 
+ <link href="scripts/md-input.css" rel="stylesheet" />
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<base >
+	<script src="global.js"></script>
+<script>
+	
+	
+</script>
+</head>
+<body ng-app="APP"  ng-cloak dir="LTR">
+	<div ng-controller="globalCTRL"></div>
+	
+	
+	<!--div ng-init="pageId=180330"></div>
+	<div ng-init="pageContentId=190460"></div-->
+	<!--div ng-include="'Page/'+pageId+'.html?r=243445131&pageContentId='+pageContentId"></div-->
+
+	<!--Skin-->
+
+	<!---->
+	****{{dashboardName}}
+	<div ng-include="'part.html?r='+rand" ng-if="true" ng-init="pageId=part1.pageId;pageContentId=part1.pageContentId" flex="100"></div>
+
+</body>
+</html>

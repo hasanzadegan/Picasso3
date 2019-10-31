@@ -1,0 +1,30 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190708.js?r=184642600']}"> 
+	
+	<div ng-controller="Ctrl190708">
+	    <form id="formData" name="formData">
+			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+			<div flex="100" layout-wrap layout="row">
+
+<h4   > {{'sucess' |translate}} </h4>
+<div ng-init="Form.CertificateDate__minDate=setFilterForDate('','','','')"></div>
+<div ng-init="Form.CertificateDate__maxDate=setFilterForDate('','','','')"></div>
+
+<div ng-init="Form.CertificateDate=setStandardDate()"></div>
+<md-input-container  >
+	<label>{{''| translate }}</label>
+        <md-persian-datepicker 
+			md-max-date="Form.CertificateDate__minDate"
+			md-min-date="Form.CertificateDate__maxDate"
+			ng-model="Form.CertificateDate"   name="CertificateDate"  ></md-persian-datepicker>
+
+</md-input-container>
+
+
+</div>  
+	</div>
+</div>
+
+		</form>
+	</div> 
+</div> 

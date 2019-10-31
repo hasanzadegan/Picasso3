@@ -1,0 +1,90 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190545.js?r=1810696775','Design/design10138.js?r=433741056','Design/design10135.js?r=433741056','scripts/angular-md5.js']}"> 
+	<div ng-controller="Design_10138"></div>
+<div ng-controller="Design_10135"></div>
+
+	<div ng-controller="Ctrl190545">
+	    <form id="formData" name="formData">
+			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+		<div flex="60" flex-xs="100" layout-padding >
+			<div flex="100" layout-wrap layout="row">
+<div ng-init="design_10135(this)" style="display:none"></div>
+<md-input-container 
+	ng-show="PatientInfo.password != null" flex="100" flex-xs="100"  >
+    <md-icon>security</md-icon>
+    <input ng-model="Form.oldPassword__"  type="Password" 
+	md-five="true"
+	 minlength="6" md-minlength="6" 
+	 md-  
+	
+	name="oldPassword"  required    >	
+	<label>{{'OLD_PASSWORD'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    <div ng-messages="formData.newPassword.$error"  role="alert" >
+		<div ng-message="required" class="my-message">
+			{{ 'OLD_PASSWORD_IS_REQUIRED' | translate }}
+		</div>
+		<div ng-message="minlength" class="my-message">
+			{{ 'OLD_PASSWORD_MUST_BE_MORE_THAN_6_CHARS' | translate }}
+		</div>
+	</div>
+</md-input-container>
+<md-input-container 
+	 flex="100" flex-xs="100" md-no-float >
+    <md-icon>security</md-icon>
+    <input ng-model="Form.newPassword__"  type="Password" 
+	md-five="true"
+	 minlength="6" md-minlength="6" 
+	 md-  
+	
+	name="newPassword"  required password-verify="{{Form.confirmPassword__}}"   >	
+	<label>{{'PASSWORD'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    <div ng-messages="formData.newPassword.$error"  role="alert" >
+		<div ng-message="required" class="my-message">
+			{{ 'PASSWORD_IS_REQUIRED' | translate }}
+		</div>
+		<div ng-message="minlength" class="my-message">
+			{{ 'PASSWORD_MUST_BE_MORE_THAN_6_CHARS' | translate }}
+		</div>
+		<div ng-message="passwordVerify" class="my-message">
+			{{ 'PASSWORD_IS_NOT_MATCH_WITH_CONFIRM_PASSWORD' | translate }}
+		</div>
+	</div>
+</md-input-container>
+<md-input-container 
+	 flex="100" flex-xs="100"  >
+    <md-icon>security</md-icon>
+    <input ng-model="Form.confirmPassword__"  type="Password" 
+	md-five="true"
+	 minlength="6" md-minlength="6" 
+	 md-  
+	
+	name="confirmPassword"  required password-verify="{{Form.newPassword__}}"   >	
+	<label>{{'CONFIRM_PASSWORD'| translate }}</label>
+    	<div class="hint" >{{'' | translate }}</div>
+    <div ng-messages="formData.confirmPassword.$error"  role="alert" >
+		<div ng-message="required" class="my-message">
+			{{ 'PASSWORD_IS_REQUIRED' | translate }}
+		</div>
+		<div ng-message="minlength" class="my-message">
+			{{ 'PASSWORD_MUST_BE_MORE_THAN_6_CHARS' | translate }}
+		</div>
+		<div ng-message="passwordVerify" class="my-message">
+			{{ 'PASSWORD_IS_NOT_MATCH_WITH_CONFIRM_PASSWORD' | translate }}
+		</div>
+	</div>
+</md-input-container>
+<md-button  
+	class="md-list-item-content md-primary" 
+	ng-click="design_10138(this);" flex="100" flex-xs="100"  >
+    <md-icon class="material-icons"></md-icon>
+    <span class="md-inline-list-icon-label">{{'APPROVE' | translate}}</span>   
+</md-button>
+<!--  --></div>  
+		</div>
+	</div>
+</div>
+		</form>
+	</div> 
+</div> 

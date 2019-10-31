@@ -1,0 +1,33 @@
+/*myProfile*/
+.titleProf {
+	color: #595959;
+    font-size: 20px;
+}
+.accountName {
+    color: #00C6D7;
+    font-weight: bold;
+}
+.lf-ng-md-file-input .lf-ng-md-file-input-preview-container .lf-ng-md-file-input-drag-text-container {
+  height: 200px;
+  width: 200px;
+  border-radius: 150px;
+  background: url(../../images/account3.png) no-repeat center center;
+  border: solid 1px #00C6D7;
+}
+.lf-ng-md-file-input .lf-ng-md-file-input-container .md-raised.lf-ng-md-file-input-button {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -moz-border-radius: none;
+  -webkit-border-radius: none;
+  border-radius: none;
+  background: rgba(255,255,255,0);
+  color: #00C6D7 !important;
+  font-size: 30px;
+  margin: 0;
+}

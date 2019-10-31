@@ -1,0 +1,54 @@
+<div id="_template" class="template flex-100 layout-wrap layout-column">
+ <div class="flex-100 layout-wrap layout-row">
+  <div class="flex-100 layout-wrap layout-row"> 
+<md-select  flex="25" flex-xs="100" 
+		md-on-open="getDynamicData('__stateList','','http://localhost:8089/getData','state',[])"
+		ng-model="Form.State" placeholder="State" >
+	<md-option ng-value="item.id" ng-repeat="item in __stateList" >
+		{{item.title}}		
+	</md-option>
+</md-select>
+
+<md-select  flex="25" flex-xs="100" 
+		md-on-open="getDynamicData('__classTypeList','','http://localhost:8089/getData','class',[])"
+		ng-model="Form.ClassType" placeholder="Class" >
+	<md-option ng-value="item.id" ng-repeat="item in __classTypeList" >
+		{{item.title}}		
+	</md-option>
+</md-select>
+
+<md-select  flex="25" flex-xs="100" 
+		md-on-open="getDynamicData('__cityList','','http://localhost:8089/getData','city',{stateId:Form.State,classTypeId:Form.ClassType})"
+		ng-model="Form.City" placeholder="City" >
+	<md-option ng-value="item.id" ng-repeat="item in __cityList" >
+		{{item.title}}		
+	</md-option>
+</md-select>
+
+
+<md-input-container  flex="100" flex-xs="100" >
+    <md-icon></md-icon>
+    <input     ng-value="{{}}"
+ minlength="11" maxlength="11" md-maxlength="11" type="text" placeholder="تعداد"       >	
+    <div class="hint"></div>
+    <div  role="alert"  >
+        <div ng-message="required" class="my-message"></div>
+    </div>
+</md-input-container>
+</div>
+    </div>
+    <div class="flex-100 layout-wrap layout-row" layout-xs="column">
+        <div class="flex-25 flex-xs-100 layout-column layout-padding col1" >  </div>
+        <div class="flex-25 flex-xs-100 layout-column layout-padding col2" >  </div>
+        <div class="flex-25 flex-xs-100 layout-column layout-padding col3" >  </div>
+        <div class="flex-25 flex-xs-100 layout-column layout-padding col4" >  </div>
+    </div>   
+    <div class="flex-100 layout-wrap layout-row">
+        <div class="flex-100 layout-row layout-wrap"></div>
+    </div>
+    <div class="flex-100 layout-wrap layout-row">
+        <div class="flex-100 layout-row layout-wrap">
+                
+        </div>
+    </div>
+</div>

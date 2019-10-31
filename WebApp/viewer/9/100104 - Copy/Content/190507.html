@@ -1,0 +1,55 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190507.js?r=1135951869','Design/design10128.js?r=1135951869','scripts/ngMask.min.js','scripts/md-input.css']}"> 
+	<div ng-controller="Design_10128"></div>
+
+	<div ng-controller="Ctrl190507">
+	    <form id="formData" name="formData">
+			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+		<div flex="60" flex-xs="100" layout-padding >
+			<div flex="100" layout-wrap layout="row">
+
+<md-input-container  flex="100" flex-xs="100" md-no-float>
+    <md-icon>security</md-icon>
+    <input ng-model="Form.oldPassword"  type="Password" 
+	 minlength="6"  
+	md- type="text"  
+	name="Password"      >	
+	<label>{{'OLD_PASSWORD'| translate }}</label>
+    <div class="hint">{{'' | translate }}</div>
+    
+</md-input-container>
+
+<md-input-container  flex="100" flex-xs="100" md-no-float>
+    <md-icon>security</md-icon>
+    <input ng-model="Form.newPassword"  type="Password" 
+	   
+	md- type="text"  
+	name="Password"      >	
+	<label>{{'NEW_PASSWORD'| translate }}</label>
+    <div class="hint">{{'AT_LEAST_6_CHARACTER' | translate }}</div>
+    
+</md-input-container>
+
+<md-input-container  flex="100" flex-xs="100" md-no-float>
+    <md-icon>security</md-icon>
+    <input ng-model="Form.confirmPassword"  type="Password" 
+	 minlength="6"  
+	md- type="text"  
+	name="Password"      >	
+	<label>{{'CONFIRM_PASSWORD'| translate }}</label>
+    <div class="hint">{{'AT_LEAST_6_CHARACTER' | translate }}</div>
+    
+</md-input-container>
+<md-button  
+	class="md-list-item-content md-primary" 
+	ng-click="makeDesign_272537();" flex="100" flex-xs="100"  >
+    <md-icon class="material-icons">save</md-icon>
+    <span class="md-inline-list-icon-label">Approve</span>   
+</md-button>
+<!--  --></div>  
+		</div>
+	</div>
+</div>
+		</form>
+	</div> 
+</div> 

@@ -1,0 +1,30 @@
+<!--<script type="text/javascript-lazy">
+    loadjscssfile("/panels/project/projectPanel.js","js");
+</script>-->
+<div oc-lazy-load="{ name: 'myApp', files: ['panels/project/projectPanel.js','panels/page/pagePanel.js']}">
+    <md-menu ng-controller="projectController" ng-show="User.UserId>0">
+        <div layout="row">
+            <md-button class="md-icon-button" ng-mouseenter="$mdMenu.open()">
+                <md-icon class="md-accent">settings</md-icon>
+            </md-button>
+            <div class="md-title" ng-click="selectProjectInfo()" title="{{current.project.ProjectId}}">
+                {{current.project.ProjectName}}
+            </div>
+        </div>
+        <md-menu-content width="4" ng-mouseleave="$mdMenu.close()">
+            <md-menu-item ng-repeat="project in current.projectList">
+
+                <md-button aria-label="Favorite" ng-click="selectProject({project})">
+                    <!--<md-icon ng-click="deleteProject({project})">delete</md-icon>-->
+                    {{project.ProjectName}}
+                </md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button ng-click="showCreateProject()" ng-disabled="disabled">
+                    <md-icon class="md-accent">add</md-icon>
+                    Create new Project
+                </md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+</div>

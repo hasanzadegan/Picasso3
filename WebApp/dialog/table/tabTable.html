@@ -1,0 +1,27 @@
+﻿<!--<md-input-container layout="row" flex="100" flex-xs="100" md-no-float>
+    <md-input layout="row" flex="100">
+        <input ng-model="rootScope.current.Table.TableName" placeholder="TableName">
+    </md-input>
+</md-input-container>-->
+<div layout="row">
+    <md-input-container layout="row" flex="90" flex-xs="90" md-no-float>
+        <md-input layout="row" flex="100">
+            <input ng-model="rootScope.current.Table.RestApi" placeholder="RestApi">
+        </md-input>
+    </md-input-container>
+    <md-button flex="10" class="md-icon-button"
+               ng-click="rootScope.callURL()">
+        <md-icon class="md-accent">search</md-icon>
+    </md-button>
+</div>
+<!--
+    TableBodyId
+DeleteDesignId
+
+ProjectId
+
+CssClass
+RestApi
+RenderView
+RenderEdit
+ColumnJSON-->

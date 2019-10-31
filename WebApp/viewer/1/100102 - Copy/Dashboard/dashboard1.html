@@ -1,0 +1,12 @@
+<div ng-if="true" ng-include="skinPath+'toolbar.html?r='+rand"></div>
+<div ng-init="pages=dashboardParam[dashboardName].pages"></div>
+<div layout="row">
+	<div flex="70">
+			<div ng-include="'/part.html?r='+rand" ng-if="true" ng-init="partParam=pages[0]" flex="100"></div>
+	</div>
+	<div flex="30">
+		<div ng-include="'/part.html?r='+rand" ng-if="true" ng-init="partParam=pages[1]" flex="100"></div>
+		<div ng-include="'/part.html?r='+rand" ng-if="true" ng-init="partParam=pages[2]" flex="100"></div>
+	</div>
+</div>
+

@@ -1,0 +1,6 @@
+<div ng-show="current.content.ContentId>0"  layout-padding ng-controller="iconController" layout="row" layout-wrap>
+    <div ng-repeat="icon in iconList" flex="10">
+        <md-icon style="{{current.content.Icon==icon?'color:#ff0269':''}}" ng-click="saveContentIcon(icon)">{{icon}}</md-icon>
+    </div>
+</div>
+

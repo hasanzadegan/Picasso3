@@ -1,0 +1,86 @@
+<div oc-lazy-load="{ name: 'myApp', files: ['dialog/theme/themeDialog.js']}">
+    <script type="text/ng-template" id="theme.tmpl.html" ng-controller="themeDialogController">
+        <md-dialog>
+            <md-dialog-content style="min-height:550px;min-width:900px;background:black"
+                               layout-padding layout="row" layout-wrap>
+
+                <div flex="100" layout="row">
+                    <div flex="5">
+                        <div ng-repeat="color in rootScope.colorList">
+                            <div title="{{color}}"
+                                 style="border:solid 1px {{rootScope.selectedColorList[palette] == color?'black':'white'}};
+                                height:30px;width:30px;background:{{rootScope.colorDetail[color][500].hex}}"
+                                 ng-click="rootScope.selectedColorList['primary'] = color;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div layout="row" flex="10">
+                        <div ng-repeat="palette in ['primary','accent']" >
+                            <div layout-wrap style="max-height:20px"
+                                 ng-repeat="(key,value) in rootScope.colorDetail[rootScope.selectedColorList[palette]]">
+                                <div flex="20"
+                                     style="min-height:20px;
+                                        border:solid 1px #eaeaea;
+                                        font-size:8px;padding:1px;
+                                        background:{{value.hex}};
+                                        color:rgba({{value.contrast[0]}},
+                                                    {{value.contrast[1]}},
+                                                    {{value.contrast[2]}},
+                                                    {{value.contrast[3]}})">
+                                    {{key}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div flex="85" layout-wrap layout="row">
+                        <div ng-repeat="color in rootScope.colorList" flex="20">
+                            <md-card ng-click="rootScope.selectedColorList['accent'] = color;rootScope.changeTheme(rootScope.selectedColorList);">
+                                <div layout="row">
+                                    <!--<div flex="40" layout-padding
+                                         style="
+                                         background:{{rootScope.colorDetail[color][500].hex}}
+                                         ;color:rgba(
+                                        {{rootScope.colorDetail[rootScope.selectedColorList['primary']][500].contrast[0]}},
+                                        {{rootScope.colorDetail[rootScope.selectedColorList['primary']][500].contrast[1]}},
+                                        {{rootScope.colorDetail[rootScope.selectedColorList['primary']][500].contrast[2]}},
+                                        {{rootScope.colorDetail[rootScope.selectedColorList['primary']][500].contrast[3]}}
+                                     ) !important">
+                                        {{rootScope.colorDetail[rootScope.selectedColorList['primary']][500].hex}}
+                                    </div>-->
+                                    <div flex="100"
+                                         layout-padding
+                                         style="
+                                             background:{{rootScope.colorDetail[rootScope.selectedColorList['primary']][500].hex}};
+                                             border-bottom:solid 8px {{rootScope.colorDetail[rootScope.selectedColorList['primary']][700].hex}};
+                                             color:rgba(
+                                            {{rootScope.colorDetail[rootScope.selectedColorList['primary']][500].contrast[0]}},
+                                            {{rootScope.colorDetail[rootScope.selectedColorList['primary']][500].contrast[1]}},
+                                            {{rootScope.colorDetail[rootScope.selectedColorList['primary']][500].contrast[2]}},
+                                            {{rootScope.colorDetail[rootScope.selectedColorList['primary']][500].contrast[3]}}
+                                         ) !important">
+                                        {{rootScope.selectedColorList['primary']}}
+                                    </div>
+
+                                </div>
+                                <div style="background:white;" layout="row" layout-padding>
+                                    <div flex="60">
+                                        the secondary color is
+                                        <div style="color:{{rootScope.colorDetail[color][500].hex}}">
+                                            {{rootScope.colorDetail[color][500].hex}}
+                                        </div>
+                                    </div>
+                                    <md-button class="md-fab md-mini"
+                                               style="background:{{rootScope.colorDetail[color][500].hex}} !important">
+                                        <md-icon>home</md-icon>
+                                    </md-button>
+                                </div>
+                            </md-card>
+                        </div>
+                    </div>
+                </div>
+            </md-dialog-content>
+        </md-dialog>
+    </script>
+</div>

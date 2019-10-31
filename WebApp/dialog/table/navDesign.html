@@ -1,0 +1,16 @@
+﻿<md-menu-bar>
+    <md-menu>
+        <md-button class="md-icon-button" ng-click="$mdMenu.open()">
+            <md-icon class="md-accent" style="font-size:24px !important">arrow_right_alt</md-icon>
+        </md-button>
+        <md-menu-content width="4" ng-mouseleave="$mdMenu.close()">
+            <md-menu-item ng-repeat="design in rootScope.current.project.designList"
+                          ng-click="rootScope.changeTableDesign(action,design)">
+                <md-button aria-label="Favorite">
+                    <md-icon flex="5">device_hub</md-icon>
+                    {{design.DesignDesc}}
+                </md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+</md-menu-bar>

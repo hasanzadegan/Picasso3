@@ -1,0 +1,90 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190551.js?r='+rand,'scripts/ngMask.min.js','scripts/md-input.css']}"> 
+	
+	<div ng-controller="Ctrl190551">
+	    <form id="formData" name="formData">
+		<fieldset ng-disabled="ishttpCalling">
+			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+			<div flex="100" layout-wrap layout="row">
+<md-input-container 
+	ng-if="100" flex="100" flex-xs="100" >
+    <md-icon>search</md-icon>
+    <input ng-model="Form.Search"   
+	  md- 
+ md-  
+	required
+	      >	
+	<label>{{'TABRIK'| translate }}</label>
+    	<div class="hint" >{{'ثبت نام يا ورود به پنل' | translate }}</div>
+    
+</md-input-container>
+<div >
+	<div  
+		style="height:100px;width:100px;
+		border:solid 1px silver;
+		background:url('{{image_source['Image1'].result}}');
+		background-size: cover;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		border-radius:px;
+		position:relative;
+
+		" 
+		>
+		<md-progress-linear  
+		ng-show="image_source['Image1'].progress>0 && image_source['Image1'].progress<100"
+		value="{{image_source['Image1'].progress}}"></md-progress-linear>
+	</div>
+	<div layout-padding style="width:100px;position:relative">
+		<input ng-model="Form.Image1" type="file"  
+		
+		
+		style="color:transparent"
+		
+		
+		onchange="angular.element(this).scope().uploadedFile(this,'Image1')" >
+		<md-icon ng-show="image_source['Image1'].visible" style="position:absolute;top:10px;left:115px;color:green;">check</md-icon>
+	</div>
+</div>
+
+
+<md-button  
+	 
+	ng-click="makeDesign_282787();" flex="100" flex-xs="100"  >
+    <md-icon class="material-icons">security</md-icon>
+    <span class="md-inline-list-icon-label">{{'Login' | translate}}</span>   
+</md-button>
+<!--  -->
+<img    >
+<md-button  
+	 
+	ng-click="makeDesign_282816();" flex="100" flex-xs="100"  >
+    <md-icon class="material-icons">security</md-icon>
+    <span class="md-inline-list-icon-label">{{'SEND' | translate}}</span>   
+</md-button>
+<!--  -->
+<md-input-container flex="100" flex-xs="100" md-no-float>
+	<md-icon>fmale</md-icon>
+	<md-select 
+		md-on-open="getDynamicData('__genderList',[{'title':'مرد','value':'01'},{'title':'زن','value':'02'}],'','','',[],this)"
+		ng-model="Form.Gender" placeholder="Gender" >
+		<md-option ng-value="value" ng-repeat="item in __genderList" >
+			{{item.title}}		
+		</md-option>
+	</md-select>
+</md-input-container>
+<md-button  type="submit"
+	 
+	ng-click="makeDesign_303991();" flex="100" flex-xs="100"  >
+    <md-icon class="material-icons">security</md-icon>
+    <span class="md-inline-list-icon-label">{{'Login' | translate}}</span>   
+</md-button>
+<!--  --></div>  
+	</div>
+</div>
+
+		</fieldset>
+		</form>
+	</div> 
+</div> 

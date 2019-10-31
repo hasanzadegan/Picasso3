@@ -1,0 +1,89 @@
+﻿<md-menu-bar>
+    <md-menu>
+        <md-button class="md-icon-button" ng-click="$mdMenu.open()">
+            <md-icon class="md-accent" style="font-size:24px !important">arrow_right_alt</md-icon>
+        </md-button>
+        <md-menu-content width="4">
+            <md-menu-item ng-if="true || rootScope.current.selectedComponent.Design.isMulipledest==1">
+                <md-menu-bar>
+                    <md-menu>
+                        <md-button aria-label="Favorite" style="width:270px !important">
+                            <div layout="row">
+                                dashboards
+                            </div>
+                        </md-button>
+                        <md-menu-content width="4" ng-mouseleave="$mdMenu.close()">
+                            <md-menu-item ng-repeat="dashboard in rootScope.current.project.dashboardList">
+                                <md-menu-bar>
+                                    <md-menu>
+                                        <md-button aria-label="Favorite" style="width:270px !important">
+                                            <div layout="row">
+                                                {{dashboard.Title}}
+                                            </div>
+                                        </md-button>
+                                        <md-menu-content>
+                                            <md-menu-item ng-repeat="panel in rootScope.current.project.panelList">
+                                                <md-button ng-click="rootScope.addDesignResult('dashborad',dashboard,panel)">
+                                                    <md-icon flex="5">grid_on</md-icon>
+                                                    {{panel.Title}}
+                                                </md-button>
+                                            </md-menu-item>
+                                        </md-menu-content>
+                                    </md-menu>
+                                </md-menu-bar>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+                </md-menu-bar>
+            </md-menu-item>
+            <md-divider ng-if="rootScope.current.selectedComponent.Design.isMulipledest==1"></md-divider>
+            <md-menu-item ng-if="rootScope.current.selectedComponent.Design.isMulipledest==1">
+                <md-menu-bar>
+                    <md-menu>
+                        <md-button aria-label="Favorite" style="width:270px !important">
+                            <div layout="row">
+                                other project design
+                            </div>
+                        </md-button>
+                        <md-menu-content width="4" ng-mouseleave="$mdMenu.close()">
+                            <md-menu-item ng-repeat="design in rootScope.current.project.designList"
+                                          ng-click="rootScope.addDesignResult('design',design)"
+                                          ng-if="rootScope.current.selectedComponent.Design.DesignId!=design.DesignId">
+                                <md-button aria-label="Favorite">
+                                    <md-icon flex="5">device_hub</md-icon>
+                                    {{design.DesignDesc}}
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+                </md-menu-bar>
+            </md-menu-item>
+            <md-divider ng-if="rootScope.current.selectedComponent.Design.isMulipledest==1"></md-divider>
+            <md-menu-item ng-repeat="page in rootScope.current.pageList">
+                <md-menu-bar>
+                    <md-menu>
+                        <md-button aria-label="Favorite" flex="100" style="width:270px !important" ng-mouseenter="rootScope.getNavigationPageContentList($index);">
+                            <div flex="100">{{page.PageName}}</div>
+                        </md-button>
+                        <md-menu-content width="4" ng-mouseleave="$mdMenu.close()">
+                            <md-menu-item ng-repeat="pageContent in page.PageContentList"
+                                          ng-click="rootScope.addDesignResult('pageContent',pageContent);">
+                                <md-button aria-label="Favorite">
+                                    <md-icon flex="5">insert_drive_file</md-icon>
+                                    {{pageContent.ContentName}}
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+                </md-menu-bar>
+            </md-menu-item>
+            <md-menu-item>
+                <md-menu-bar>
+                    <md-button aria-label="Favorite" flex="100" style="width:270px !important" ng-click="rootScope.addDesignResult('stopHere',null);">
+                        <div flex="100">Stop Here</div>
+                    </md-button>
+                </md-menu-bar>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+</md-menu-bar>

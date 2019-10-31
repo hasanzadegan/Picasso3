@@ -1,0 +1,15 @@
+<div oc-lazy-load="{ name: 'myApp', files: ['dialog/icon/iconDialog.js']}">
+    <script type="text/ng-template" id="icon.tmpl.html" ng-controller="iconController">
+        <md-dialog>
+            <md-dialog-content style="min-height:200px" layout-padding>
+                <div layout="row" layout-wrap>
+                    <div ng-repeat="icon in rootScope.iconList" flex="10" layout-padding>
+                        <md-icon flex="10" style="{{rootScope.current.content.Icon==icon?'color:#ff0269':''}};font-size:32px !important" ng-click="rootScope.saveContentIcon(icon)">
+                            {{icon}}
+                        </md-icon>
+                    </div>
+                </div>
+            </md-dialog-content>
+        </md-dialog>
+    </script>
+</div>

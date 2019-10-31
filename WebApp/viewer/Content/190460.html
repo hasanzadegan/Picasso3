@@ -1,0 +1,55 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190460.js?r=668602149','scripts/ngMask.min.js','scripts/md-input.css']}"> 
+	
+	<div ng-controller="Ctrl190460">
+	    <form id="formData" name="formData">
+			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+		<div flex="60" flex-xs="100" layout-padding >
+			<div flex="100" layout-wrap layout="row">
+<md-input-container ng-if="100" flex="100" flex-xs="100" >
+    <md-icon>search</md-icon>
+    <input ng-model="Form.Search"   
+	  md-  
+	md- type="text"  
+	      >	
+	<label>{{'شماره ملي / شماره نظام پزشکي'| translate }}</label>
+    	<div class="hint" >{{'ثبت نام يا ورود به پنل' | translate }}</div>
+    
+</md-input-container>
+<div >
+	<div  
+		style="height:100px;width:100px;
+		border:solid 1px silver;
+		background:url('{{image_source['Image1'].result}}');
+		background-size: cover;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		border-radius:px;
+		position:relative;
+
+		" 
+		>
+		<md-progress-linear  
+		ng-show="image_source['Image1'].progress>0 && image_source['Image1'].progress<100"
+		value="{{image_source['Image1'].progress}}"></md-progress-linear>
+	</div>
+	<div layout-padding style="width:100px;position:relative">
+		<input ng-model="Form.Image1" type="file"  
+		
+		
+		style="color:transparent"
+		
+		
+		onchange="angular.element(this).scope().uploadedFile(this,'Image1')" >
+		<md-icon ng-show="image_source['Image1'].visible" style="position:absolute;top:10px;left:115px;color:green;">check</md-icon>
+	</div>
+</div>
+
+</div>  
+		</div>
+	</div>
+</div>
+		</form>
+	</div> 
+</div> 

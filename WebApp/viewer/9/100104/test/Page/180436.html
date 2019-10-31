@@ -1,0 +1,9 @@
+<!--	
+<div ng-init="skinPath='Skin/skin1/'"></div>	
+<div ng-include="skinPath+'toolbar.html?r='+rand" ng-init="pageContent=(contents|filter:{pageContentId:pageContentId})[0]"></div>
+-->
+	
+<div ng-init="contents =[{'index':0,'pageContentId':'190670','contentId':'160419', 'title':'PatientSideNav','icon':'info'}];selectedContent();"></div>
+<div ng-include="'Content/'+pageContentId+'.html?r='+rand"></div>
+
+

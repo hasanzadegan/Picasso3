@@ -1,0 +1,66 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190724.js?r='+rand,'Design/design30321.js?r='+rand,'Design/design30320.js?r='+rand,'Design/design30322.js?r='+rand]}"> 
+	<div ng-controller="Design_30321"></div>
+<div ng-controller="Design_30320"></div>
+<div ng-controller="Design_30322"></div>
+
+	<div ng-controller="Ctrl190724">
+	    <form id="formData" name="formData">
+		<fieldset ng-disabled="ishttpCalling">
+			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+			<div flex="100" layout-wrap layout="row">
+<div ng-init="design_30322(this)" style="display:none"></div>
+<div data-ng-init=" __genderList_edit = isNullList() " style="display:none"></div>
+<div data-ng-init=" Form.Gender = isNullObject() " style="display:none"></div>
+
+<md-input-container flex="25" flex-xs="100" md-no-float>
+	<md-icon></md-icon>
+	<md-select 
+		required
+		
+		md-on-open="getDynamicData('__genderList','','1','db/gender.json','',[],this)"
+		ng-model="Form.Gender" placeholder="{{'جنسيت' | translate}}" >
+		<md-option  ng-repeat="gender in  (__genderList!=null?__genderList:__genderList_edit)" value="{{gender.GenderId}}">
+			{{gender.Title}}		
+		</md-option>
+	</md-select>
+</md-input-container>
+<div data-ng-init=" __genderList1_edit = isNullList() " style="display:none"></div>
+<div data-ng-init=" Form.Gender1 = isNullObject() " style="display:none"></div>
+
+<md-input-container flex="25" flex-xs="100" md-no-float>
+	<md-icon>fmale</md-icon>
+	<md-select 
+		
+		
+		md-on-open="getDynamicData('__genderList1','','1','db/gender.json','',[],this)"
+		ng-model="Form.Gender1" placeholder="{{'Gender' | translate}}" >
+		<md-option  ng-repeat="item in  (__genderList1!=null?__genderList1:__genderList1_edit)" value="{{item.GenderId}}">
+			{{item.Title}}		
+		</md-option>
+	</md-select>
+</md-input-container>
+<md-button  
+	 
+	
+	ng-click="makeDesign_304178();" flex="100" flex-xs="100"  >
+    <md-icon class="material-icons">book</md-icon>
+    <span class="md-inline-list-icon-label">{{'set' | translate}}</span>   
+</md-button>
+<!--  -->
+<md-button  
+	 ng-disabled="formData.$invalid"
+	
+	ng-click="makeDesign_304181();" flex="100" flex-xs="100"  >
+    <md-icon class="material-icons">save</md-icon>
+    <span class="md-inline-list-icon-label">{{'save' | translate}}</span>   
+</md-button>
+<!--  -->
+<div ng-init=" __genderListFirst = [{'GenderId': '1','Title': 'Mard'}] " style="display:none"></div></div>  
+	</div>
+</div>
+
+		</fieldset>
+		</form>
+	</div> 
+</div> 

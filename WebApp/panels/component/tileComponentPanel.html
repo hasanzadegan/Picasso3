@@ -1,0 +1,22 @@
+﻿<!--<div flex="100" layout-wrap>
+    <div ng-drop="true" ng-drop-success="onDropComplete($event,'{{tile.tileName}}')" id="fldst{{tile.tileName}}"
+              ng-click="current.CurrentTile=tile" layout-wrap>
+        <legend>{{tile.tileName}}
+        </legend>
+        <div layout="row" flex="100">
+            <div ng-repeat="component in tile.componentList" layout-padding ng-drag="true" ng-drag-data="obj"
+                 ng-drag-success="onDragSuccess('{{component.ComponentId}}',$event,'{{tile.tileName}}')">
+                <div style="background:#ebebeb;border-radius:3px;" layout="row">
+                    <md-icon ng-click="deleteComponent({component})">delete</md-icon>
+                    <div ng-show="!component.editingComponent" style="font-size:10px"
+                         ng-click="selectComponentInfo({tile},{component})" ng-dblclick="component.editingComponent=true">
+                        {{component.InheritedTypeName}}
+                    </div>
+                    <md-input-container ng-show="component.editingComponent">
+                        <input ng-blur="updateComponentInfo();component.editingComponent=false" ng-model="component.InheritedTypeName" autofocus="true">
+                    </md-input-container>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->

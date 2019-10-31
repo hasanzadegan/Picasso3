@@ -1,0 +1,78 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190460.js?r=1585668194','Design/design10087.js?r=1398396440']}"> 
+	<div ng-controller="Design_10087"></div>
+
+	<div ng-controller="Ctrl190460">
+	    <form id="" name="">
+			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+		<div flex="60" flex-xs="100" layout-padding >
+			<div flex="100" layout-wrap layout="row">
+<div >
+	<div  
+		style="height:248px;width:220px;
+		border:solid 1px silver;
+		background:url('{{image_source['Image2'].result}}');
+		background-size: cover;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		border-radius:8px;
+		position:relative;
+
+		" 
+		>
+		<md-progress-linear  
+		ng-show="image_source['Image2'].progress>0 && image_source['Image2'].progress<100"
+		value="{{image_source['Image2'].progress}}"></md-progress-linear>
+	</div>
+	<div layout-padding style="width:220px;position:relative">
+		<input ng-model="Form.Image2" type="file" accept="image/*" 
+		baseUrlId="0"
+		url="account/person/image/save"
+		style="color:transparent"
+		imageDataVar="imageData"
+		param="{'id':2628}"
+		onchange="angular.element(this).scope().uploadedFile(this,'Image2')" >
+		<md-icon ng-show="image_source['Image2'].visible" style="position:absolute;top:10px;left:115px;color:green;">check</md-icon>
+	</div>
+</div>
+{{image_source['Image2'].progress}}
+<div layout="row" flex="33" flex-xs="10">
+</div>
+<div >
+	<div  
+		style="height:200px;width:200px;
+		border:solid 1px silver;
+		background:url('{{image_source['Image3'].result}}');
+		background-size: cover;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		border-radius:6px;
+		position:relative;
+
+		" 
+		>
+		<md-progress-linear  
+		ng-show="image_source['Image3'].progress>0 && image_source['Image3'].progress<100"
+		value="{{image_source['Image3'].progress}}"></md-progress-linear>
+	</div>
+	<div layout-padding style="width:200px;position:relative">
+		<input ng-model="Form.Image2" type="file" accept="image/*" 
+		baseUrlId="0"
+		url="account/person/image/save"
+		style="color:transparent"
+		imageDataVar="imageData"
+		param="{'id':2628}"
+		onchange="angular.element(this).scope().uploadedFile(this,'Image3')" >
+		<md-icon ng-show="image_source['Image3'].visible" style="position:absolute;top:10px;left:115px;color:green;">check</md-icon>
+	</div>
+</div>
+
+</div>  
+		</div>
+	<div>
+</div>
+		</form>
+	</div> 
+</div> 

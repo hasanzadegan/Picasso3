@@ -1,0 +1,40 @@
+----
+<md-button aria-label="Favorite"  ng-show="true">
+	<md-icon flex="5">add_box</md-icon>
+	Add
+</md-button>	
+<table flex="100" ng-table="tableParams"  show-filter="true">
+	<tr ng-repeat="item in $data">
+		<td title="('firstName'|translate)"    flex="50" >{{item.firstName}}</td>
+		<td title="('lastName'|translate)"    flex="50" >{{item.lastName}}</td>
+		<td flex="5">
+			<md-menu-bar>
+				<md-menu>
+					<md-button class="md-icon-button" ng-click="$mdMenu.open()">
+						<md-icon class="md-accent" style="font-size:24px !important">list_alt</md-icon>
+					</md-button>
+					<md-menu-content width="4" ng-mouseleave="$mdMenu.close()">
+						<md-menu-item  ng-show="true">
+							<md-button aria-label="Favorite" >
+								<md-icon flex="5">view</md-icon>
+								select
+							</md-button>
+						</md-menu-item>
+						<md-menu-item  ng-show="true">
+							<md-button aria-label="Favorite" >
+								<md-icon flex="5">edit</md-icon>
+								edit
+							</md-button>
+						</md-menu-item>
+						<md-menu-item  ng-show="true">
+							<md-button aria-label="Favorite" >
+								<md-icon flex="5">remove</md-icon>
+								delete
+							</md-button>
+						</md-menu-item>			
+					</md-menu-content>
+				</md-menu>
+			</md-menu-bar>
+		</td>
+	</tr>
+</table>

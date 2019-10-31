@@ -1,0 +1,18 @@
+<div oc-lazy-load="{ name: 'YourApp', files: [skinPath+'js/language.js?r='+rand] }">
+	<div ng-controller="langCtrl" layout="row" class="langBx">
+		<md-menu-bar >
+			<md-menu>
+			<md-button class="md-icon-button" ng-click="$mdMenu.open()">
+				<md-icon style="font-size:24px !important">language</md-icon>
+			</md-button>
+			<md-menu-content width="2">
+				<md-menu-item  ng-repeat="lang in ['Fa','En']" >
+					<md-button aria-label="Favorite" ng-click="changeLanguage(lang)"> 
+							{{lang}}
+					</md-button>
+				</md-menu-item>
+			</md-menu>
+		</md-menu-bar>
+
+	</div>
+</div>

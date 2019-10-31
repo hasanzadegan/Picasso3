@@ -1,0 +1,60 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190619.js?r=2103905965','Design/design20206.js?r=2103905965']}"> 
+	<div ng-controller="Design_20206"></div>
+
+	<div ng-controller="Ctrl190619">
+	    <form id="formData" name="formData">
+			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+		<div flex="60" flex-xs="100" layout-padding >
+			<div flex="100" layout-wrap layout="row">
+<!--div ng-init="getDynamicData('__disasterTypeList','','0','/api/CityDisasters/getAllActive','','',this)"></div-->
+
+<div ng-init=" __disasterTypeList = getDynamicData('__disasterTypeList','','0','/api/CityDisasters/getAllActive','','',this) " style="display:none"></div>
+<div ng-init=" Form.CityDisastersId = 1 " style="display:none"></div>
+
+<!--md-input-container flex="100" flex-xs="100" md-no-float>
+	<md-icon></md-icon>
+	<md-select 
+		disabled="disabled"
+		md-on-open="getDynamicData('__disasterTypeList','','0','/api/CityDisasters/getAllActive','','',this)"
+		ng-model="Form.CityDisastersId" placeholder="{{'SUBJECT' | translate}}" >
+		<md-option  ng-repeat="item in __disasterTypeList" value="{{item.CityDisastersId}}">
+			{{item.Title}}		
+		</md-option>
+	</md-select>
+</md-input-container-->
+<!--div ng-init="getDynamicData('__cityList','','0','/api/CityDisastersJob/List?cityDisastersId='+Form.CityDisastersId+'','','',this)"></div-->
+
+<div ng-init=" __cityList =  " style="display:none"></div>
+<div ng-init=" Form.CityDisastersJobId =  " style="display:none"></div>
+
+<md-input-container flex="100" flex-xs="100" md-no-float>
+	<md-icon></md-icon>
+	<md-select 
+		
+		md-on-open="getDynamicData('__cityList','','0','/api/CityDisastersJob/List?cityDisastersId='+Form.CityDisastersId+'','','',this)"
+		ng-model="Form.CityDisastersJobId" placeholder="{{'SPECIALITY' | translate}}" >
+		<md-option  ng-repeat="item in __cityList" value="{{item.CityDisastersJobId}}">
+			{{item.Title}}		
+		</md-option>
+	</md-select>
+</md-input-container>
+<div ng-init="Form.StartDate=setStandardDate()"></div>
+<md-input-container  >
+	<label>{{'START_DATE'| translate }}</label>
+        <md-persian-datepicker ng-model="Form.StartDate"   name="START_DATE"  ></md-persian-datepicker>
+
+</md-input-container>
+<md-button  
+	 
+	ng-click="makeDesign_293067();" flex="100" flex-xs="100"  >
+    <md-icon class="material-icons">security</md-icon>
+    <span class="md-inline-list-icon-label">{{'VOLENTEER_REQUEST' | translate}}</span>   
+</md-button>
+<!--  --></div>  
+		</div>
+	</div>
+</div>
+		</form>
+	</div> 
+</div> 

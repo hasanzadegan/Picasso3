@@ -1,0 +1,41 @@
+<div ng-hide="current.project.ProjectId>0" ng-controller="projectController" layout="row" layout-wrap flex="100">
+    <div ng-init="current.newProject.TemplateTypeList=[{'title':'angularJs-Materil','value':'1'}]" style="display:none"></div>
+    <md-input-container flex="100" flex-xs="100" md-no-float>
+        <md-icon class="material-icons">dashboard</md-icon>
+        <md-select ng-model="current.newProject.TemplateId" name="TemplateType" placeHolder="TemplateType">
+            <md-option ng-value="item.value" ng-repeat="item in current.newProject.TemplateTypeList">{{item.title}}</md-option>
+        </md-select>
+        <div ng-messages="current.newProject.TemplateType.$error" role="alert" multiple>
+            <div ng-message="required" class="my-message"></div>
+        </div>
+    </md-input-container>
+
+    <md-input-container flex="100" flex-xs="100" md-no-float>
+        <md-icon>assignment</md-icon>
+        <input ng-model="current.newProject.ProjectName" type="text" minlength="5" maxlength="100" md-maxlength="100" type="text" placeholder="Project Name" name="ProjectName">
+        <div ng-messages="current.newProject.ProjectName.$error" role="alert">
+            <div ng-message="required" class="my-message"></div>
+        </div>
+    </md-input-container>
+
+    <md-input-container flex="100" flex-xs="100" md-no-float>
+        <md-icon>notes</md-icon>
+        <textarea flex="100" name="ProjectDescription" placeHolder="Project Description" ng-model="current.newProject.ProjectDescription"  maxlength="4000" md-maxlength="4000"></textarea>
+        <div ng-messages="current.newProject.ProjectDescription.$error" role="alert">
+            <div ng-message="required" class="my-message"></div>
+        </div>
+    </md-input-container>
+    <md-input-container flex="100" flex-xs="100" md-no-float>
+        <md-icon>code</md-icon>
+        <input ng-model="current.newProject.ScriptBasePath" maxlength="100" md-maxlength="100" type="text" placeholder="BasePath" name="BasePath">
+        <div ng-messages="current.newProject.BasePath.$error" role="alert">
+            <div ng-message="required" class="my-message"></div>
+        </div>
+    </md-input-container>
+
+    <md-button flex="100" flex-xs="100" ng-click="createNewProject()">
+        <md-icon class="material-icons">assignment</md-icon>
+        <span class="md-inline-list-icon-label">Create Project</span>
+    </md-button>
+</div>
+

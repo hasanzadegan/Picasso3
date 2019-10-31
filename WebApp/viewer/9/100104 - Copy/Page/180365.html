@@ -1,0 +1,22 @@
+<!--	
+<div ng-init="skinPath='Skin/skin1/'"></div>	
+<div ng-include="skinPath+'toolbar.html?r='+rand" ng-init="pageContent=(contents|filter:{pageContentId:pageContentId})[0]"></div>
+-->
+	
+<div ng-init="contents =[{'index':0,'pageContentId':'190540','contentId':'160321', 'title':'WORK_DAY','icon':'assignment'},{'index':1,'pageContentId':'190541','contentId':'160322', 'title':'PERSONAL_VACATION','icon':'assignment'},{'index':2,'pageContentId':'190542','contentId':'160325', 'title':'CALENDAR_VACATION','icon':'assignment'},{'index':3,'pageContentId':'190543','contentId':'160326', 'title':'VISIT_TIME_SETTING','icon':'assignment'}];selectedContent();"></div>
+<md-tabs md-selected="(contents|filter:pageContentId:pageContentId)[0].index" md-border-bottom md-autoselect md-swipe-content md-dynamic-height>
+	<md-tab ng-repeat="content in contents" ng-disabled="content.disabledContent">
+		<md-tab-label>
+			<div ng-click="navigateULR(180365,content.pageContentId)">
+				<md-icon >{{content.icon}}</md-icon> 
+				{{content.title | translate}}
+			</div>
+		</md-tab-label>
+        <md-tab-body>
+			<div  ng-include="'Content/'+content.pageContentId+'.html?r='+rand" ></div>
+        </md-tab-body>
+	</md-tab>
+</md-tabs>
+<div ng-init="disableConentList(contents,[])"></div>
+
+

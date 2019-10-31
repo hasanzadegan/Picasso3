@@ -1,0 +1,21 @@
+﻿<div oc-lazy-load="{ name: 'myApp', files: ['dialog/table/tableDialog.js']}">
+    <script type="text/ng-template" id="table.tmpl.html" ng-controller="tableController">
+        <style>
+            h4 {color: deepskyblue;}
+        </style>
+        <md-dialog flex="90">
+            <md-dialog-content flex="100" style="height:95vh;min-height:95vh" layout-padding>
+                
+                <div layout="row">
+                    <div flex="20">
+                        <div ng-include="'dialog/table/searchTable.html'"></div>
+                    </div>
+                    <div flex="80">
+                        <div ng-include="'dialog/table/tabInit.html'"></div>
+                        <!--<div ng-include="'dialog/table/wizardTable.html'"></div>-->
+                    </div>
+                </div>
+            </md-dialog-content>
+        </md-dialog>
+    </script>
+</div>

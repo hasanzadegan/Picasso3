@@ -1,0 +1,28 @@
+<md-input-container flex="100" md-autofocus layout="row">
+    <label>{{current.project.ProjectName}} Contents</label>
+    <input type="text" ng-keyup="addProjectContent($event)" placeholder="Add New Content" ng-model="current.newContentName">
+</md-input-container>
+
+<div layout="row">
+    &nbsp;
+</div>
+<div layout-padding>
+    <div ng-repeat="content in current.projectContentList" flex="100" layout="row">
+        <md-menu>
+            <md-icon ng-click="$mdMenu.open()">{{content.Icon}}</md-icon>
+            <md-menu-content width="4">
+                <md-menu-item>
+                    <md-button ng-click="addContent({content})">
+                        add content
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="deleteProjectContent({content})">
+                        delete
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+        <div flex="90" title="{{content.ContentId}}">{{content.ContentName}}</div>
+    </div>
+</div>

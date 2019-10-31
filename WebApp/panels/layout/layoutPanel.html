@@ -1,0 +1,20 @@
+<div oc-lazy-load="{ name: 'myApp', files: ['panels/layout/layoutPanel.js']}">
+    <div ng-show="current.content.ContentId>0" flex="100" layout-padding layout-wrap ng-controller="layoutController">
+
+        <div layout="row" flex="100">
+            <md-input-container flex="50" flex-xs="100" layout-padding>
+                <md-select ng-model="current.page.ContainerTypeId" placeHolder="Container Type" ng-change="updatePageInfo();generatePage();">
+                    <md-option ng-value="{{container.ContainerTypeId}}" ng-repeat="container in current.project.containerList">{{container.Title}}</md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-input-container flex="50" flex-xs="100" layout-padding layout-wrap>
+                <md-select ng-model="current.content.LayoutId" placeHolder="Layout" ng-change="updateContentInfo()">
+                    <md-option ng-value="{{layout.LayoutId}}" ng-repeat="layout in current.project.layoutList">{{layout.LayoutName}}</md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+
+        <dynamic-element flex="100" message='current.layout.LayoutHTML'></dynamic-element>
+    </div>
+</div>

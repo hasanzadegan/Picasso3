@@ -1,0 +1,45 @@
+@import url(toolbar.css);
+@import url(search.css);
+@import url(sideNav.css);
+@import url(account.css);
+@import url(language.css);
+@import url(logo.css);
+@import url(content.css);
+@import url(profilePage.css);
+@import url(titlePage.css);
+@import url(myProfile.css);
+@import url(bio.css);
+@import url(tabs.css);
+@import url(personalInfo.css);
+@import url(privacyTab.css);
+@import url(workplaceTab.css);
+.toolbarIcons {
+	font-size:30px;
+	width:30px;
+	height:30px;
+	color: #fff !important;
+}
+.extraIcons {
+	color: #00C6D7 !important;
+}
+hr.borderStyle {
+	border: 0;
+	height: 2px;
+	background-image: -webkit-linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+	background-image: -moz-linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+	background-image: -ms-linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+	background-image: -o-linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+	width: 80%;
+}
+.approveBtn {
+	background: #052963;
+	color: #fff;
+}
+.whiteTxtToolbar {
+	font-size: 14px;
+	color: #fff;
+}
+.grayTxt {
+	color: #777;
+}

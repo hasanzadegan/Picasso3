@@ -1,0 +1,47 @@
+<div oc-lazy-load="{name:'myApp',files:['Content/190575.js?r=1219159410','Design/design10177.js?r=612731619']}"> 
+	<div ng-controller="Design_10177"></div>
+
+	<div ng-controller="Ctrl190575">
+	    <form id="formData" name="formData">
+			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
+	<div flex="100" layout-wrap layout="row" layout-align="center center">
+			<div flex="100" layout-wrap layout="row">
+<div ng-init="initToast('z','z==3',('NATIONAL_CODE'|translate),'error');"></div>
+<div data-ng-init=" __genderList = isNullList() " style="display:none"></div>
+<div data-ng-init=" Form.Gender = isNullObject() " style="display:none"></div>
+
+<md-input-container flex="100" flex-xs="100" md-no-float>
+	<md-icon>home</md-icon>
+	<md-select 
+		
+		md-on-open="getDynamicData('__genderList',[{'title':'مرد','value':1},{'title':'زن','value':2}],'','','',[],this)"
+		ng-model="Form.Gender" placeholder="{{'SEND' | translate}}" >
+		<md-option  ng-repeat="item in __genderList" value="{{item.value}}">
+			{{item.title}}		
+		</md-option>
+	</md-select>
+</md-input-container>
+<div ng-init=" Form.Gender = 1 " style="display:none"></div>
+<div ng-init="Form.CertificateDate=setStandardDate('2018-12-11')"
+<md-input-container flex="100" >
+	<label>{{''| translate }}</label>
+        <md-persian-datepicker ng-model="Form.CertificateDate"   name="CertificateDate"  ></md-persian-datepicker>
+
+</md-input-container>
+
+--{{keys}}--
+<div layout="row" flex="70" flex-xs="10">
+</div>
+<md-button  
+	class="md-list-item-content md-primary" 
+	ng-click="makeDesign_282917();" flex="100" flex-xs="100"  >
+    <md-icon class="material-icons">save</md-icon>
+    <span class="md-inline-list-icon-label">{{'ذخيره و بازگشت' | translate}}</span>   
+</md-button>
+<!--  --></div>  
+	</div>
+</div>
+
+		</form>
+	</div> 
+</div> 
