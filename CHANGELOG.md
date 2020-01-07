@@ -22,4 +22,6 @@ on the official Visual Studio extension gallery.
 - [x] Initial release
 - [x] Feature 1
 - [x] Feature 2
+- [x] Feature 3
+
   - [x] Sub feature
